@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
 @export var speed = 550
-@export var jump_power = -200
+@export var jump_power = -1000
 @export var gravity = 120
+@export var climbingspeed =  200.0
 
 const acc = 50
 const friction = 70
+
+var climbable = false
 
 func _physics_process(delta):
 	var input_dir: Vector2 = input()
@@ -15,6 +18,13 @@ func _physics_process(delta):
 	else:
 		add_friction()
 		play_animation()
+	
+	if climbable:
+		velocity.y = Input.get_axis("up", "down") * climbingspeed
+	else:
+		if not is_on_floor():
+			velocity.y += gravity * delta
+	
 	player_movement()
 	jump()
 
@@ -36,7 +46,7 @@ func player_movement():
 	move_and_slide()
 
 func jump():
-	if Input.is_action_just_pressed("up"):
+	if Input.is_action_just_pressed("space"):
 		velocity.y = jump_power
 	else:
 		velocity.y += gravity
