@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ble81ur0qfj62"]
+
+[ext_resource type="PackedScene" uid="uid://bg815yv7qogod" path="res://levels/objects/climbable.tscn" id="1_tqsb7"]
+[ext_resource type="Script" path="res://scripts/testcharacter.gd" id="2_116sa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw1ba"]
+size = Vector2(370, 41)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1gxk"]
+
+[node name="climbtest" type="Node2D"]
+position = Vector2(-7, 1)
+
+[node name="climbable2" parent="." instance=ExtResource("1_tqsb7")]
+position = Vector2(378, 125)
+
+[node name="ColorRect" type="ColorRect" parent="climbable2"]
+offset_left = -44.0
+offset_top = -43.0
+offset_right = 45.0
+offset_bottom = 88.0
+color = Color(0.733333, 0.34902, 0.34902, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(147, 205)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_right = 371.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(185, 19.5)
+shape = SubResource("RectangleShape2D_rw1ba")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(178, 185)
+script = ExtResource("2_116sa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_h1gxk")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+offset_left = -7.0
+offset_top = -14.0
+offset_right = 8.0
+offset_bottom = 14.0
