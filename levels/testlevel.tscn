@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy3f3dogp4p15"]
+
+[ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_snouy"]
+[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="2_yia7e"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
+scenes/1/scene = ExtResource("2_yia7e")
+
+[sub_resource type="TileSet" id="TileSet_id0ry"]
+sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
+
+[node name="testlevel" type="Node2D"]
+
+[node name="Wall" type="Sprite2D" parent="."]
+position = Vector2(577, 322)
+texture = ExtResource("1_snouy")
+
+[node name="floor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_id0ry")
+format = 2
