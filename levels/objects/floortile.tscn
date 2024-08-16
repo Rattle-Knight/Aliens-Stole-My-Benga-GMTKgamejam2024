@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bij4tgilhpkxw"]
 
-[ext_resource type="Texture2D" uid="uid://i8n6sxocwn30" path="res://sprites/bg/tile floor.png" id="1_hwdiu"]
+[ext_resource type="Texture2D" uid="uid://i8n6sxocwn30" path="res://sprites/bg/tile floor.png" id="1_4ardr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba7oi"]
 size = Vector2(166, 128)
 
 [node name="floortile" type="Sprite2D"]
-texture = ExtResource("1_hwdiu")
+texture = ExtResource("1_4ardr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
