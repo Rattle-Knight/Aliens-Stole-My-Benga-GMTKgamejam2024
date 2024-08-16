@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ble81ur0qfj62"]
+[gd_scene load_steps=4 format=3 uid="uid://ble81ur0qfj62"]
 
 [ext_resource type="PackedScene" uid="uid://bg815yv7qogod" path="res://levels/objects/climbable.tscn" id="1_tqsb7"]
-[ext_resource type="Script" path="res://scripts/testcharacter.gd" id="2_116sa"]
+[ext_resource type="PackedScene" uid="uid://ckjuw8xuj6w3n" path="res://scenes/player2.tscn" id="2_evh2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rw1ba"]
 size = Vector2(370, 41)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1gxk"]
 
 [node name="climbtest" type="Node2D"]
 position = Vector2(-7, 1)
@@ -32,15 +30,5 @@ offset_bottom = 40.0
 position = Vector2(185, 19.5)
 shape = SubResource("RectangleShape2D_rw1ba")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(178, 185)
-script = ExtResource("2_116sa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CapsuleShape2D_h1gxk")
-
-[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
-offset_left = -7.0
-offset_top = -14.0
-offset_right = 8.0
-offset_bottom = 14.0
+[node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("2_evh2c")]
+position = Vector2(169, 113)

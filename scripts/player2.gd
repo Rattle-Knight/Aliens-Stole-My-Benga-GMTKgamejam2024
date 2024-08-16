@@ -17,7 +17,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	
 	if climbable:
-		velocity.y = Input.get_axis("ui_up", "ui_down") * climbingspeed
+		velocity.y = Input.get_axis("up", "down") * climbingspeed
 	else:
 		if not is_on_floor():
 			velocity.y += gravity * delta
