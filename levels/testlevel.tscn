@@ -1,8 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy3f3dogp4p15"]
+[gd_scene load_steps=19 format=3 uid="uid://cy3f3dogp4p15"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_y6aq5"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="2_am88s"]
 [ext_resource type="PackedScene" uid="uid://s60bki06mwve" path="res://scenes/player.tscn" id="3_02s34"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_g0m1b"]
+[ext_resource type="PackedScene" uid="uid://dhyghet38wiay" path="res://levels/objects/book1.tscn" id="5_j1f01"]
+[ext_resource type="PackedScene" uid="uid://de378bmpncqyy" path="res://levels/objects/book2.tscn" id="6_fblth"]
+[ext_resource type="PackedScene" uid="uid://cywn3qyoggmvy" path="res://levels/objects/book3.tscn" id="7_6wxf8"]
+[ext_resource type="PackedScene" uid="uid://d3m1keebkrooa" path="res://levels/objects/book4.tscn" id="8_35ehi"]
+[ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="9_j0ods"]
+[ext_resource type="PackedScene" uid="uid://kf0hqxeqmamg" path="res://levels/objects/book6.tscn" id="10_7jc8e"]
+[ext_resource type="PackedScene" uid="uid://cxnn7jb8hf5mr" path="res://levels/objects/book7.tscn" id="11_jovva"]
+[ext_resource type="PackedScene" uid="uid://boukts8nwxx5c" path="res://levels/objects/book8.tscn" id="12_8fcll"]
+[ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="13_bgp2u"]
+[ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="14_dwoqf"]
+[ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="15_do041"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_g2hbh"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("2_am88s")
@@ -14,15 +27,22 @@ sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
 [node name="testlevel" type="Node2D"]
 
 [node name="floor" type="TileMap" parent="."]
+z_index = 2
 position = Vector2(-1, 11)
 tile_set = SubResource("TileSet_id0ry")
 format = 2
-layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536)
+layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 327679, 0, 65536, 327678, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 327677, 0, 65536, 327676, 0, 65536, 327675, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 327674, 0, 65536, 327673, 0, 65536, 327672, 0, 65536)
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("3_02s34")]
-position = Vector2(135, 304)
+z_index = 2
+position = Vector2(-1102, 399)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(117, 51)
+limit_top = 0
+limit_bottom = 650
+editor_draw_limits = true
+script = ExtResource("3_g0m1b")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -32,3 +52,44 @@ motion_mirroring = Vector2(1152, 0)
 [node name="Wall" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(577, 322)
 texture = ExtResource("1_y6aq5")
+
+[node name="objects" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Book" parent="objects" instance=ExtResource("5_j1f01")]
+position = Vector2(623, 498)
+
+[node name="Book2" parent="objects" instance=ExtResource("6_fblth")]
+position = Vector2(656, 434)
+
+[node name="Book3" parent="objects" instance=ExtResource("7_6wxf8")]
+position = Vector2(659, 360)
+
+[node name="Book4" parent="objects" instance=ExtResource("8_35ehi")]
+position = Vector2(-834, 431)
+rotation = -0.387005
+
+[node name="Book5" parent="objects" instance=ExtResource("9_j0ods")]
+position = Vector2(-267, 499)
+
+[node name="Book6" parent="objects" instance=ExtResource("10_7jc8e")]
+position = Vector2(-307, 431)
+
+[node name="Book7" parent="objects" instance=ExtResource("11_jovva")]
+position = Vector2(-395, 346)
+
+[node name="Book8" parent="objects" instance=ExtResource("12_8fcll")]
+position = Vector2(-500, 284)
+
+[node name="Book9" parent="objects" instance=ExtResource("13_bgp2u")]
+position = Vector2(-453, 231)
+
+[node name="Book10" parent="objects" instance=ExtResource("14_dwoqf")]
+position = Vector2(-445, 183)
+
+[node name="cap" parent="objects" instance=ExtResource("15_do041")]
+position = Vector2(1338, 401)
+
+[node name="alien" parent="." instance=ExtResource("16_g2hbh")]
+position = Vector2(-247, 39)
+scale = Vector2(1.54, 1.54)

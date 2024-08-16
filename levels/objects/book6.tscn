@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://kf0hqxeqmamg"]
+
+[ext_resource type="Texture2D" uid="uid://dawsxko3nn5rr" path="res://sprites/objects/book 3.png" id="1_62yw3"]
+[ext_resource type="Script" path="res://scripts/climbable.gd" id="2_caer2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjfxo"]
+size = Vector2(31.8879, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phum8"]
+size = Vector2(32, 88)
+
+[node name="Book" type="StaticBody2D"]
+
+[node name="Book1" type="Sprite2D" parent="."]
+position = Vector2(6, -1)
+texture = ExtResource("1_62yw3")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(347, 5)
+script = ExtResource("2_caer2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-142.056, -4.5)
+shape = SubResource("RectangleShape2D_jjfxo")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-25, 9)
+script = ExtResource("2_caer2")
+dir = "l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-165, -14)
+shape = SubResource("RectangleShape2D_phum8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-186, -48, 204, -39, 203, 43, -185, 38)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

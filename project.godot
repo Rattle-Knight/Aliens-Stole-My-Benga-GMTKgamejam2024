@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Pausemenu="*res://scenes/pausemenu.tscn"
 GameOver="*res://scenes/game_over.tscn"
+Global="*res://scripts/global.gd"
 
 [input]
 

@@ -13,7 +13,14 @@ const friction = 70
 
 var climbable = false
 
+func check_climbable():
+	if Global.laddercount > 0:
+		climbable = true
+	else:
+		climbable = false
+
 func _physics_process(delta):
+	check_climbable()
 	var input_dir: Vector2 = input()
 	if input_dir != Vector2.ZERO:
 		accelerate(input_dir)
@@ -31,7 +38,7 @@ func _physics_process(delta):
 		if not is_on_floor():
 			velocity.y += get_grav() *delta 
 		else:
-			jump()
+			jump(input_dir)
 	
 	player_movement()
 
@@ -57,11 +64,12 @@ func add_friction():
 func player_movement():
 	move_and_slide()
 
-func jump():
+func jump(input_dir):
 	if Input.is_action_just_released("space") and velocity.y < 0:
 		velocity.y += jump_power /4
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y += jump_power 
+
 
 func play_animation():
 	pass

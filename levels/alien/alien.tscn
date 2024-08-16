@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://do3r2faib5rf6"]
+
+[ext_resource type="Script" path="res://scripts/alien.gd" id="1_7pn6o"]
+[ext_resource type="Texture2D" uid="uid://sm305v3qkqfy" path="res://sprites/objects/Red_square.svg" id="1_hk400"]
+[ext_resource type="Script" path="res://scripts/alienhead.gd" id="2_176lj"]
+
+[node name="alien" type="Node2D"]
+script = ExtResource("1_7pn6o")
+
+[node name="body" type="Sprite2D" parent="."]
+modulate = Color(0.372549, 0.372549, 0.372549, 1)
+position = Vector2(321, 317)
+texture = ExtResource("1_hk400")
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(321, 100)
+texture = ExtResource("1_hk400")
+script = ExtResource("2_176lj")
+speed = 85.465
+change_direction_interval = 0.7
