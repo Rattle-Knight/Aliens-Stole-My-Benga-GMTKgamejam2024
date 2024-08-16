@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var speed = 550
 @export var jump_power = -200
 @export var gravity = 120
+@export var climbingspeed =  200.0
+
+var climbable = false
 
 func _physics_process(delta):
 	
@@ -13,6 +16,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	if climbable:
+		velocity.y = Input.get_axis("ui_up", "ui_down") * climbingspeed
+	else:
+		if not is_on_floor():
+			velocity.y += gravity * delta
 	move_and_slide()
