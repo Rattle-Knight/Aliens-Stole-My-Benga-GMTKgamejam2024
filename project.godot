@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Gmt Kgamejam 2024"
+config/name="GMTK gamejam 2024"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
