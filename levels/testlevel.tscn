@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cy3f3dogp4p15"]
+[gd_scene load_steps=20 format=3 uid="uid://cy3f3dogp4p15"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_y6aq5"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="2_am88s"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="14_dwoqf"]
 [ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="15_do041"]
 [ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="17_73o8l"]
+[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="17_mdvem"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("2_am88s")
@@ -37,6 +38,7 @@ layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146,
 z_index = 2
 position = Vector2(-1102, 399)
 shrinking = false
+timer = 90
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(117, 51)
@@ -91,5 +93,9 @@ position = Vector2(-445, 183)
 [node name="cap" parent="objects" instance=ExtResource("15_do041")]
 position = Vector2(1338, 401)
 
+[node name="ball of paper" parent="objects" instance=ExtResource("17_mdvem")]
+position = Vector2(209, 376)
+mass = 0.05
+
 [node name="gum" parent="." instance=ExtResource("17_73o8l")]
-position = Vector2(-560, 150)
+position = Vector2(-632, 154)

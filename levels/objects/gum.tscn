@@ -5,10 +5,11 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hl8a"]
 radius = 12.185
-height = 83.0
+height = 61.0
 
 [node name="gum" type="Area2D"]
 z_index = 2
+scale = Vector2(0.635, 0.715)
 script = ExtResource("1_6j2sj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

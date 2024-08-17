@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 250
-@export var maxspeed = 500
+@export var minspeed = 250
+@export var maxspeed = 700
 @export var jump_power = -750
 @export var gravity = 1000
 @export var fall_gravity = 10000
@@ -9,13 +9,16 @@ extends CharacterBody2D
 
 @onready var camera = $Camera2D
 
+var speed = 250
+
+
 var gumtrig = 0
-const acc = 50
+var acc = 50
 const friction = 70
 
 
 #QUICKTIME VARS
-var target_presses: int = 20
+var target_presses: int = 10
 var time_limit: float = 5.0
 var key_to_mash: StringName = "space" # Default key (Enter/Space)
 var _press_count: int = 0
@@ -35,7 +38,8 @@ func _ready():
 func check_scale():
 	if scale <= Vector2(0,0):
 		print("dead")
-		#GameOver.game_over()
+	else:
+		speed = lerp(minspeed,maxspeed,1-scale.x)
 
 func check_climbable():
 	if Global.laddercount > 0:
@@ -43,42 +47,46 @@ func check_climbable():
 	else:
 		climbable = false
 
+
+#CODE FOR GUM QUICKTIME EVENT 1
 func check_gum():
 	if Global.steppedingum:
 		gum = true
 		gumtrig += 1
-		if gumtrig == 1:
+		if gumtrig == 1 or quicktimesuccess:
 			gumquicktimeevent()
-		if quicktimesuccess:
-			print("real")
-			var tween = create_tween()
-			tween.tween_property(self,"position",Global.gumpos + Vector2(40*gum_dir,-10),2)
-			tween.tween_property(camera,"rotation",camera.rotation_degrees - 7,0.1)
-			tween.tween_property(camera,"zoom",Vector2(1.0,1.0),0.1)
-			_reset_mashing()
-			quicktimesuccess = false
-			Global.steppedingum = false
-			gumtrig = 0
 	else:
 		gum = false
 
-
+#CODE FOR GUM QUICKTIME EVENT 2
 func gumquicktimeevent():
-	_start_mashing()
+	var camt : Tween
+	if not quicktimesuccess:
+		camt =create_tween()
+		_start_mashing()
+	
 	#CAMERA TWEENS
-	var camt = create_tween()
-	camt.tween_property(self,"position",Global.gumpos,1)
-	camt.tween_property(camera,"rotation",camera.rotation_degrees + 7,2)
+		camt.set_parallel()
+		camt.tween_property(self,"position",Global.gumpos+ Vector2(0,-20),1)
+		camt.tween_property(camera,"rotation",camera.rotation_degrees + 7,1)
+		camt.tween_property(camera,"zoom",Vector2(1.3,1.3),1)
 	
-	camt.tween_property(camera,"zoom",Vector2(1.3,1.3),2)
+	if quicktimesuccess:
+		var tween = create_tween()
+		tween.tween_property(self,"position",Global.gumpos + Vector2(100*gum_dir,-10),0.1)
+		tween.tween_property(camera,"rotation",camera.rotation_degrees - 7,0.1)
+		tween.tween_property(camera,"zoom",Vector2(1.0,1.0),0.1)
+		_reset_mashing()
+		await tween.finished
+		quicktimesuccess = false
+		Global.steppedingum = false
+		gumtrig = 0
 
-	#POSITIONAL TWEENS
-	
 
-	
+
 func _process(delta: float):
+	#CODE FOR GUM QUICKTIME EVENT 3
 	if _is_mashing and gum:
-		print(_press_count)
 		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 			_press_count += 1
 			gum_dir = Input.get_axis("left", "right")
@@ -117,6 +125,7 @@ func _physics_process(delta):
 			jump(input_dir)
 	
 	player_movement()
+	
 
 func get_grav():
 	if velocity.y < 0:
@@ -131,6 +140,7 @@ func input() -> Vector2:
 
 func accelerate(direction):
 	velocity = velocity.move_toward(speed * direction, acc)
+
 
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
@@ -150,9 +160,7 @@ func jump(input_dir):
 func change_size():
 	if shrinking:
 		var tween = create_tween()
-		var tweenspeed = create_tween()
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
-		tweenspeed.tween_property(self, "speed",maxspeed, timer)
 		tween.connect("finished", on_tween_finished)
 
 func on_tween_finished():
@@ -163,6 +171,8 @@ func play_animation():
 	pass
 
 
+
+#CODE FOR GUM QUICKTIME EVENT 4
 func _start_mashing():
 	_reset_mashing()
 	_is_mashing = true
