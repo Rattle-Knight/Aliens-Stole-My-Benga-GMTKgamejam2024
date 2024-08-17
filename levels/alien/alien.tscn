@@ -1,27 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://do3r2faib5rf6"]
+[gd_scene load_steps=8 format=3 uid="uid://do3r2faib5rf6"]
 
 [ext_resource type="Script" path="res://scripts/alien.gd" id="1_7pn6o"]
-[ext_resource type="Texture2D" uid="uid://sm305v3qkqfy" path="res://sprites/objects/Red_square.svg" id="1_hk400"]
-[ext_resource type="Script" path="res://scripts/alienhead.gd" id="2_176lj"]
+[ext_resource type="Texture2D" uid="uid://cghxuyhccc0pr" path="res://sprites/alien/alien.png" id="2_b7yao"]
+[ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="4_44bli"]
 [ext_resource type="PackedScene" uid="uid://30kyyd38tck" path="res://scenes/turret.tscn" id="4_oeb0r"]
+[ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="5_vegu4"]
+[ext_resource type="Script" path="res://scripts/AlienEyeball.gd" id="6_qwi0k"]
+[ext_resource type="Texture2D" uid="uid://35smpvyitwho" path="res://sprites/objects/ufo.png" id="7_vth3n"]
 
 [node name="alien" type="Node2D"]
 script = ExtResource("1_7pn6o")
 
 [node name="body" type="Sprite2D" parent="."]
-modulate = Color(0.372549, 0.372549, 0.372549, 1)
 position = Vector2(321, 317)
-texture = ExtResource("1_hk400")
+texture = ExtResource("2_b7yao")
 
-[node name="head" type="Sprite2D" parent="."]
-position = Vector2(321, 100)
-texture = ExtResource("1_hk400")
-script = ExtResource("2_176lj")
-speed = 85.465
-change_direction_interval = 0.7
+[node name="turret" parent="." instance=ExtResource("4_oeb0r")]
+position = Vector2(119, 90)
 
-[node name="turret" parent="head" instance=ExtResource("4_oeb0r")]
-position = Vector2(-72, -161)
+[node name="turret2" parent="." instance=ExtResource("4_oeb0r")]
+position = Vector2(295, 44)
 
-[node name="turret2" parent="head" instance=ExtResource("4_oeb0r")]
-position = Vector2(61, -165)
+[node name="Alieneyes" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(320, 315)
+texture = ExtResource("4_44bli")
+
+[node name="AlienEyeball" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(307, 258)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("5_vegu4")
+script = ExtResource("6_qwi0k")
+
+[node name="AlienEyeball2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(415, 248)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("5_vegu4")
+script = ExtResource("6_qwi0k")
+
+[node name="Ufo" type="Sprite2D" parent="."]
+position = Vector2(321, 779)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("7_vth3n")

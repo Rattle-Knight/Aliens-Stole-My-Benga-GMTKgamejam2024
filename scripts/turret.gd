@@ -26,11 +26,6 @@ func _aim():
 	#elif ray_cast.get_collider() != player and not timer.is_stopped():
 		#timer.stop()
 
-func other_timer():
-	pass
-	#await get_tree().create_timer(3).timeout
-	#_shoot()
-
 func _on_timer_timeout():
 	_shoot()
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnkitg5dut2uv"]
+[gd_scene load_steps=5 format=3 uid="uid://bnkitg5dut2uv"]
 
 [ext_resource type="Script" path="res://scripts/turret_bullets.gd" id="1_adnxe"]
-[ext_resource type="Texture2D" uid="uid://b6f7fthk7vrvc" path="res://icon.svg" id="2_ry722"]
+[ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="2_j4vxt"]
+[ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="3_1b2u7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gef8n"]
-size = Vector2(56, 56)
+[sub_resource type="CircleShape2D" id="CircleShape2D_k62x6"]
+radius = 18.0
 
 [node name="bullets" type="Area2D"]
 script = ExtResource("1_adnxe")
@@ -13,10 +14,11 @@ script = ExtResource("1_adnxe")
 modulate = Color(1, 0.462745, 1, 1)
 position = Vector2(0.999996, -1)
 scale = Vector2(0.4375, 0.4375)
-texture = ExtResource("2_ry722")
+texture = ExtResource("2_j4vxt")
+script = ExtResource("3_1b2u7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_gef8n")
+shape = SubResource("CircleShape2D_k62x6")
 
 [connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]

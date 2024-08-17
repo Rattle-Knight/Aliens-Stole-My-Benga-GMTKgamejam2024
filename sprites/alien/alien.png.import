@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs0psva8on781"
-path="res://.godot/imported/ufo alien.png-737c8fabda5248329ef4844d38e26314.ctex"
+uid="uid://cghxuyhccc0pr"
+path="res://.godot/imported/alien.png-6172f0bde40805f36ec4a0fbf3c926dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/objects/ufo alien.png"
-dest_files=["res://.godot/imported/ufo alien.png-737c8fabda5248329ef4844d38e26314.ctex"]
+source_file="res://sprites/alien/alien.png"
+dest_files=["res://.godot/imported/alien.png-6172f0bde40805f36ec4a0fbf3c926dc.ctex"]
 
 [params]
 

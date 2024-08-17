@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=22 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_yyxy3"]
@@ -7,10 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://dcascrhra2oy4" path="res://levels/objects/benga/benga(1b).tscn" id="6_r01u1"]
 [ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="7_4l4ws"]
 [ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="8_7wyc1"]
+[ext_resource type="Texture2D" uid="uid://c146akfh0cxxg" path="res://sprites/objects/benga 8.png" id="9_cak75"]
 [ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="9_hkbl3"]
 [ext_resource type="Texture2D" uid="uid://c6yr5bi7683ih" path="res://sprites/objects/shelf longer.png" id="10_at2k2"]
 [ext_resource type="Script" path="res://scripts/benga Controller.gd" id="10_h0mjx"]
+[ext_resource type="Texture2D" uid="uid://btsig5vaf1px" path="res://sprites/objects/benga 10.png" id="10_vbfld"]
+[ext_resource type="Texture2D" uid="uid://dywvtnu2jaivu" path="res://sprites/objects/benga 3.png" id="11_na184"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="11_ttnyv"]
+[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="12_mlujb"]
+[ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="14_vdo7l"]
+[ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="15_de15l"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_5qy7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7xr"]
 size = Vector2(58, 63)
@@ -40,6 +47,7 @@ script = ExtResource("3_yyxy3")
 motion_mirroring = Vector2(1152, 648)
 
 [node name="Wall" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -8
 position = Vector2(577, 322)
 texture = ExtResource("4_n12kh")
 
@@ -191,20 +199,19 @@ position = Vector2(61, 349)
 rotation = 0.343222
 
 [node name="Benga2" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
-position = Vector2(-114, 249)
-rotation = -0.276963
+position = Vector2(-93, 251)
+rotation = 0.132071
 
 [node name="Benga3" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
 position = Vector2(679, 322)
 rotation = -0.314521
 
 [node name="Benga" parent="benga tower/benga 14 b" instance=ExtResource("5_qlsim")]
-position = Vector2(291, 48)
-rotation = -0.44061
+position = Vector2(294, 65)
 
 [node name="Benga4" parent="benga tower/benga 14 b" instance=ExtResource("5_qlsim")]
-position = Vector2(614, -148)
-rotation = -0.606802
+position = Vector2(608, -31)
+rotation = -0.0176325
 
 [node name="Benga5" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
 position = Vector2(683, 154)
@@ -215,7 +222,7 @@ position = Vector2(387, 183)
 rotation = 0.343222
 
 [node name="Benga7" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
-position = Vector2(-242, 426)
+position = Vector2(-378, 134)
 rotation = -1.30971
 
 [node name="Benga8" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
@@ -227,10 +234,102 @@ position = Vector2(123, 450)
 rotation = 0.470692
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga 14 b"]
-position = Vector2(397, 272)
-scale = Vector2(9.84, 8.71)
+position = Vector2(355, 266)
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
+
+[node name="Benga10" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
+position = Vector2(505, -196)
+rotation = -0.0535601
+
+[node name="benga 14" type="Node2D" parent="benga tower"]
+position = Vector2(-53, -1479)
+
+[node name="Benga1" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
+position = Vector2(428, 432)
+
+[node name="Benga8" type="Sprite2D" parent="benga tower/benga 14"]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+position = Vector2(448, 644)
+rotation = 1.56924
+texture = ExtResource("9_cak75")
+
+[node name="Benga10" type="Sprite2D" parent="benga tower/benga 14"]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+position = Vector2(289, 643)
+rotation = 1.57922
+texture = ExtResource("10_vbfld")
+
+[node name="Benga4" type="Sprite2D" parent="benga tower/benga 14"]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+position = Vector2(229, 644)
+rotation = 1.56733
+texture = ExtResource("11_na184")
+
+[node name="Benga5" type="Sprite2D" parent="benga tower/benga 14"]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+position = Vector2(361, 645)
+rotation = 1.57539
+texture = ExtResource("11_na184")
+
+[node name="benga 15" type="Node2D" parent="benga tower"]
+position = Vector2(-47, -1480)
+
+[node name="Benga" parent="benga tower/benga 15" instance=ExtResource("5_qlsim")]
+position = Vector2(334, 496)
+
+[node name="benga 16" type="Node2D" parent="benga tower"]
+position = Vector2(-49, -1608)
+
+[node name="Benga" parent="benga tower/benga 16" instance=ExtResource("5_qlsim")]
+position = Vector2(334, 496)
+
+[node name="benga 17" type="Node2D" parent="benga tower"]
+position = Vector2(-57, -1609)
+
+[node name="Benga1" parent="benga tower/benga 17" instance=ExtResource("6_r01u1")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 17" instance=ExtResource("6_r01u1")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 17" instance=ExtResource("6_r01u1")]
+position = Vector2(428, 432)
+
+[node name="benga 18" type="Node2D" parent="benga tower"]
+position = Vector2(-52, -1732)
+
+[node name="Benga" parent="benga tower/benga 18" instance=ExtResource("5_qlsim")]
+position = Vector2(334, 496)
+
+[node name="benga 19" type="Node2D" parent="benga tower"]
+position = Vector2(-57, -1726)
+
+[node name="Benga1" parent="benga tower/benga 19" instance=ExtResource("6_r01u1")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 19" instance=ExtResource("6_r01u1")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 19" instance=ExtResource("6_r01u1")]
+position = Vector2(428, 432)
+
+[node name="benga 20" type="Node2D" parent="benga tower"]
+position = Vector2(-48, -1851)
+
+[node name="Benga" parent="benga tower/benga 20" instance=ExtResource("5_qlsim")]
+position = Vector2(334, 496)
 
 [node name="benga Controller" type="Node" parent="."]
 script = ExtResource("10_h0mjx")
@@ -242,6 +341,7 @@ position = Vector2(175, 240)
 shape = SubResource("RectangleShape2D_4h7xr")
 
 [node name="Shelf" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(1428, -150)
 scale = Vector2(2.93, 2.93)
 texture = ExtResource("10_at2k2")
@@ -251,6 +351,16 @@ texture = ExtResource("10_at2k2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shelf/StaticBody2D"]
 position = Vector2(-109.898, -391.467)
 shape = SubResource("RectangleShape2D_dnpsk")
+
+[node name="Book10" type="Sprite2D" parent="Shelf"]
+position = Vector2(21.843, -108.874)
+scale = Vector2(0.341297, 0.341297)
+texture = ExtResource("14_vdo7l")
+
+[node name="Book8" type="Sprite2D" parent="Shelf"]
+position = Vector2(-145.051, 78.4983)
+scale = Vector2(0.341297, 0.341297)
+texture = ExtResource("15_de15l")
 
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(330, 1520)
@@ -263,4 +373,26 @@ texture = ExtResource("11_ttnyv")
 position = Vector2(-15.1389, -271.324)
 shape = SubResource("RectangleShape2D_1qgu1")
 
+[node name="gum" parent="." instance=ExtResource("12_mlujb")]
+position = Vector2(291, -716)
+scale = Vector2(0.395, 0.715)
+
+[node name="Benga movement2" type="Area2D" parent="."]
+position = Vector2(298, -1089)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement2"]
+position = Vector2(175, 240)
+shape = SubResource("RectangleShape2D_4h7xr")
+
+[node name="alien" parent="." instance=ExtResource("16_5qy7l")]
+position = Vector2(-717, -481)
+isplaying = true
+
+[node name="alien2" parent="." instance=ExtResource("16_5qy7l")]
+z_index = -1
+position = Vector2(607, -168)
+isplaying = true
+flipsprite = true
+
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
+[connection signal="body_entered" from="Benga movement2" to="benga Controller" method="_on_benga_movement_2_body_entered"]
