@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1h5nukvgvccf"]
 
-[ext_resource type="Texture2D" uid="uid://doub81ag8d5h" path="res://sprites/objects/ball paper.png" id="1_l6ucs"]
+[ext_resource type="Texture2D" uid="uid://bdnnumb6j1kwh" path="res://sprites/objects/ball paper.png" id="1_l6ucs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hivtk"]
 radius = 66.0
