@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c8ummdaxbofgv"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://c8ummdaxbofgv"]
 
 [ext_resource type="FontFile" uid="uid://dshhab66jrdqj" path="res://themes/SingleDay-Regular.ttf" id="1_bkyio"]
 [ext_resource type="FontFile" uid="uid://bvpytbeeuugk4" path="res://assets/fonts/Vanilla.ttf" id="1_huvjh"]
+[ext_resource type="Texture2D" path="res://sprites/ui/purple 3.png" id="3_ai1g8"]
+[ext_resource type="Texture2D" path="res://sprites/ui/purple 2.png" id="4_lbiv8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gopi8"]
 
@@ -25,6 +27,18 @@ border_color = Color(0.156863, 0.156863, 0.156863, 0.843137)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbkpm"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4i1yd"]
+color = Color(0.815686, 0.545098, 1, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7yw0n"]
+color = Color(0.70218, 0.3196, 0.94, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y1tr0"]
+color = Color(0.94902, 0.878431, 1, 1)
+thickness = 10
+
 [resource]
 default_font = ExtResource("1_huvjh")
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -41,6 +55,12 @@ Button/styles/focus = SubResource("StyleBoxEmpty_mlhk4")
 Button/styles/hover = SubResource("StyleBoxFlat_xyxkb")
 Button/styles/normal = SubResource("StyleBoxFlat_msvsw")
 Button/styles/pressed = SubResource("StyleBoxFlat_hbkpm")
+HSlider/icons/grabber = ExtResource("4_lbiv8")
+HSlider/icons/grabber_disabled = ExtResource("3_ai1g8")
+HSlider/icons/grabber_highlight = ExtResource("3_ai1g8")
+HSlider/styles/grabber_area = SubResource("StyleBoxLine_4i1yd")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxLine_7yw0n")
+HSlider/styles/slider = SubResource("StyleBoxLine_y1tr0")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 10
