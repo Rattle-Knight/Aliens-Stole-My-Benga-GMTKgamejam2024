@@ -77,4 +77,4 @@ position = Vector2(437, 426)
 mass = 0.05
 
 [node name="alien" parent="." instance=ExtResource("18_iukrb")]
-position = Vector2(-262, 105)
+position = Vector2(-464, -77)

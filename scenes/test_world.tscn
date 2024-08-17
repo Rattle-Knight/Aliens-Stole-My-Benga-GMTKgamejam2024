@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d22el3ujsgs3e"]
+[gd_scene load_steps=4 format=3 uid="uid://dawkr5t04pf8e"]
 
-[ext_resource type="PackedScene" uid="uid://cb8yfqj5weth6" path="res://scenes/size bar.tscn" id="2_heo2o"]
+[ext_resource type="PackedScene" uid="uid://xv5iloism1du" path="res://scenes/size bar.tscn" id="2_heo2o"]
+[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_j58ci"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_25oq7"]
 distance = -530.0
@@ -18,3 +19,6 @@ position = Vector2(534, 310)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SizeBar" parent="CanvasLayer" instance=ExtResource("2_heo2o")]
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("2_j58ci")]
+position = Vector2(433, 393)

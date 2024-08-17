@@ -93,3 +93,7 @@ position = Vector2(1, -77)
 rotation = -1.5708
 scale = Vector2(0.349311, 0.326459)
 texture = ExtResource("7_8phqb")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.41
+one_shot = true
