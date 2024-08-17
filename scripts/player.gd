@@ -158,14 +158,15 @@ func jump(input_dir):
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y += jump_power 
 
-
-@export var timer = 15
+@export var timer = 100
 
 func change_size():
 	if shrinking:
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
+		
 		tween.connect("finished", on_tween_finished)
+		
 
 func on_tween_finished():
 	print("died")
