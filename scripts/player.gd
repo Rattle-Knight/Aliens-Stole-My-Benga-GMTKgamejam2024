@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 250
+@export var maxspeed = 2000
 @export var jump_power = -750
 @export var gravity = 1000
 @export var fall_gravity = 10000
@@ -10,7 +11,7 @@ const acc = 50
 const friction = 70
 
 var climbable = false
-var shrinking = true
+@export var shrinking = true
 
 func _ready():
 	change_size()
@@ -75,12 +76,15 @@ func jump(input_dir):
 
 func change_size():
 	var tween = create_tween()
+	var tweenspeed = create_tween()
 	if shrinking:
-		tween.tween_property(sprite_2d, "scale", Vector2(0,0), timer)
+		tween.tween_property(self, "scale", Vector2(0,0), timer)
+		tweenspeed.tween_property(self, "speed",maxspeed, timer)
 		tween.connect("finished", on_tween_finished)
 
 func on_tween_finished():
-	GameOver.game_over()
+	print("died")
+	#GameOver.game_over()
 
 func play_animation():
 	pass

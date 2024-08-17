@@ -7,15 +7,16 @@ extends Node2D
 var player
 func _ready():
 	player = get_parent().find_child("player")
+	timer.start()
 
-func _physics_process(delta):
+func _process(delta):
 	_aim()
 	#_check_player_collision()
 
 func _aim():
 	ray_cast.target_position = to_local(player.position)
-	timer.start(2)
-	other_timer()
+	await timer.timeout
+	_shoot()
 
 #func _check_player_collision():
 	#if ray_cast.get_collider() == player and timer.is_stopped():
@@ -29,7 +30,7 @@ func other_timer():
 	#_shoot()
 
 func _on_timer_timeout():
-	print("timer")
+	print("bang")
 	_shoot()
 
 func _shoot():
