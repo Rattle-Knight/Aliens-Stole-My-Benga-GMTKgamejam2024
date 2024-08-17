@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=23 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_yyxy3"]
@@ -27,6 +27,9 @@ size = Vector2(251.877, 182.253)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qgu1"]
 size = Vector2(1072.5, 42.059)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppbj"]
+size = Vector2(321, 114.25)
 
 [node name="testlevel" type="Node2D"]
 
@@ -331,6 +334,41 @@ position = Vector2(-48, -1851)
 [node name="Benga" parent="benga tower/benga 20" instance=ExtResource("5_qlsim")]
 position = Vector2(334, 496)
 
+[node name="benga infinite" type="Node2D" parent="benga tower"]
+position = Vector2(-102, -3295)
+
+[node name="Benga1" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
+position = Vector2(246, 308)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga1"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga2" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
+position = Vector2(477, 296)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga2"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga3" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
+position = Vector2(472, 450)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga3"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga4" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
+position = Vector2(259, 448)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga4"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
 [node name="benga Controller" type="Node" parent="."]
 script = ExtResource("10_h0mjx")
 
@@ -393,6 +431,13 @@ z_index = -1
 position = Vector2(607, -168)
 isplaying = true
 flipsprite = true
+
+[node name="Benga movement3" type="Area2D" parent="."]
+position = Vector2(91, -1695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement3"]
+position = Vector2(202.5, 244.125)
+shape = SubResource("RectangleShape2D_5ppbj")
 
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Benga movement2" to="benga Controller" method="_on_benga_movement_2_body_entered"]

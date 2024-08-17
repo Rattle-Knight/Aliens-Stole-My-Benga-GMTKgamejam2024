@@ -7,6 +7,11 @@ extends Node
 @onready var alien1 = $"../alien"
 @onready var alien2 = $"../alien2"
 
+@onready var infpiece1 = $"../benga tower/benga infinite/Benga1"
+@onready var infpiece2 = $"../benga tower/benga infinite/Benga2"
+@onready var infpiece3 = $"../benga tower/benga infinite/Benga3"
+@onready var infpiece4 = $"../benga tower/benga infinite/Benga4"
+
 var turn = 0
 var turn2 = 0
 
@@ -62,7 +67,7 @@ func _on_benga_movement_2_body_entered(body):
 			alientween.tween_property(alien1,"position",Vector2(-468, -1788),5)
 			alientween = create_tween()
 			alientween.tween_property(alien2,"position",Vector2(392, -1796),5)
-			#var movetween = create_tween()
-			#movetween = create_tween()
-			#movetween.tween_property(piece2,"position",Vector2(716, 504),1)
+			var movetween = create_tween()
+			movetween = create_tween()
+			movetween.tween_property(infpiece1,"position",Vector2(716, 504),1)
 			
