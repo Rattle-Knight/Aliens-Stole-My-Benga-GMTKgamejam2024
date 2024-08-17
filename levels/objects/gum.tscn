@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://80o2cfjlsltr"]
+
+[ext_resource type="Script" path="res://scripts/gum.gd" id="1_6j2sj"]
+[ext_resource type="Texture2D" uid="uid://djt2hr4thdyne" path="res://sprites/objects/gum.png" id="1_kjiqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6hl8a"]
+radius = 12.185
+height = 83.0
+
+[node name="gum" type="Area2D"]
+z_index = 2
+script = ExtResource("1_6j2sj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0.5, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6hl8a")
+
+[node name="Gum" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("1_kjiqv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

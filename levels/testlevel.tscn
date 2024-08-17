@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="13_bgp2u"]
 [ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="14_dwoqf"]
 [ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="15_do041"]
-[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_g2hbh"]
+[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="17_73o8l"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("2_am88s")
@@ -91,6 +91,5 @@ position = Vector2(-445, 183)
 [node name="cap" parent="objects" instance=ExtResource("15_do041")]
 position = Vector2(1338, 401)
 
-[node name="alien" parent="." instance=ExtResource("16_g2hbh")]
-position = Vector2(-247, 39)
-scale = Vector2(1.54, 1.54)
+[node name="gum" parent="." instance=ExtResource("17_73o8l")]
+position = Vector2(-560, 150)

@@ -9,17 +9,18 @@ var center_pos = position
 
 
 func _process(_delta):
-	var direction = center_pos.direction_to(get_local_mouse_position())
-	var target_pos = center_pos + direction * target_dist 
+	if not Global.steppedingum:
+		var direction = center_pos.direction_to(get_local_mouse_position())
+		var target_pos = center_pos + direction * target_dist 
 	
 	
-	#MAKES SURE THE CAMERA CANT GO TO FAR
-	target_pos = target_pos.clamp(
-		center_pos - Vector2(MAX_DIST,MAX_DIST),
-		center_pos + Vector2(MAX_DIST,MAX_DIST) 
-	)
+		#MAKES SURE THE CAMERA CANT GO TO FAR
+		target_pos = target_pos.clamp(
+			center_pos - Vector2(MAX_DIST,MAX_DIST),
+			center_pos + Vector2(MAX_DIST,MAX_DIST) 
+		)
 	
-	position = position.lerp(target_pos,_delta*FOLLOW_SPEED)
+		position = position.lerp(target_pos,_delta*FOLLOW_SPEED)
 
 
 func _input(event):
