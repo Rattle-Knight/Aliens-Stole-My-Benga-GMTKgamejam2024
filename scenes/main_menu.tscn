@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://215ebp17ipu5"]
+[gd_scene load_steps=11 format=3 uid="uid://215ebp17ipu5"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
+[ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
 [ext_resource type="Theme" uid="uid://vhh7baiippqt" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
+[ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="3_4pw6n"]
+[ext_resource type="Texture2D" uid="uid://l1abj8x1d2vb" path="res://sprites/alien/alien cropped.png" id="3_p2e4p"]
+[ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="4_ntwog"]
+[ext_resource type="Texture2D" uid="uid://bbdtinltvna4w" path="res://sprites/objects/benga 2.png" id="7_lkkym"]
+[ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="8_kh5el"]
+[ext_resource type="Texture2D" uid="uid://btt5ake4a1yv4" path="res://sprites/objects/benga 4.png" id="9_kutjc"]
+[ext_resource type="Texture2D" uid="uid://bdnnumb6j1kwh" path="res://sprites/objects/ball paper.png" id="10_inga1"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -12,6 +20,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pwasb")
 
+[node name="Illustration3" type="Sprite2D" parent="."]
+position = Vector2(570, 308)
+scale = Vector2(1.16, 1.16)
+texture = ExtResource("2_fk27q")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.266575, 0.266575, 0.266575, 1)
+color = Color(0.0338533, 0.0338533, 0.0338533, 0.243137)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 2
@@ -56,6 +69,47 @@ layout_mode = 2
 theme = ExtResource("2_vnwco")
 text = "Quit"
 flat = true
+
+[node name="Alieneyes" type="Sprite2D" parent="."]
+position = Vector2(329, 324)
+texture = ExtResource("3_4pw6n")
+
+[node name="Eyeball" type="Sprite2D" parent="."]
+position = Vector2(427, 262)
+scale = Vector2(0.560005, 0.560005)
+texture = ExtResource("4_ntwog")
+
+[node name="Eyeball2" type="Sprite2D" parent="."]
+position = Vector2(323, 270)
+scale = Vector2(0.560005, 0.560005)
+texture = ExtResource("4_ntwog")
+
+[node name="AlienCropped" type="Sprite2D" parent="."]
+position = Vector2(345, 330)
+texture = ExtResource("3_p2e4p")
+
+[node name="Benga2" type="Sprite2D" parent="."]
+position = Vector2(522, 116)
+rotation = -0.422328
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_lkkym")
+
+[node name="Benga7" type="Sprite2D" parent="."]
+position = Vector2(131, 328)
+rotation = 0.308305
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_kh5el")
+
+[node name="Benga4" type="Sprite2D" parent="."]
+position = Vector2(395, 567)
+rotation = -3.3183
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_kutjc")
+
+[node name="BallPaper" type="Sprite2D" parent="."]
+position = Vector2(704, 480)
+scale = Vector2(0.643587, 0.643587)
+texture = ExtResource("10_inga1")
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_exit_pressed"]
