@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy3f3dogp4p15"]
+[gd_scene load_steps=19 format=3 uid="uid://cy3f3dogp4p15"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_y6aq5"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="2_am88s"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="14_dwoqf"]
 [ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="15_do041"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_g2hbh"]
-[ext_resource type="PackedScene" uid="uid://30kyyd38tck" path="res://scenes/turret.tscn" id="17_wg2yt"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("2_am88s")
@@ -37,6 +36,7 @@ layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146,
 [node name="player" parent="." groups=["player"] instance=ExtResource("3_02s34")]
 z_index = 2
 position = Vector2(-1102, 399)
+shrinking = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(117, 51)
@@ -94,6 +94,3 @@ position = Vector2(1338, 401)
 [node name="alien" parent="." instance=ExtResource("16_g2hbh")]
 position = Vector2(-247, 39)
 scale = Vector2(1.54, 1.54)
-
-[node name="turret" parent="." instance=ExtResource("17_wg2yt")]
-position = Vector2(-834, 122)

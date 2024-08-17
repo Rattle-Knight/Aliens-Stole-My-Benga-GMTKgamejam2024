@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://do3r2faib5rf6"]
+[gd_scene load_steps=5 format=3 uid="uid://do3r2faib5rf6"]
 
 [ext_resource type="Script" path="res://scripts/alien.gd" id="1_7pn6o"]
 [ext_resource type="Texture2D" uid="uid://sm305v3qkqfy" path="res://sprites/objects/Red_square.svg" id="1_hk400"]
 [ext_resource type="Script" path="res://scripts/alienhead.gd" id="2_176lj"]
+[ext_resource type="PackedScene" uid="uid://30kyyd38tck" path="res://scenes/turret.tscn" id="4_oeb0r"]
 
 [node name="alien" type="Node2D"]
 script = ExtResource("1_7pn6o")
@@ -18,3 +19,9 @@ texture = ExtResource("1_hk400")
 script = ExtResource("2_176lj")
 speed = 85.465
 change_direction_interval = 0.7
+
+[node name="turret" parent="head" instance=ExtResource("4_oeb0r")]
+position = Vector2(-72, -161)
+
+[node name="turret2" parent="head" instance=ExtResource("4_oeb0r")]
+position = Vector2(61, -165)

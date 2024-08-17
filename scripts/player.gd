@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 250
-@export var maxspeed = 2000
+@export var maxspeed = 500
 @export var jump_power = -750
 @export var gravity = 1000
 @export var fall_gravity = 10000
@@ -75,9 +75,9 @@ func jump(input_dir):
 @export var timer = 15
 
 func change_size():
-	var tween = create_tween()
-	var tweenspeed = create_tween()
 	if shrinking:
+		var tween = create_tween()
+		var tweenspeed = create_tween()
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
 		tweenspeed.tween_property(self, "speed",maxspeed, timer)
 		tween.connect("finished", on_tween_finished)

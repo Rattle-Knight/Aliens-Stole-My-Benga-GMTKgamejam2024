@@ -1,12 +1,14 @@
 extends Node2D
 
-@onready var ray_cast = $RayCast2D
-@onready var timer: Timer = $Timer
+@onready var ray_cast = $"../RayCast2D"
+@onready var timer: Timer = $"../Timer"
 @export var ammo : PackedScene
 
-var player
+@onready var player = get_tree().get_first_node_in_group("player")
+
+
+
 func _ready():
-	player = get_parent().find_child("player")
 	timer.start()
 
 func _process(delta):
@@ -16,7 +18,7 @@ func _process(delta):
 func _aim():
 	ray_cast.target_position = to_local(player.position)
 	await timer.timeout
-	_shoot()
+
 
 #func _check_player_collision():
 	#if ray_cast.get_collider() == player and timer.is_stopped():
@@ -30,11 +32,18 @@ func other_timer():
 	#_shoot()
 
 func _on_timer_timeout():
-	print("bang")
 	_shoot()
 
 func _shoot():
 	var bullet = ammo.instantiate()
+	add_child(bullet)
 	bullet.position = position
 	bullet.direction = (ray_cast.target_position).normalized()
-	get_tree().current_scene.add_child(bullet)
+
+	
+	#bullet cleanup
+	var children = get_children()
+	for childindx in range(len(children)):
+		if children[childindx].position.x > get_viewport().size.x or children[childindx].position.y > get_viewport().size.y:
+			children[childindx].queue_free()
+
