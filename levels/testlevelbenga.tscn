@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2tumaqcv3v60"]
+
+[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="1_08tg1"]
+[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_txr6i"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_jrix7"]
+[ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="4_utqw6"]
+[ext_resource type="PackedScene" uid="uid://ucry2jboqsjc" path="res://levels/objects/benga/benga(1a).tscn" id="5_v8gtc"]
+[ext_resource type="PackedScene" uid="uid://dcascrhra2oy4" path="res://levels/objects/benga/benga(1b).tscn" id="6_km07v"]
+[ext_resource type="Script" path="res://scripts/benga Controller.gd" id="7_1aflm"]
+[ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="7_cm27w"]
+[ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="8_ayej8"]
+[ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="9_7a8v4"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
+scenes/1/scene = ExtResource("1_08tg1")
+
+[sub_resource type="TileSet" id="TileSet_id0ry"]
+tile_size = Vector2i(165, 128)
+sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7xr"]
+size = Vector2(58, 63)
+
+[node name="testlevel" type="Node2D"]
+
+[node name="floor" type="TileMap" parent="."]
+z_index = 2
+position = Vector2(-1, 11)
+tile_set = SubResource("TileSet_id0ry")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 327679, 0, 65536, 327678, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 327677, 0, 65536, 327676, 0, 65536, 327675, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 327674, 0, 65536, 327673, 0, 65536, 327672, 0, 65536)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("2_txr6i")]
+z_index = 2
+position = Vector2(-1102, 399)
+shrinking = false
+timer = 90
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(117, 51)
+limit_top = -800
+limit_bottom = 650
+editor_draw_limits = true
+script = ExtResource("3_jrix7")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Wall" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(577, 322)
+texture = ExtResource("4_utqw6")
+
+[node name="benga tower" type="Node2D" parent="."]
+z_index = 2
+
+[node name="benga 1" type="Node2D" parent="benga tower"]
+
+[node name="Benga" parent="benga tower/benga 1" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="benga 2" type="Node2D" parent="benga tower"]
+position = Vector2(-5, 2)
+
+[node name="Benga1" parent="benga tower/benga 2" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 2" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 2" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga 3" type="Node2D" parent="benga tower"]
+position = Vector2(0, -124)
+
+[node name="Benga" parent="benga tower/benga 3" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="benga 4" type="Node2D" parent="benga tower"]
+position = Vector2(-5, -124)
+
+[node name="Benga1" parent="benga tower/benga 4" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 4" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 4" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga 5" type="Node2D" parent="benga tower"]
+position = Vector2(0, -248)
+
+[node name="Benga" parent="benga tower/benga 5" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="benga 6" type="Node2D" parent="benga tower"]
+position = Vector2(-5, -248)
+
+[node name="Benga1" parent="benga tower/benga 6" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 6" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 6" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga 7" type="Node2D" parent="benga tower"]
+position = Vector2(0, -372)
+
+[node name="Benga" parent="benga tower/benga 7" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga 7/Benga"]
+visible = false
+position = Vector2(6, -4)
+texture = ExtResource("7_cm27w")
+script = ExtResource("8_ayej8")
+
+[node name="Benga7" type="Sprite2D" parent="benga tower/benga 7"]
+modulate = Color(0.447059, 0.447059, 0.447059, 1)
+z_index = -1
+position = Vector2(331, 491)
+texture = ExtResource("9_7a8v4")
+
+[node name="benga 8" type="Node2D" parent="benga tower"]
+position = Vector2(-5, -372)
+
+[node name="Benga1" parent="benga tower/benga 8" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga 8/Benga1"]
+visible = false
+position = Vector2(6, -4)
+texture = ExtResource("7_cm27w")
+script = ExtResource("8_ayej8")
+
+[node name="Benga2" parent="benga tower/benga 8" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 8" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga 9" type="Node2D" parent="benga tower"]
+position = Vector2(0, -496)
+
+[node name="Benga" parent="benga tower/benga 9" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga 9/Benga"]
+visible = false
+position = Vector2(6, -4)
+texture = ExtResource("7_cm27w")
+script = ExtResource("8_ayej8")
+
+[node name="benga 10" type="Node2D" parent="benga tower"]
+position = Vector2(-5, -620)
+
+[node name="Benga1" parent="benga tower/benga 10" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 10" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 10" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga 11" type="Node2D" parent="benga tower"]
+position = Vector2(0, -620)
+
+[node name="Benga" parent="benga tower/benga 11" instance=ExtResource("5_v8gtc")]
+position = Vector2(334, 496)
+
+[node name="benga 12" type="Node2D" parent="benga tower"]
+position = Vector2(-8, -491)
+
+[node name="Benga1" parent="benga tower/benga 12" instance=ExtResource("6_km07v")]
+position = Vector2(241, 432)
+
+[node name="Benga2" parent="benga tower/benga 12" instance=ExtResource("6_km07v")]
+position = Vector2(334, 432)
+
+[node name="Benga3" parent="benga tower/benga 12" instance=ExtResource("6_km07v")]
+position = Vector2(428, 432)
+
+[node name="benga Controller" type="Node" parent="."]
+script = ExtResource("7_1aflm")
+
+[node name="Benga movement1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement1"]
+position = Vector2(175, 240)
+shape = SubResource("RectangleShape2D_4h7xr")
+
+[connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]

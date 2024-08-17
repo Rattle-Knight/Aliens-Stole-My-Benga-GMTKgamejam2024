@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcascrhra2oy4"]
+
+[ext_resource type="Texture2D" uid="uid://btt5ake4a1yv4" path="res://sprites/objects/benga 4.png" id="1_codi8"]
+[ext_resource type="Script" path="res://scripts/climbable.gd" id="2_4qq60"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq1dq"]
+size = Vector2(88.5, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn3vj"]
+size = Vector2(22, 59)
+
+[node name="Benga" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(3.75, -4)
+shape = SubResource("RectangleShape2D_lq1dq")
+
+[node name="Benga4" type="Sprite2D" parent="."]
+position = Vector2(4, -4)
+texture = ExtResource("1_codi8")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-36, -9)
+script = ExtResource("2_4qq60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 4.5)
+shape = SubResource("RectangleShape2D_vn3vj")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(57, -9)
+script = ExtResource("2_4qq60")
+dir = "l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-4, 4.5)
+shape = SubResource("RectangleShape2D_vn3vj")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

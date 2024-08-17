@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var minspeed = 250
 @export var maxspeed = 700
-@export var jump_power = -750
+@export var minjump = -750
+@export var maxjump = -1250
 @export var gravity = 1000
 @export var fall_gravity = 10000
 @export var climbingspeed =  200.0
@@ -10,6 +11,7 @@ extends CharacterBody2D
 @onready var camera = $Camera2D
 
 var speed = 250
+var jump_power = -750
 
 
 var gumtrig = 0
@@ -39,7 +41,9 @@ func check_scale():
 	if scale <= Vector2(0,0):
 		print("dead")
 	else:
+		#speed and jump power increases with size
 		speed = lerp(minspeed,maxspeed,1-scale.x)
+		jump_power = lerp(minjump,maxjump,1-scale.x)
 
 func check_climbable():
 	if Global.laddercount > 0:

@@ -1,10 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq5tfgn8r368l"]
+[gd_scene load_steps=13 format=3 uid="uid://bq5tfgn8r368l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51acg"]
 [ext_resource type="Texture2D" uid="uid://b6f7fthk7vrvc" path="res://icon.svg" id="2_61dkt"]
+[ext_resource type="Texture2D" uid="uid://bacqujer76ety" path="res://sprites/ui/button .png" id="3_vdtcb"]
+[ext_resource type="Texture2D" uid="uid://vaatkebjm530" path="res://sprites/ui/button pressed.png" id="4_jpgf2"]
+[ext_resource type="Script" path="res://scripts/ALERTA.gd" id="5_2bndo"]
+[ext_resource type="FontFile" uid="uid://bvpytbeeuugk4" path="res://assets/fonts/Vanilla.ttf" id="6_opin2"]
+[ext_resource type="Texture2D" uid="uid://dj75aflurcwco" path="res://sprites/ui/arrow.png" id="7_8phqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qa7b"]
 size = Vector2(58, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_disix"]
+atlas = ExtResource("3_vdtcb")
+region = Rect2(0, 0, 64, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3rrk"]
+atlas = ExtResource("4_jpgf2")
+region = Rect2(0, 0, 64, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjljk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_disix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3rrk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rah1p"]
+font = ExtResource("6_opin2")
+font_size = 25
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 3
@@ -19,4 +50,46 @@ texture = ExtResource("2_61dkt")
 position = Vector2(1.50003, -1.49997)
 shape = SubResource("RectangleShape2D_4qa7b")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="alerts" type="Node" parent="."]
+script = ExtResource("5_2bndo")
+
+[node name="ALERTA" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, -54)
+scale = Vector2(0.47, 0.47)
+sprite_frames = SubResource("SpriteFrames_bjljk")
+autoplay = "default"
+frame = 1
+frame_progress = 0.512779
+
+[node name="Label" type="Label" parent="ALERTA"]
+offset_left = -10.6383
+offset_top = -17.0213
+offset_right = 29.3617
+offset_bottom = 9.97872
+rotation = 0.0864106
+text = "A"
+label_settings = SubResource("LabelSettings_rah1p")
+metadata/_edit_use_anchors_ = true
+
+[node name="ALERTD" type="AnimatedSprite2D" parent="."]
+position = Vector2(19, -54)
+scale = Vector2(0.47, 0.47)
+sprite_frames = SubResource("SpriteFrames_bjljk")
+autoplay = "default"
+frame = 1
+frame_progress = 0.624602
+
+[node name="Label" type="Label" parent="ALERTD"]
+offset_left = -12.766
+offset_top = -14.8936
+offset_right = 27.234
+offset_bottom = 12.1064
+rotation = 0.0393604
+text = "D"
+label_settings = SubResource("LabelSettings_rah1p")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(1, -77)
+rotation = -1.5708
+scale = Vector2(0.349311, 0.326459)
+texture = ExtResource("7_8phqb")

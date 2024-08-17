@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://7xkh3l43udtj"]
+
+[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="1_cxe5k"]
+[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_tjnly"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_cuomi"]
+[ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="4_4siuk"]
+[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="16_oe0x6"]
+[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="17_vq0cb"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="18_iukrb"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
+scenes/1/scene = ExtResource("1_cxe5k")
+
+[sub_resource type="TileSet" id="TileSet_id0ry"]
+tile_size = Vector2i(165, 128)
+sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
+
+[node name="testlevel" type="Node2D"]
+
+[node name="floor" type="TileMap" parent="."]
+z_index = 2
+position = Vector2(-1, 11)
+tile_set = SubResource("TileSet_id0ry")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 327679, 0, 65536, 327678, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 327677, 0, 65536, 327676, 0, 65536, 327675, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 327674, 0, 65536, 327673, 0, 65536, 327672, 0, 65536)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("2_tjnly")]
+z_index = 2
+position = Vector2(-1102, 399)
+shrinking = false
+timer = 90
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(117, 51)
+limit_top = 0
+limit_bottom = 650
+editor_draw_limits = true
+script = ExtResource("3_cuomi")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Wall" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(577, 322)
+texture = ExtResource("4_4siuk")
+
+[node name="objects" type="Node2D" parent="."]
+z_index = 2
+
+[node name="ball of paper" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(209, 376)
+mass = 0.05
+
+[node name="gum" parent="objects" instance=ExtResource("17_vq0cb")]
+position = Vector2(-632, 154)
+
+[node name="ball of paper2" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(330, 255)
+mass = 0.05
+
+[node name="ball of paper3" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(209, 376)
+mass = 0.05
+
+[node name="ball of paper4" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(79, 260)
+mass = 0.05
+
+[node name="ball of paper5" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(18, 421)
+mass = 0.05
+
+[node name="ball of paper6" parent="objects" instance=ExtResource("16_oe0x6")]
+position = Vector2(437, 426)
+mass = 0.05
+
+[node name="alien" parent="." instance=ExtResource("18_iukrb")]
+position = Vector2(-262, 105)

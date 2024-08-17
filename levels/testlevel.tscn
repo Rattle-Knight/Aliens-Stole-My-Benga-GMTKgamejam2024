@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy3f3dogp4p15"]
+[gd_scene load_steps=21 format=3 uid="uid://cy3f3dogp4p15"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_y6aq5"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="2_am88s"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="13_bgp2u"]
 [ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="14_dwoqf"]
 [ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="15_do041"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_g2hbh"]
 [ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="17_73o8l"]
 [ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="17_mdvem"]
 
@@ -99,3 +100,6 @@ mass = 0.05
 
 [node name="gum" parent="." instance=ExtResource("17_73o8l")]
 position = Vector2(-632, 154)
+
+[node name="alien" parent="." instance=ExtResource("16_g2hbh")]
+position = Vector2(-262, 105)

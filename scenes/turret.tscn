@@ -17,7 +17,7 @@ scale = Vector2(0.523438, 0.523438)
 collision_mask = 3
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 6.0
 
 [node name="bulletmanager" type="Node2D" parent="."]
 script = ExtResource("1_qh2dh")

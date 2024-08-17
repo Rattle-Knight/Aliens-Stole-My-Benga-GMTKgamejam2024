@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://boqqnkdvo5ft7"]
+[gd_scene load_steps=4 format=3 uid="uid://xv5iloism1du"]
 
 [ext_resource type="Texture2D" uid="uid://ct2c0obyyvkmx" path="res://sprites/ui/side bar 2.png" id="1_1mejp"]
 [ext_resource type="Theme" uid="uid://cfb1vr0rwtoks" path="res://themes/side bar theme.tres" id="1_emyap"]
@@ -15,9 +15,9 @@ grow_vertical = 2
 [node name="SizeBar" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 67.0
-offset_top = 42.0
+offset_top = 50.0
 offset_right = 108.0
-offset_bottom = 531.0
+offset_bottom = 541.0
 theme = ExtResource("1_emyap")
 
 [node name="SideBar2" type="Sprite2D" parent="."]
