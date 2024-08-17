@@ -131,9 +131,9 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("space") or not coyotetimer.is_stopped():
 			velocity.y = -climbingspeed
 	elif not gum:
-		if not is_on_floor() or not coyotetimer.is_stopped():
+		if not is_on_floor():
 			velocity.y += get_grav() *delta 
-		else:
+		elif is_on_floor() or not coyotetimer.is_stopped():
 			jump(input_dir)
 	
 	player_movement()
