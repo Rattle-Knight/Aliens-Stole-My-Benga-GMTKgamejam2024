@@ -34,6 +34,14 @@ var gum_dir = 1
 @export var shrinking = true
 
 
+#coyote time vars
+@onready var coyotetimer = $CoyoteTimer
+
+var coyote_frames = 6  # How many in-air frames to allow jumping
+var coyote = false  # Track whether we're in coyote time or not
+var last_floor = false  # Last frame's on-floor state
+
+
 func _ready():
 	change_size()
 
@@ -106,7 +114,7 @@ func _physics_process(delta):
 	check_scale()
 	check_gum()
 	
-	
+	last_floor = is_on_floor()
 	#gum disables movement mostly
 	check_climbable()
 	var input_dir: Vector2 = input()
@@ -120,15 +128,19 @@ func _physics_process(delta):
 	if climbable and not gum:
 		if Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 			velocity.y = (Input.get_axis("up", "down") * climbingspeed)
-		elif Input.is_action_pressed("space"):
+		elif Input.is_action_pressed("space") or not coyotetimer.is_stopped():
 			velocity.y = -climbingspeed
 	elif not gum:
-		if not is_on_floor():
+		if not is_on_floor() or not coyotetimer.is_stopped():
 			velocity.y += get_grav() *delta 
 		else:
 			jump(input_dir)
 	
 	player_movement()
+	
+	if last_floor and is_on_floor():
+		coyotetimer.start()
+
 	
 
 func get_grav():
