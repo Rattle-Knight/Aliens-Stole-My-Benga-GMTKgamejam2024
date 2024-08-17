@@ -44,6 +44,10 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "RESUME"
 
+[node name="restart" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "QUIT"
@@ -80,6 +84,7 @@ text = "Music"
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="changed" from="MarginContainer2/VBoxContainer/mvolume" to="." method="_on_mvolume_changed"]
 [connection signal="changed" from="MarginContainer2/VBoxContainer/music" to="." method="_on_music_changed"]

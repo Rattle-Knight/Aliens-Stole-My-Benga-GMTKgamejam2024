@@ -6,12 +6,14 @@ extends CharacterBody2D
 @export var fall_gravity = 10000
 @export var climbingspeed =  200.0
 
-
-
 const acc = 50
 const friction = 70
 
 var climbable = false
+var shrinking = true
+
+func _ready():
+	change_size()
 
 func check_climbable():
 	if Global.laddercount > 0:
@@ -52,11 +54,9 @@ func input() -> Vector2:
 	input_dir.x = Input.get_axis("left", "right")
 	input_dir = input_dir.normalized()
 	return input_dir
-	
 
 func accelerate(direction):
 	velocity = velocity.move_toward(speed * direction, acc)
-	
 
 func add_friction():
 	velocity = velocity.move_toward(Vector2.ZERO, friction)
@@ -70,6 +70,17 @@ func jump(input_dir):
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y += jump_power 
 
+@onready var sprite_2d = $Sprite2D
+@export var timer = 15
+
+func change_size():
+	var tween = create_tween()
+	if shrinking:
+		tween.tween_property(sprite_2d, "scale", Vector2(0,0), timer)
+		tween.connect("finished", on_tween_finished)
+
+func on_tween_finished():
+	GameOver.game_over()
 
 func play_animation():
 	pass
