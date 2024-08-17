@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://215ebp17ipu5"]
+[gd_scene load_steps=3 format=3 uid="uid://215ebp17ipu5"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
+[ext_resource type="Theme" uid="uid://vhh7baiippqt" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -20,6 +21,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.266575, 0.266575, 0.266575, 1)
 
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 2
+offset_left = 722.0
+offset_top = 217.0
+offset_right = 1007.0
+offset_bottom = 270.0
+theme = ExtResource("2_vnwco")
+text = "Awesome Game"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
@@ -27,20 +37,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -70.5
-offset_right = 49.0
-offset_bottom = 70.5
+offset_left = 225.0
+offset_top = -29.0
+offset_right = 349.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_vnwco")
 
 [node name="Start" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_vnwco")
 text = "Start"
+flat = true
 
 [node name="Quit" type="Button" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_vnwco")
 text = "Quit"
+flat = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_exit_pressed"]

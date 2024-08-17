@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct4xl5bcuhari"]
+[gd_scene load_steps=3 format=3 uid="uid://ct4xl5bcuhari"]
 
 [ext_resource type="Script" path="res://scripts/pausemenu.gd" id="1_kwyd1"]
+[ext_resource type="Theme" uid="uid://c8ummdaxbofgv" path="res://themes/pausemenu theme.tres" id="2_13yte"]
 
 [node name="pausemenu" type="Control"]
 process_mode = 3
@@ -29,9 +30,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -121.0
-offset_top = -190.0
+offset_top = -191.0
 offset_right = 121.0
-offset_bottom = 13.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -39,18 +40,26 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("2_13yte")
+theme_override_constants/separation = 10
 
 [node name="resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "RESUME"
+theme = ExtResource("2_13yte")
+text = "Resume"
+flat = true
 
 [node name="restart" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "RESTART"
+theme = ExtResource("2_13yte")
+text = "Restart"
+flat = true
 
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "QUIT"
+theme = ExtResource("2_13yte")
+text = "Quit"
+flat = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -59,29 +68,36 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -634.0
-offset_top = 9.0
-offset_right = -516.0
-offset_bottom = 99.0
+offset_left = -705.0
+offset_top = 27.0
+offset_right = -439.0
+offset_bottom = 155.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
+theme = ExtResource("2_13yte")
+theme_override_constants/separation = 10
+alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+[node name="mvolume label" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_13yte")
 text = "Master Volume"
 
 [node name="mvolume" type="HSlider" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_13yte")
 
-[node name="Label2" type="Label" parent="MarginContainer2/VBoxContainer"]
+[node name="music label" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_13yte")
 text = "Music"
 
 [node name="music" type="HSlider" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_13yte")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
