@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8wrx272h8ga8"
-path="res://.godot/imported/box.PNG-f31fe27b35d95ba8f791cf5fcc2e9e52.ctex"
+uid="uid://bic7oe01i4vhf"
+path="res://.godot/imported/benga 7.png-d110894b4ddef95b9520415cbb456c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/objects/box.PNG"
-dest_files=["res://.godot/imported/box.PNG-f31fe27b35d95ba8f791cf5fcc2e9e52.ctex"]
+source_file="res://sprites/objects/benga 7.png"
+dest_files=["res://.godot/imported/benga 7.png-d110894b4ddef95b9520415cbb456c4d.ctex"]
 
 [params]
 

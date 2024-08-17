@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8wrx272h8ga8"
-path="res://.godot/imported/box.PNG-dc0f3b9a881afa50cfe81b5ababc7350.ctex"
+uid="uid://bdnnumb6j1kwh"
+path="res://.godot/imported/ball paper.png-5ad65ae45a4fc30d411f6f398106639e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/box.PNG"
-dest_files=["res://.godot/imported/box.PNG-dc0f3b9a881afa50cfe81b5ababc7350.ctex"]
+source_file="res://sprites/objects/ball paper.png"
+dest_files=["res://.godot/imported/ball paper.png-5ad65ae45a4fc30d411f6f398106639e.ctex"]
 
 [params]
 
