@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1m3gctpircue"]
-
-[ext_resource type="Script" path="res://scripts/unused/gun_track.gd" id="1_asevx"]
-
-[node name="gun_track" type="Node2D"]
-script = ExtResource("1_asevx")
