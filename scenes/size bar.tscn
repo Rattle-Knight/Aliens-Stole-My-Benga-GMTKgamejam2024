@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://boqqnkdvo5ft7"]
+
+[ext_resource type="Texture2D" uid="uid://ct2c0obyyvkmx" path="res://sprites/ui/side bar 2.png" id="1_1mejp"]
+[ext_resource type="Theme" uid="uid://cfb1vr0rwtoks" path="res://themes/side bar theme.tres" id="1_emyap"]
+[ext_resource type="Texture2D" uid="uid://7ov5tfj8g8f3" path="res://sprites/ui/side bar 1.png" id="2_vdy50"]
+
+[node name="SideBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SizeBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 42.0
+offset_right = 108.0
+offset_bottom = 531.0
+theme = ExtResource("1_emyap")
+
+[node name="SideBar2" type="Sprite2D" parent="."]
+position = Vector2(87, 304)
+texture = ExtResource("1_1mejp")
+
+[node name="SideBar1" type="Sprite2D" parent="."]
+position = Vector2(93, 555)
+texture = ExtResource("2_vdy50")
