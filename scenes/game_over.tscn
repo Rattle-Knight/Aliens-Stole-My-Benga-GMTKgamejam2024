@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://7g8wa0gm3470"]
+[gd_scene load_steps=6 format=3 uid="uid://7g8wa0gm3470"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_qdy7j"]
+[ext_resource type="FontFile" uid="uid://bvpytbeeuugk4" path="res://assets/fonts/Vanilla.ttf" id="2_tiir0"]
+[ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="3_m75yk"]
+[ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="4_af5pk"]
+[ext_resource type="AudioStream" uid="uid://bm0ejesgdxf0l" path="res://assets/audio/Space Music.mp3" id="5_pmowa"]
 
 [node name="game_over" type="Control"]
 process_mode = 3
@@ -34,6 +38,7 @@ offset_right = 36.0
 offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tiir0")
 text = "You died!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -52,6 +57,17 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tiir0")
 text = "Retry"
 
+[node name="hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m75yk")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_af5pk")
+
+[node name="gameover_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_pmowa")
+
+[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_retry_button_pressed"]

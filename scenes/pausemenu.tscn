@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct4xl5bcuhari"]
+[gd_scene load_steps=6 format=3 uid="uid://ct4xl5bcuhari"]
 
 [ext_resource type="Script" path="res://scripts/pausemenu.gd" id="1_kwyd1"]
-[ext_resource type="Theme" uid="uid://c8ummdaxbofgv" path="res://themes/pausemenu theme.tres" id="2_13yte"]
+[ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="2_13yte"]
+[ext_resource type="AudioStream" uid="uid://d34dkc8jc7i1a" path="res://assets/audio/In the name of all.wav" id="3_cqho5"]
+[ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="4_36oi5"]
+[ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="5_jf0jo"]
 
 [node name="pausemenu" type="Control"]
 process_mode = 3
@@ -18,8 +21,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 7.0
-offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.137255, 0.137255, 0.137255, 0.470588)
@@ -117,8 +118,25 @@ text = "Music"
 layout_mode = 2
 theme = ExtResource("2_13yte")
 
+[node name="pause_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cqho5")
+bus = &"Music"
+
+[node name="hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_36oi5")
+bus = &"SFX"
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jf0jo")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="changed" from="MarginContainer2/VBoxContainer/mvolume" to="." method="_on_mvolume_changed"]
+[connection signal="drag_ended" from="MarginContainer2/VBoxContainer/mvolume" to="." method="_on_mvolume_drag_ended"]
 [connection signal="changed" from="MarginContainer2/VBoxContainer/music" to="." method="_on_music_changed"]
+[connection signal="drag_ended" from="MarginContainer2/VBoxContainer/music" to="." method="_on_music_drag_ended"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=26 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_yyxy3"]
@@ -9,17 +9,18 @@
 [ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="8_7wyc1"]
 [ext_resource type="Texture2D" uid="uid://c146akfh0cxxg" path="res://sprites/objects/benga 8.png" id="9_cak75"]
 [ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="9_hkbl3"]
-[ext_resource type="Texture2D" uid="uid://cn6jk34v56dmc" path="res://sprites/objects/blast alien black hole.png" id="9_nrbh8"]
-[ext_resource type="Texture2D" uid="uid://c6yr5bi7683ih" path="res://sprites/objects/shelf longer.png" id="10_at2k2"]
+[ext_resource type="Texture2D" uid="uid://bndtssryskey3" path="res://sprites/objects/blast alien black hole.png" id="9_nrbh8"]
+[ext_resource type="Texture2D" uid="uid://bxvlyarujqke8" path="res://levels/objects/shelf longer.png" id="10_at2k2"]
 [ext_resource type="Script" path="res://scripts/benga Controller.gd" id="10_h0mjx"]
 [ext_resource type="Texture2D" uid="uid://btsig5vaf1px" path="res://sprites/objects/benga 10.png" id="10_vbfld"]
 [ext_resource type="Texture2D" uid="uid://dywvtnu2jaivu" path="res://sprites/objects/benga 3.png" id="11_na184"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="11_ttnyv"]
 [ext_resource type="Texture2D" uid="uid://bn2ck4m5wwagd" path="res://sprites/objects/benga 11.png" id="12_hqqm8"]
-[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="12_mlujb"]
+[ext_resource type="PackedScene" path="res://levels/objects/gum.tscn" id="12_mlujb"]
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="14_vdo7l"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="15_de15l"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_5qy7l"]
+[ext_resource type="AudioStream" uid="uid://c2l00qvdpp5yu" path="res://assets/audio/darkness_road_bpm165.ogg" id="21_ydr2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7xr"]
 size = Vector2(58, 63)
@@ -507,6 +508,10 @@ position = Vector2(89, -1688)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement3"]
 position = Vector2(304, 261.5)
 shape = SubResource("RectangleShape2D_5ppbj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_ydr2r")
+autoplay = true
 
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Benga movement2" to="benga Controller" method="_on_benga_movement_2_body_entered"]

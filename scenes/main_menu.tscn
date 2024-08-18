@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://ctl7b8mhjt07i"]
+[gd_scene load_steps=22 format=3 uid="uid://ctl7b8mhjt07i"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
-[ext_resource type="Theme" uid="uid://3j5x7f7ne7le" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
+[ext_resource type="Theme" uid="uid://chj0t5k1pukfn" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
 [ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="3_4pw6n"]
 [ext_resource type="Texture2D" uid="uid://l1abj8x1d2vb" path="res://sprites/alien/alien cropped.png" id="3_p2e4p"]
 [ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="4_ntwog"]
@@ -16,6 +16,9 @@
 [ext_resource type="Script" path="res://scripts/menupath.gd" id="12_ymjxj"]
 [ext_resource type="Texture2D" uid="uid://djt2hr4thdyne" path="res://sprites/objects/gum.png" id="15_hfo1f"]
 [ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="16_nvalh"]
+[ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="17_acumo"]
+[ext_resource type="AudioStream" uid="uid://bb28m7b6ohyfc" path="res://assets/audio/Goblin_Tinker_Soldier_Spy.mp3" id="17_v420c"]
+[ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="18_ravww"]
 
 [sub_resource type="Curve2D" id="Curve2D_6qefi"]
 _data = {
@@ -129,7 +132,6 @@ rotation = 1.61077
 [node name="Book3" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-34.3326, -7.63391)
 rotation = -1.9334
-scale = Vector2(1, 1)
 texture = ExtResource("7_2wgq2")
 script = ExtResource("9_jonhm")
 
@@ -244,5 +246,18 @@ rotation = 3.00734
 texture = ExtResource("8_74eku")
 script = ExtResource("9_jonhm")
 
+[node name="menu_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_v420c")
+autoplay = true
+bus = &"Music"
+
+[node name="hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_acumo")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_ravww")
+
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_exit_pressed"]
