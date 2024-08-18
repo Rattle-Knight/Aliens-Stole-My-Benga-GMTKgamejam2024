@@ -7,11 +7,13 @@ extends Node
 @onready var alien1 = $"../alien"
 @onready var alien2 = $"../alien2"
 
-@onready var infpiece1 = $"../benga tower/benga infinite/Benga1"
-@onready var infpiece2 = $"../benga tower/benga infinite/Benga2"
-@onready var infpiece3 = $"../benga tower/benga infinite/Benga3"
-@onready var infpiece4 = $"../benga tower/benga infinite/Benga4"
+@onready var infpieceL = $"../benga tower/benga left"
+@onready var infpieceR = $"../benga tower/benga right"
+@onready var lone = $"../benga tower/LoneBenga"
 
+
+
+var turn3 = 0
 var turn = 0
 var turn2 = 0
 
@@ -60,14 +62,40 @@ func _on_benga_movement_2_body_entered(body):
 			alientween = create_tween()
 			alientween.tween_property(alien1,"position",Vector2(-821, -460),1)
 			
-			await alientween.finished
+
+
+
+
 			
+
+
+func _on_benga_movement_3_body_entered(body):
+	if body == player:
+		turn3 += 1
+		if turn3 == 1:
 			#finale
-			alientween = create_tween()
-			alientween.tween_property(alien1,"position",Vector2(-468, -1788),5)
-			alientween = create_tween()
-			alientween.tween_property(alien2,"position",Vector2(392, -1796),5)
-			var movetween = create_tween()
-			movetween = create_tween()
-			movetween.tween_property(infpiece1,"position",Vector2(716, 504),1)
-			
+				var alientween = create_tween()
+				alientween.set_parallel()
+				alientween.tween_property(alien1,"position",Vector2(-468, -1788),5)
+				alientween.tween_property(alien2,"position",Vector2(392, -1796),5)
+				var movepaytween = create_tween()
+				movepaytween.tween_property(player,"position",Vector2(286, -1415),0.5)
+				await movepaytween.finished
+				Global.forcestop = true
+				
+				#"trap"
+				var movetween = create_tween()
+				movetween.set_parallel()
+				movetween.tween_property(infpieceL,"position",Vector2(-79, -1867),1)
+				movetween.tween_property(infpieceR,"position",Vector2(-88, -1882),1)
+				
+				await alientween.finished
+				movetween = create_tween()
+				movetween.tween_property(lone,"position",Vector2(609, -1574),1)
+				await movetween.finished
+				alientween = create_tween()
+				Global.forcestop = false
+				alientween.tween_property(alien2,"position",Vector2(623, -204),0.8)
+				alientween.tween_property(alien2,"rotation_degrees",alien2.rotation_degrees + 97,0.8)
+				
+

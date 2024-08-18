@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=25 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_yyxy3"]
@@ -9,11 +9,13 @@
 [ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="8_7wyc1"]
 [ext_resource type="Texture2D" uid="uid://c146akfh0cxxg" path="res://sprites/objects/benga 8.png" id="9_cak75"]
 [ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="9_hkbl3"]
+[ext_resource type="Texture2D" uid="uid://cn6jk34v56dmc" path="res://sprites/objects/blast alien black hole.png" id="9_nrbh8"]
 [ext_resource type="Texture2D" uid="uid://c6yr5bi7683ih" path="res://sprites/objects/shelf longer.png" id="10_at2k2"]
 [ext_resource type="Script" path="res://scripts/benga Controller.gd" id="10_h0mjx"]
 [ext_resource type="Texture2D" uid="uid://btsig5vaf1px" path="res://sprites/objects/benga 10.png" id="10_vbfld"]
 [ext_resource type="Texture2D" uid="uid://dywvtnu2jaivu" path="res://sprites/objects/benga 3.png" id="11_na184"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="11_ttnyv"]
+[ext_resource type="Texture2D" uid="uid://bn2ck4m5wwagd" path="res://sprites/objects/benga 11.png" id="12_hqqm8"]
 [ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="12_mlujb"]
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="14_vdo7l"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="15_de15l"]
@@ -29,7 +31,7 @@ size = Vector2(251.877, 182.253)
 size = Vector2(1072.5, 42.059)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ppbj"]
-size = Vector2(321, 114.25)
+size = Vector2(84, 73)
 
 [node name="testlevel" type="Node2D"]
 
@@ -246,6 +248,12 @@ script = ExtResource("8_7wyc1")
 position = Vector2(505, -196)
 rotation = -0.0535601
 
+[node name="BlastAlienBlackHole" type="Sprite2D" parent="benga tower/benga 14 b"]
+z_index = -1
+position = Vector2(417, 363)
+scale = Vector2(2, 2)
+texture = ExtResource("9_nrbh8")
+
 [node name="benga 14" type="Node2D" parent="benga tower"]
 position = Vector2(-53, -1479)
 
@@ -334,40 +342,101 @@ position = Vector2(-48, -1851)
 [node name="Benga" parent="benga tower/benga 20" instance=ExtResource("5_qlsim")]
 position = Vector2(334, 496)
 
-[node name="benga infinite" type="Node2D" parent="benga tower"]
+[node name="benga left" type="Node2D" parent="benga tower"]
 position = Vector2(-102, -3295)
 
-[node name="Benga1" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
-position = Vector2(246, 308)
+[node name="Benga1" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
+position = Vector2(260, 377)
 
-[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga1"]
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga1"]
 position = Vector2(6, -4)
 texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
-[node name="Benga2" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
-position = Vector2(477, 296)
-
-[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga2"]
-position = Vector2(6, -4)
-texture = ExtResource("7_4l4ws")
-script = ExtResource("8_7wyc1")
-
-[node name="Benga3" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
-position = Vector2(472, 450)
-
-[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga3"]
-position = Vector2(6, -4)
-texture = ExtResource("7_4l4ws")
-script = ExtResource("8_7wyc1")
-
-[node name="Benga4" parent="benga tower/benga infinite" instance=ExtResource("6_r01u1")]
+[node name="Benga4" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
 position = Vector2(259, 448)
 
-[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga infinite/Benga4"]
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga4"]
 position = Vector2(6, -4)
 texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
+
+[node name="Benga5" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
+position = Vector2(254, 241)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga5"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga6" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
+position = Vector2(255, 309)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga6"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="benga right" type="Node2D" parent="benga tower"]
+position = Vector2(-102, -3295)
+
+[node name="Benga2" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
+position = Vector2(472, 382)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga2"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga3" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
+position = Vector2(472, 450)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga3"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga4" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
+position = Vector2(474, 316)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga4"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="Benga5" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
+position = Vector2(472, 249)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga5"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="LoneBenga" parent="benga tower" instance=ExtResource("5_qlsim")]
+position = Vector2(623, -3177)
+
+[node name="BlastAlien" type="Sprite2D" parent="benga tower/LoneBenga"]
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
+
+[node name="decrotaive jenga" type="Node2D" parent="benga tower"]
+
+[node name="Benga8" type="Sprite2D" parent="benga tower/decrotaive jenga"]
+position = Vector2(330, -127)
+texture = ExtResource("9_cak75")
+
+[node name="Benga11" type="Sprite2D" parent="benga tower/decrotaive jenga"]
+position = Vector2(332, -254)
+texture = ExtResource("12_hqqm8")
+
+[node name="Benga12" type="Sprite2D" parent="benga tower/decrotaive jenga"]
+position = Vector2(334, 491)
+texture = ExtResource("12_hqqm8")
+
+[node name="Benga11" type="Sprite2D" parent="benga tower/decrotaive jenga/Benga12"]
+position = Vector2(-53, -1728)
+texture = ExtResource("12_hqqm8")
 
 [node name="benga Controller" type="Node" parent="."]
 script = ExtResource("10_h0mjx")
@@ -433,11 +502,12 @@ isplaying = true
 flipsprite = true
 
 [node name="Benga movement3" type="Area2D" parent="."]
-position = Vector2(91, -1695)
+position = Vector2(89, -1688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement3"]
-position = Vector2(202.5, 244.125)
+position = Vector2(304, 261.5)
 shape = SubResource("RectangleShape2D_5ppbj")
 
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Benga movement2" to="benga Controller" method="_on_benga_movement_2_body_entered"]
+[connection signal="body_entered" from="Benga movement3" to="benga Controller" method="_on_benga_movement_3_body_entered"]

@@ -32,7 +32,7 @@ var climbable = false
 var gum = false
 var gum_dir = 1
 @export var shrinking = true
-
+var forcestop = false
 
 #coyote time vars
 @onready var coyotetimer = $CoyoteTimer
@@ -108,29 +108,34 @@ func _process(delta: float):
 				quicktimesuccess = true
 				
 
-
+func check_global_force():
+	if Global.forcestop:
+		forcestop = true
+	elif not Global.forcestop:
+		forcestop = false
 
 func _physics_process(delta):
 	check_scale()
 	check_gum()
+	check_global_force()
 	
 	last_floor = is_on_floor()
 	#gum disables movement mostly
 	check_climbable()
 	var input_dir: Vector2 = input()
-	if input_dir != Vector2.ZERO and not gum:
+	if input_dir != Vector2.ZERO and not gum and not forcestop:
 		accelerate(input_dir)
 		play_animation()
 	else:
 		add_friction()
 		play_animation()
 	
-	if climbable and not gum:
+	if climbable and not gum and not forcestop:
 		if Input.is_action_pressed("up") or Input.is_action_pressed("down"):
 			velocity.y = (Input.get_axis("up", "down") * climbingspeed)
 		elif Input.is_action_pressed("space") or not coyotetimer.is_stopped():
 			velocity.y = -climbingspeed
-	elif not gum:
+	elif not gum and not forcestop:
 		if not is_on_floor():
 			velocity.y += get_grav() *delta 
 		elif is_on_floor() or not coyotetimer.is_stopped():

@@ -27,7 +27,8 @@ func _aim():
 		#timer.stop()
 
 func _on_timer_timeout():
-	_shoot()
+	if not Global.ceasefire:
+		_shoot()
 
 func _shoot():
 	var bullet = ammo.instantiate()
