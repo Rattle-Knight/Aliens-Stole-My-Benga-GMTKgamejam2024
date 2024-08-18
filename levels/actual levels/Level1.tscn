@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b2pje2cydnmbu"]
+[gd_scene load_steps=42 format=3 uid="uid://b2pje2cydnmbu"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_buxbu"]
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_2nb44"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="24_1v4ql"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="25_f6ljg"]
 [ext_resource type="PackedScene" uid="uid://cjtenyecu44ha" path="res://levels/objects/shoe.tscn" id="26_uu8xl"]
+[ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_oprhe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s54ar"]
 shader = ExtResource("2_75s8v")
@@ -62,6 +63,9 @@ size = Vector2(260, 306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswly"]
 size = Vector2(320, 487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pryon"]
+size = Vector2(234, 186)
 
 [node name="level1" type="Node2D"]
 
@@ -345,6 +349,13 @@ position = Vector2(12133, 92)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="takeaway4"]
 position = Vector2(432, 327.5)
 shape = SubResource("RectangleShape2D_bswly")
+
+[node name="scene_change" parent="." instance=ExtResource("30_oprhe")]
+position = Vector2(12486, 482)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
+position = Vector2(150, 83)
+shape = SubResource("RectangleShape2D_pryon")
 
 [connection signal="body_entered" from="takeaway" to="takeaway benga" method="_on_takeaway_body_entered"]
 [connection signal="body_entered" from="takeaway2" to="takeaway benga" method="_on_takeaway_2_body_entered"]

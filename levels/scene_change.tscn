@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw68qse37lixg"]
+
+[ext_resource type="Script" path="res://scripts/scene_change.gd" id="1_kddrf"]
+
+[node name="scene_change" type="Area2D"]
+script = ExtResource("1_kddrf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
