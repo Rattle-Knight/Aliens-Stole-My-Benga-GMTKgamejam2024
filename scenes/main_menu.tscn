@@ -1,15 +1,33 @@
-[gd_scene load_steps=11 format=3 uid="uid://215ebp17ipu5"]
+[gd_scene load_steps=19 format=3 uid="uid://ctl7b8mhjt07i"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
-[ext_resource type="Theme" uid="uid://vhh7baiippqt" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
+[ext_resource type="Theme" uid="uid://3j5x7f7ne7le" path="res://themes/mainmenu theme.tres" id="2_vnwco"]
 [ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="3_4pw6n"]
 [ext_resource type="Texture2D" uid="uid://l1abj8x1d2vb" path="res://sprites/alien/alien cropped.png" id="3_p2e4p"]
 [ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="4_ntwog"]
+[ext_resource type="Texture2D" uid="uid://dawsxko3nn5rr" path="res://sprites/objects/book 3.png" id="7_2wgq2"]
 [ext_resource type="Texture2D" uid="uid://bbdtinltvna4w" path="res://sprites/objects/benga 2.png" id="7_lkkym"]
+[ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="8_74eku"]
 [ext_resource type="Texture2D" uid="uid://bic7oe01i4vhf" path="res://sprites/objects/benga 7.png" id="8_kh5el"]
+[ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="9_jonhm"]
 [ext_resource type="Texture2D" uid="uid://btt5ake4a1yv4" path="res://sprites/objects/benga 4.png" id="9_kutjc"]
 [ext_resource type="Texture2D" uid="uid://bdnnumb6j1kwh" path="res://sprites/objects/ball paper.png" id="10_inga1"]
+[ext_resource type="Script" path="res://scripts/menupath.gd" id="12_ymjxj"]
+[ext_resource type="Texture2D" uid="uid://djt2hr4thdyne" path="res://sprites/objects/gum.png" id="15_hfo1f"]
+[ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="16_nvalh"]
+
+[sub_resource type="Curve2D" id="Curve2D_6qefi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 127, -165, 0, 0, 0, 0, 119, 35, 0, 0, 0, 0, 107, 195, 0, 0, 0, 0, 105, 351, 0, 0, 0, 0, 96, 586, 0, 0, 0, 0, 78, 1139, 0, 0, 0, 0, 48, 1705)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_tw356"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 497, -238, 0, 0, 0, 0, 494, -54, 0, 0, 0, 0, 494, 92, 0, 0, 0, 0, 494, 204, 0, 0, 0, 0, 492, 357, 0, 0, 0, 0, 485, 556, 0, 0, 0, 0, 463, 673, 0, 0, 0, 0, 483, 745)
+}
+point_count = 8
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -21,6 +39,7 @@ grow_vertical = 2
 script = ExtResource("1_pwasb")
 
 [node name="Illustration3" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(570, 308)
 scale = Vector2(1.16, 1.16)
 texture = ExtResource("2_fk27q")
@@ -88,28 +107,142 @@ texture = ExtResource("4_ntwog")
 position = Vector2(345, 330)
 texture = ExtResource("3_p2e4p")
 
-[node name="Benga2" type="Sprite2D" parent="."]
-position = Vector2(522, 116)
-rotation = -0.422328
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("7_lkkym")
+[node name="BlastAlien" type="Sprite2D" parent="AlienCropped"]
+position = Vector2(-221, -242)
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
 
-[node name="Benga7" type="Sprite2D" parent="."]
-position = Vector2(131, 328)
-rotation = 0.308305
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("8_kh5el")
+[node name="BlastAlien2" type="Sprite2D" parent="AlienCropped"]
+position = Vector2(-57, -281)
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
 
-[node name="Benga4" type="Sprite2D" parent="."]
-position = Vector2(395, 567)
-rotation = -3.3183
+[node name="Path2D" type="Path2D" parent="."]
+z_index = -1
+curve = SubResource("Curve2D_6qefi")
+script = ExtResource("12_ymjxj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(127, -165)
+rotation = 1.61077
+
+[node name="Book3" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-34.3326, -7.63391)
+rotation = -1.9334
+scale = Vector2(1, 1)
+texture = ExtResource("7_2wgq2")
+script = ExtResource("9_jonhm")
+
+[node name="BlastAlien" type="Sprite2D" parent="Path2D/PathFollow2D/Book3"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D"]
+position = Vector2(127, -165)
+rotation = 1.61077
+
+[node name="Benga4" type="Sprite2D" parent="Path2D/PathFollow2D2"]
+position = Vector2(6.99441, -0.279779)
+rotation = 1.38747
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("9_kutjc")
+script = ExtResource("9_jonhm")
 
-[node name="BallPaper" type="Sprite2D" parent="."]
-position = Vector2(704, 480)
+[node name="BlastAlien" type="Sprite2D" parent="Path2D/PathFollow2D2/Benga4"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D"]
+position = Vector2(127, -165)
+rotation = 1.61077
+
+[node name="Benga7" type="Sprite2D" parent="Path2D/PathFollow2D3"]
+position = Vector2(-7.43408, -10.7114)
+rotation = -1.29279
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_kh5el")
+script = ExtResource("9_jonhm")
+
+[node name="BlastAlien" type="Sprite2D" parent="Path2D/PathFollow2D3/Benga7"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
+
+[node name="Path2D2" type="Path2D" parent="."]
+z_index = -1
+curve = SubResource("Curve2D_tw356")
+script = ExtResource("12_ymjxj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(471.101, 702.164)
+rotation = 1.29985
+progress = 943.48
+
+[node name="BallPaper" type="Sprite2D" parent="Path2D2/PathFollow2D"]
+position = Vector2(53.6994, -18.8779)
+rotation = -1.57742
 scale = Vector2(0.643587, 0.643587)
 texture = ExtResource("10_inga1")
+script = ExtResource("9_jonhm")
+
+[node name="BlastAlien" type="Sprite2D" parent="Path2D2/PathFollow2D/BallPaper"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(497, -238)
+rotation = 1.5871
+
+[node name="Gum" type="Sprite2D" parent="Path2D2/PathFollow2D2"]
+position = Vector2(20.8505, -9.34113)
+rotation = 1.69843
+texture = ExtResource("15_hfo1f")
+script = ExtResource("9_jonhm")
+
+[node name="GumSticky" type="Sprite2D" parent="Path2D2/PathFollow2D2/Gum"]
+position = Vector2(35.5139, 16.3939)
+rotation = 2.7489
+texture = ExtResource("16_nvalh")
+
+[node name="GumSticky2" type="Sprite2D" parent="Path2D2/PathFollow2D2/Gum"]
+position = Vector2(-0.885406, 23.3284)
+rotation = 3.00734
+texture = ExtResource("16_nvalh")
+
+[node name="GumSticky3" type="Sprite2D" parent="Path2D2/PathFollow2D2/Gum"]
+position = Vector2(-39.5603, 13.416)
+rotation = 3.21388
+texture = ExtResource("16_nvalh")
+
+[node name="BlastAlien" type="Sprite2D" parent="Path2D2/PathFollow2D2/Gum"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(497, -238)
+rotation = 1.5871
+
+[node name="Benga2" type="Sprite2D" parent="Path2D2/PathFollow2D3"]
+position = Vector2(48.6022, -24.7956)
+rotation = -1.97607
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_lkkym")
+script = ExtResource("9_jonhm")
+
+[node name="BlastAlien" type="Sprite2D" parent="Path2D2/PathFollow2D3/Benga2"]
+position = Vector2(-6.0799, -0.187866)
+rotation = 3.00734
+texture = ExtResource("8_74eku")
+script = ExtResource("9_jonhm")
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_exit_pressed"]
