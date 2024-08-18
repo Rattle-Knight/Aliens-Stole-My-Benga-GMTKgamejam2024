@@ -1,9 +1,9 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://c8ummdaxbofgv"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cv5ix05irjhgf"]
 
 [ext_resource type="FontFile" uid="uid://dshhab66jrdqj" path="res://themes/SingleDay-Regular.ttf" id="1_bkyio"]
 [ext_resource type="FontFile" uid="uid://bvpytbeeuugk4" path="res://assets/fonts/Vanilla.ttf" id="1_huvjh"]
-[ext_resource type="Texture2D" path="res://sprites/ui/purple 3.png" id="3_ai1g8"]
-[ext_resource type="Texture2D" path="res://sprites/ui/purple 2.png" id="4_lbiv8"]
+[ext_resource type="Texture2D" uid="uid://bo4xnehyc5g2j" path="res://sprites/ui/purple 3.png" id="3_ai1g8"]
+[ext_resource type="Texture2D" uid="uid://cvjwnephyjk75" path="res://sprites/ui/purple 2.png" id="4_lbiv8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gopi8"]
 

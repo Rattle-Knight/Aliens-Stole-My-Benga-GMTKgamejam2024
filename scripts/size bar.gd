@@ -4,6 +4,7 @@ extends Control
 
 @export var health_max = 1
 var health = health_max
+var health_min = 0
 
 @onready var health_bar = $SizeBar
 @onready var shrink_timer = $shrink_timer
@@ -18,9 +19,8 @@ func _ready():
 
 func life_change():
 	health = player_size.x
+	var healthbar_result = lerp(health_max, health_min, player_size.x)
 	
 	health = clamp(health, 0, health_max)
-	health_bar.value = health
+	health_bar.value = healthbar_result
 
-#func _on_shrink_timer_timeout():
-	#life_change(-1)

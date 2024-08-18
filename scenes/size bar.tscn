@@ -30,7 +30,3 @@ texture = ExtResource("1_1mejp")
 [node name="SideBar1" type="Sprite2D" parent="."]
 position = Vector2(93, 555)
 texture = ExtResource("2_vdy50")
-
-[node name="shrink_timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="shrink_timer" to="." method="_on_shrink_timer_timeout"]
