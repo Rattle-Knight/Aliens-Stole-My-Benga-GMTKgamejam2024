@@ -1,19 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://do3r2faib5rf6"]
+[gd_scene load_steps=16 format=3 uid="uid://do3r2faib5rf6"]
 
 [ext_resource type="Script" path="res://scripts/alien.gd" id="1_7pn6o"]
-[ext_resource type="Texture2D" uid="uid://cghxuyhccc0pr" path="res://sprites/alien/alien.png" id="2_b7yao"]
+[ext_resource type="Texture2D" uid="uid://l1abj8x1d2vb" path="res://sprites/alien/alien cropped.png" id="2_l2g07"]
 [ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="4_44bli"]
 [ext_resource type="PackedScene" uid="uid://30kyyd38tck" path="res://scenes/turret.tscn" id="4_oeb0r"]
 [ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="5_vegu4"]
 [ext_resource type="Script" path="res://scripts/AlienEyeball.gd" id="6_qwi0k"]
 [ext_resource type="Texture2D" uid="uid://35smpvyitwho" path="res://sprites/objects/ufo.png" id="7_vth3n"]
+[ext_resource type="Script" path="res://scripts/notes.gd" id="8_q8w1a"]
+[ext_resource type="Texture2D" uid="uid://cncly37i0fgsk" path="res://sprites/alien/music note 1.png" id="9_x8byj"]
+[ext_resource type="Texture2D" uid="uid://cxlrswywmlw3c" path="res://sprites/alien/music note 2.png" id="10_3ifxr"]
+[ext_resource type="Texture2D" uid="uid://b23m8tmb6wqxd" path="res://sprites/alien/music note 3.png" id="11_d8ebq"]
+[ext_resource type="Texture2D" uid="uid://dyccs0yac4xp6" path="res://sprites/alien/music note 4.png" id="12_iai5c"]
+[ext_resource type="Texture2D" uid="uid://cycdkrqpijeu" path="res://sprites/alien/music note 5.png" id="13_xk56s"]
+[ext_resource type="Texture2D" uid="uid://4jmgtmpjvkfd" path="res://sprites/alien/music note 6.png" id="14_4dhsj"]
+[ext_resource type="Texture2D" uid="uid://5q816x336a2l" path="res://sprites/alien/music note 7.png" id="15_k4vds"]
 
 [node name="alien" type="Node2D"]
 script = ExtResource("1_7pn6o")
 
 [node name="body" type="Sprite2D" parent="."]
 position = Vector2(321, 317)
-texture = ExtResource("2_b7yao")
+texture = ExtResource("2_l2g07")
 
 [node name="turret" parent="." instance=ExtResource("4_oeb0r")]
 position = Vector2(119, 90)
@@ -23,19 +31,19 @@ position = Vector2(295, 44)
 
 [node name="Alieneyes" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(320, 315)
+position = Vector2(305, 309)
 texture = ExtResource("4_44bli")
 
 [node name="AlienEyeball" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(307, 258)
+position = Vector2(294, 254)
 scale = Vector2(0.635, 0.635)
 texture = ExtResource("5_vegu4")
 script = ExtResource("6_qwi0k")
 
 [node name="AlienEyeball2" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(415, 248)
+position = Vector2(400, 243)
 scale = Vector2(0.72, 0.72)
 texture = ExtResource("5_vegu4")
 script = ExtResource("6_qwi0k")
@@ -44,3 +52,34 @@ script = ExtResource("6_qwi0k")
 position = Vector2(321, 779)
 scale = Vector2(0.38, 0.38)
 texture = ExtResource("7_vth3n")
+
+[node name="notes" type="Node2D" parent="."]
+script = ExtResource("8_q8w1a")
+
+[node name="MusicNote1" type="Sprite2D" parent="notes"]
+position = Vector2(623, 486.5)
+texture = ExtResource("9_x8byj")
+
+[node name="MusicNote2" type="Sprite2D" parent="notes"]
+position = Vector2(620, 406.5)
+texture = ExtResource("10_3ifxr")
+
+[node name="MusicNote3" type="Sprite2D" parent="notes"]
+position = Vector2(615, 334.5)
+texture = ExtResource("11_d8ebq")
+
+[node name="MusicNote4" type="Sprite2D" parent="notes"]
+position = Vector2(603, 266.5)
+texture = ExtResource("12_iai5c")
+
+[node name="MusicNote5" type="Sprite2D" parent="notes"]
+position = Vector2(594, 199.5)
+texture = ExtResource("13_xk56s")
+
+[node name="MusicNote6" type="Sprite2D" parent="notes"]
+position = Vector2(596, 145.5)
+texture = ExtResource("14_4dhsj")
+
+[node name="MusicNote7" type="Sprite2D" parent="notes"]
+position = Vector2(594, 79.5)
+texture = ExtResource("15_k4vds")

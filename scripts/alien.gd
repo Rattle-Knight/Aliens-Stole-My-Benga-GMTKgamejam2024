@@ -13,12 +13,13 @@ func _ready():
 		$turret.position = Vector2(546, 103)
 		$turret2.position = Vector2(374, 53)
 		
-		$AlienEyeball.position = Vector2(227, 251)
-		$AlienEyeball.eye_center = Vector2(227, 251)
-		$AlienEyeball2.position = Vector2(337, 257)
-		$AlienEyeball2.eye_center = Vector2(337, 257)
+		$AlienEyeball.position = Vector2(242, 243)
+		$AlienEyeball.eye_center = Vector2(242, 243)
+		$AlienEyeball2.position = Vector2(349, 249)
+		$AlienEyeball2.eye_center = Vector2(349, 249)
 		
 		$Alieneyes.flip_h = true
+		$Alieneyes.position = Vector2(337, 310)
 
 func _process(delta):
 	if not isplaying:
