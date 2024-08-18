@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b2pje2cydnmbu"]
+[gd_scene load_steps=42 format=3 uid="uid://b2pje2cydnmbu"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_buxbu"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_u5gax"]
@@ -6,7 +6,6 @@
 [ext_resource type="Shader" path="res://shader/blur.gdshader" id="2_75s8v"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_bvvq6"]
 [ext_resource type="Texture2D" uid="uid://bxvlyarujqke8" path="res://levels/objects/shelf longer.png" id="3_kblo3"]
-[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="4_vx2wv"]
 [ext_resource type="PackedScene" uid="uid://dtt0eobudcvo4" path="res://levels/objects/cap.tscn" id="5_4xuxj"]
 [ext_resource type="PackedScene" uid="uid://ucry2jboqsjc" path="res://levels/objects/benga/benga(1a).tscn" id="6_4ngix"]
 [ext_resource type="PackedScene" uid="uid://dcascrhra2oy4" path="res://levels/objects/benga/benga(1b).tscn" id="7_dcg6g"]
@@ -41,12 +40,8 @@ shader_parameter/strength = 20
 shader = ExtResource("2_75s8v")
 shader_parameter/strength = 20
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
-scenes/1/scene = ExtResource("4_vx2wv")
-
 [sub_resource type="TileSet" id="TileSet_ckm5e"]
 tile_size = Vector2i(165, 128)
-sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk0q6"]
 size = Vector2(160, 2028)
