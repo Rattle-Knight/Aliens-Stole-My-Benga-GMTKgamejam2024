@@ -351,8 +351,9 @@ position = Vector2(5812, 507)
 rotation = -0.0126574
 
 [node name="Book17" parent="objects" instance=ExtResource("16_8f0rh")]
-position = Vector2(6174, 520)
+position = Vector2(6128, 503)
 rotation = 0.470311
+scale = Vector2(1.19643, 1)
 
 [node name="Book18" parent="objects" instance=ExtResource("21_07nlh")]
 position = Vector2(6695, 172)
