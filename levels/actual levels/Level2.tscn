@@ -274,6 +274,6 @@ position = Vector2(3268, 580)
 texture = ExtResource("25_j6tld")
 
 [node name="ball of paper" parent="." instance=ExtResource("19_d4rbe")]
-position = Vector2(4733, 574)
+position = Vector2(4757, 580)
 
 [connection signal="body_entered" from="takeaway4" to="i see you" method="_on_takeaway_4_body_entered"]
