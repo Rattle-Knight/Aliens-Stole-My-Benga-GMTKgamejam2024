@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct7vaaj07qx84"]
+[gd_scene load_steps=6 format=3 uid="uid://ct7vaaj07qx84"]
 
 [ext_resource type="Texture2D" uid="uid://c21faai50bsga" path="res://sprites/objects/laundry pile.png" id="1_njfg6"]
 [ext_resource type="Texture2D" uid="uid://grsu0bq2vylt" path="res://sprites/objects/laundry sock.png" id="2_e4dwv"]
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="3_ehm7c"]
+[ext_resource type="Texture2D" uid="uid://y5kttp1h5qcu" path="res://sprites/objects/fly.png" id="4_vrk1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_av36l"]
 size = Vector2(46.5, 245)
@@ -37,6 +38,24 @@ dir = "l"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(11, 132)
 shape = SubResource("RectangleShape2D_av36l")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(33, 15)
+amount = 4
+lifetime = 3.0
+speed_scale = 0.35
+randomness = 0.57
+texture = ExtResource("4_vrk1r")
+emission_shape = 1
+emission_sphere_radius = 70.13
+spread = 126.82
+gravity = Vector2(0, -980)
+orbit_velocity_min = 0.1
+orbit_velocity_max = 0.3
+angle_min = -14.5
+angle_max = 14.5
+hue_variation_min = -0.14
+hue_variation_max = 0.28
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

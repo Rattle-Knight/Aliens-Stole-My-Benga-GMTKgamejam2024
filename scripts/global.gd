@@ -6,3 +6,5 @@ var gumpos : Vector2
 var ceasefire = false
 var forcestop = false
 var playerisatom = false
+
+var showhud = false

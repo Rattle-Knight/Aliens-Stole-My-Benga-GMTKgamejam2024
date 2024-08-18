@@ -243,7 +243,7 @@ position = Vector2(7101, 572)
 position = Vector2(10914, 622)
 
 [node name="ball of paper8" parent="objects" instance=ExtResource("17_dxk8q")]
-position = Vector2(3379, 563)
+position = Vector2(3799, 475)
 rotation = 0.057656
 
 [node name="Book2" parent="objects" instance=ExtResource("22_5kmyu")]

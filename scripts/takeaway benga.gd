@@ -36,6 +36,7 @@ func _on_takeaway_2_body_entered(body):
 	if body == player:
 		triga += 1
 		if triga == 1:
+			Global.showhud = true
 			var altween = create_tween()
 			altween.tween_property($"../player/Camera2D","zoom",$"../player/Camera2D".zoom + Vector2(0.5,0.5),1)
 			altween.tween_property($"../alien","position",Vector2(509, 58),1)

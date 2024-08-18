@@ -43,13 +43,17 @@ var last_floor = false  # Last frame's on-floor state
 
 
 func _ready():
-	change_size()
+	$CanvasLayer/SizeBar.visible = false
+	if Global.showhud:
+		$CanvasLayer/SizeBar.visible = true
 
 func check_scale():
-	print(scale)
+	if Global.showhud:
+		$CanvasLayer/SizeBar.visible = true
+	
+	
 	if scale <= Vector2(0.1,0.1):
 		Global.playerisatom = true
-		print("dead")
 	else:
 		#speed and jump power increases with size
 		speed = lerp(minspeed,maxspeed,1-scale.x)
