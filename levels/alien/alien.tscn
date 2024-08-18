@@ -57,29 +57,34 @@ texture = ExtResource("7_vth3n")
 script = ExtResource("8_q8w1a")
 
 [node name="MusicNote1" type="Sprite2D" parent="notes"]
-position = Vector2(623, 486.5)
+position = Vector2(658, 457)
 texture = ExtResource("9_x8byj")
 
 [node name="MusicNote2" type="Sprite2D" parent="notes"]
-position = Vector2(620, 406.5)
+position = Vector2(562, 396)
 texture = ExtResource("10_3ifxr")
 
 [node name="MusicNote3" type="Sprite2D" parent="notes"]
-position = Vector2(615, 334.5)
+position = Vector2(679, 331)
 texture = ExtResource("11_d8ebq")
 
 [node name="MusicNote4" type="Sprite2D" parent="notes"]
-position = Vector2(603, 266.5)
+position = Vector2(563, 268)
 texture = ExtResource("12_iai5c")
 
 [node name="MusicNote5" type="Sprite2D" parent="notes"]
-position = Vector2(594, 199.5)
+position = Vector2(646, 242)
 texture = ExtResource("13_xk56s")
 
 [node name="MusicNote6" type="Sprite2D" parent="notes"]
-position = Vector2(596, 145.5)
+position = Vector2(554, 185)
 texture = ExtResource("14_4dhsj")
 
 [node name="MusicNote7" type="Sprite2D" parent="notes"]
-position = Vector2(594, 79.5)
+position = Vector2(625, 125)
 texture = ExtResource("15_k4vds")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="notes" method="_on_timer_timeout"]

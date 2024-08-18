@@ -21,7 +21,7 @@ offset_top = 50.0
 offset_right = 108.0
 offset_bottom = 541.0
 theme = ExtResource("1_emyap")
-value = 100.0
+fill_mode = 3
 
 [node name="SideBar2" type="Sprite2D" parent="."]
 position = Vector2(87, 304)

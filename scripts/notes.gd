@@ -1,20 +1,28 @@
 extends Node2D
 
 @onready var notes = get_children()
+@onready var timer = $"../Timer"
 
 var orignalposnotes = []
+var switch = false
+var trig = 0
 
 func _ready():
 	for note in notes:
 		orignalposnotes.append(note.position)
 
 func _process(delta):
-		var direction = Vector2(10,0)
-		var distance_to_player = global_position.distance_to(player.global_position)
-		var clamped_distance = min(distance_to_player, eye_radius)
+		var direction = Vector2(0,0.2)
+		if switch:
+			direction = Vector2(0,-0.2)
 		
-		position = eye_center + direction * clamped_distance
+		for noteindx in range(len(notes)):
+			notes[noteindx].position += direction 
 
 
 func _on_timer_timeout():
-	pass # Replace with function body.
+	trig += 1
+	if trig % 2 == 0:
+		switch = true
+	else:
+		switch = false

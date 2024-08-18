@@ -20,7 +20,8 @@ func _ready():
 		
 		$Alieneyes.flip_h = true
 		$Alieneyes.position = Vector2(337, 310)
-
+		$notes.position = Vector2(-572, -4)
+		
 func _process(delta):
 	if not isplaying:
 		position.x = lerp(position.x,player.position.x-100,delta*FOLLOW_SPEED)
