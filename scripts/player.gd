@@ -102,7 +102,7 @@ func gumquicktimeevent():
 
 
 
-func _process(delta: float):
+func _process(_delta: float):
 	#CODE FOR GUM QUICKTIME EVENT 3
 	if _is_mashing and gum:
 		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):

@@ -6,7 +6,7 @@ var dir : float
 @onready var a = $"../ALERTA"
 @onready var d = $"../ALERTD"
 
-func _process(delta):
+func _process(_delta):
 	if Global.steppedingum:
 		a.visible = true
 		d.visible = true

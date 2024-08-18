@@ -11,7 +11,7 @@ func _ready():
 	for note in notes:
 		orignalposnotes.append(note.position)
 
-func _process(delta):
+func _process(_delta):
 		var direction = Vector2(0,0.2)
 		if switch:
 			direction = Vector2(0,-0.2)

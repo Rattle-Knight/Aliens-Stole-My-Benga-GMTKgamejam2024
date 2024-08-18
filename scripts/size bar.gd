@@ -7,7 +7,7 @@ extends Control
 
 
 
-func _process(delta):
+func _process(_delta):
 	var health_min = health_bar.min_value
 	var health_max = health_bar.max_value
 	player_size = player.scale

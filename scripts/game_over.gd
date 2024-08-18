@@ -4,7 +4,7 @@ extends Control
 func _ready():
 	visible = false
 
-func _process(delta):
+func _process(_delta):
 	if Global.playerisatom:
 		
 		visible = true

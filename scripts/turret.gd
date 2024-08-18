@@ -11,7 +11,7 @@ extends Node2D
 func _ready():
 	timer.start()
 
-func _process(delta):
+func _process(_delta):
 	_aim()
 	#_check_player_collision()
 

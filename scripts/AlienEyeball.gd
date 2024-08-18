@@ -11,7 +11,7 @@ var eye_center: Vector2
 func _ready():
 	eye_center = position
 
-func _process(delta):
+func _process(_delta):
 	if player:
 		var direction = (player.global_position - global_position).normalized()
 		var distance_to_player = global_position.distance_to(player.global_position)

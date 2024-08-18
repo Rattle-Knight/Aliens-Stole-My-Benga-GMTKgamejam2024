@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://b2pje2cydnmbu"]
+[gd_scene load_steps=44 format=3 uid="uid://b2pje2cydnmbu"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_buxbu"]
+[ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_u5gax"]
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_2nb44"]
 [ext_resource type="Shader" path="res://shader/blur.gdshader" id="2_75s8v"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_bvvq6"]
@@ -30,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="25_f6ljg"]
 [ext_resource type="PackedScene" uid="uid://cjtenyecu44ha" path="res://levels/objects/shoe.tscn" id="26_uu8xl"]
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_oprhe"]
+[ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="32_c83r7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s54ar"]
 shader = ExtResource("2_75s8v")
@@ -77,7 +79,7 @@ motion_mirroring = Vector2(1152, 648)
 [node name="Wall" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 z_index = -8
 position = Vector2(577, 322)
-texture = ExtResource("1_buxbu")
+texture = ExtResource("1_u5gax")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
@@ -106,6 +108,11 @@ z_index = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall"]
 position = Vector2(-1237, -375)
 shape = SubResource("RectangleShape2D_bk0q6")
+
+[node name="TileWall" type="Sprite2D" parent="floor/wall"]
+position = Vector2(-1275, 554)
+scale = Vector2(1, 25.48)
+texture = ExtResource("32_c83r7")
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_2nb44")]
 z_index = 2
