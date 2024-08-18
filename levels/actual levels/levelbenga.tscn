@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://ukoy104774k1"]
 
-[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_m8sf1"]
+[ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_yyxy3"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="4_n12kh"]
 [ext_resource type="PackedScene" uid="uid://ucry2jboqsjc" path="res://levels/objects/benga/benga(1a).tscn" id="5_qlsim"]
@@ -16,16 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://dywvtnu2jaivu" path="res://sprites/objects/benga 3.png" id="11_na184"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="11_ttnyv"]
 [ext_resource type="Texture2D" uid="uid://bn2ck4m5wwagd" path="res://sprites/objects/benga 11.png" id="12_hqqm8"]
-[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="12_mlujb"]
+[ext_resource type="PackedScene" path="res://levels/objects/gum.tscn" id="12_mlujb"]
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="14_vdo7l"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="15_de15l"]
 [ext_resource type="AudioStream" uid="uid://bjktexklcdri5" path="res://assets/SFX/573047__thecoolcookie17__bonk-sound-effect (mp3cut.net).mp3" id="15_qcvgj"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_5qy7l"]
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="20_j87wu"]
 [ext_resource type="AudioStream" uid="uid://c2l00qvdpp5yu" path="res://assets/audio/darkness_road_bpm165.ogg" id="21_ydr2r"]
-[ext_resource type="PackedScene" uid="uid://bf1cwi7y53112" path="res://levels/objects/chess2.tscn" id="22_hqagc"]
-[ext_resource type="PackedScene" uid="uid://h5cwp723qrqo" path="res://levels/objects/chess1.tscn" id="23_vb1fm"]
-[ext_resource type="PackedScene" uid="uid://c0jorhiwauos" path="res://levels/objects/chess3.tscn" id="25_lyplu"]
+[ext_resource type="PackedScene" path="res://levels/objects/chess2.tscn" id="22_hqagc"]
+[ext_resource type="PackedScene" path="res://levels/objects/chess1.tscn" id="23_vb1fm"]
+[ext_resource type="PackedScene" path="res://levels/objects/chess3.tscn" id="25_lyplu"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="27_it5m7"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="28_2lmtj"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="29_nnvgi"]
@@ -481,6 +481,7 @@ script = ExtResource("10_h0mjx")
 
 [node name="badonk" type="AudioStreamPlayer2D" parent="benga Controller"]
 stream = ExtResource("15_qcvgj")
+bus = &"SFX"
 
 [node name="Benga movement1" type="Area2D" parent="."]
 
@@ -519,17 +520,14 @@ texture = ExtResource("11_ttnyv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/StaticBody2D"]
 position = Vector2(43.8888, -272.059)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1qgu1")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Table/StaticBody2D"]
 position = Vector2(-501.354, -271.618)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_x75fy")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Table/StaticBody2D"]
 position = Vector2(-476.944, 14.7059)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_eitqe")
 
 [node name="Area2D" type="Area2D" parent="Table"]
@@ -539,7 +537,6 @@ dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Area2D"]
 position = Vector2(11.5277, 160.588)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i75sy")
 
 [node name="gum" parent="." instance=ExtResource("12_mlujb")]
@@ -576,6 +573,7 @@ stream = ExtResource("21_ydr2r")
 volume_db = -10.0
 autoplay = true
 max_distance = 5000.0
+bus = &"Music"
 
 [node name="chess1" parent="." instance=ExtResource("22_hqagc")]
 position = Vector2(-888, 492)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bq5tfgn8r368l"]
+[gd_scene load_steps=19 format=3 uid="uid://21hk8qfeso4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51acg"]
 [ext_resource type="Texture2D" uid="uid://b6f7fthk7vrvc" path="res://icon.svg" id="2_61dkt"]
@@ -103,11 +103,13 @@ texture = ExtResource("7_8phqb")
 [node name="gum" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_au1a2")
 volume_db = -4.685
+bus = &"SFX"
 script = ExtResource("9_7xd5n")
 
 [node name="jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_c471e")
 volume_db = -15.928
+bus = &"SFX"
 script = ExtResource("9_7xd5n")
 
 [node name="CoyoteTimer" type="Timer" parent="."]

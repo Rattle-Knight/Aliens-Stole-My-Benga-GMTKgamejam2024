@@ -35,13 +35,6 @@ func _on_quit_pressed():
 	await get_tree().create_timer(0.1).timeout
 	get_tree().quit()
 
-func _on_mvolume_changed(value):
-	AudioServer.set_bus_volume_db(0, value)
-
-func _on_music_changed(value):
-	AudioServer.set_bus_volume_db(1, value)
-
-
 func _on_resume_mouse_entered():
 	$hover.play()
 
@@ -55,6 +48,3 @@ func _on_quit_mouse_entered():
 func _on_mvolume_drag_ended(value_changed):
 	$click.play()
 
-
-func _on_music_drag_ended(value_changed):
-	$click.play()
