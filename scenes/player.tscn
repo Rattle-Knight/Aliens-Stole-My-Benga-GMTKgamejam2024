@@ -60,6 +60,7 @@ shape = SubResource("RectangleShape2D_4qa7b")
 script = ExtResource("5_2bndo")
 
 [node name="ALERTA" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-14, -54)
 scale = Vector2(0.47, 0.47)
 sprite_frames = SubResource("SpriteFrames_bjljk")
@@ -78,6 +79,7 @@ label_settings = SubResource("LabelSettings_rah1p")
 metadata/_edit_use_anchors_ = true
 
 [node name="ALERTD" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(19, -54)
 scale = Vector2(0.47, 0.47)
 sprite_frames = SubResource("SpriteFrames_bjljk")
@@ -95,6 +97,7 @@ text = "D"
 label_settings = SubResource("LabelSettings_rah1p")
 
 [node name="Arrow" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1, -77)
 rotation = -1.5708
 scale = Vector2(0.349311, 0.326459)
