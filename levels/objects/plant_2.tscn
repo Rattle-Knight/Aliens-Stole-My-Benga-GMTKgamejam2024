@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsijsdwrny47s"]
+
+[ext_resource type="Texture2D" uid="uid://crje508aolqb6" path="res://sprites/objects/plant 2.png" id="1_7sm5n"]
+[ext_resource type="Script" path="res://scripts/climbable.gd" id="2_pl4kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdtw5"]
+size = Vector2(57, 152)
+
+[node name="plant1" type="StaticBody2D"]
+
+[node name="Plant3" type="Sprite2D" parent="."]
+position = Vector2(1, -30)
+texture = ExtResource("1_7sm5n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-94, -13, -92, 43, -74, 81, -38, 110, 15, 112, 60, 94, 89, 38, 94, -20, 82, -38, 64, -50, 31, -57, -19, -57, -72, -45)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-10, 1)
+script = ExtResource("2_pl4kg")
+dir = "l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-68.5, 29)
+shape = SubResource("RectangleShape2D_mdtw5")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(156, 4)
+script = ExtResource("2_pl4kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-68.5, 29)
+shape = SubResource("RectangleShape2D_mdtw5")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

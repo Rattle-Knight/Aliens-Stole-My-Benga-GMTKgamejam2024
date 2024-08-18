@@ -1,6 +1,7 @@
 extends Node
 
 var t = 0
+var t2 = 0
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _on_takeaway_4_body_entered(body):
@@ -11,3 +12,10 @@ func _on_takeaway_4_body_entered(body):
 			tween.tween_property($"../alien","position",Vector2(673, -536),1)
 			await tween.finished
 			$"../alien".isplaying = false
+
+
+func _on_takeaway_5_body_entered(body):
+	if body == player:
+		t2 += 1
+		if t2 == 1:
+			$"../alien".isplaying = true

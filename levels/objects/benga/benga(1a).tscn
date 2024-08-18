@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_mj20p")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-123, -8)
 script = ExtResource("2_y1gae")
+dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-10, 4.5)
@@ -33,7 +34,6 @@ shape = SubResource("RectangleShape2D_xgw8s")
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(131, -9)
 script = ExtResource("2_y1gae")
-dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(2, 4.5)

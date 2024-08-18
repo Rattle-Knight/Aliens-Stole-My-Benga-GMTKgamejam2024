@@ -25,6 +25,7 @@ polygon = PackedVector2Array(-132, 179, -159, 130, -135, 55, -145, -1, -121, -58
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-150, -69)
 script = ExtResource("3_ehm7c")
+dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(11, 132)
@@ -33,7 +34,6 @@ shape = SubResource("RectangleShape2D_av36l")
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(196, -79)
 script = ExtResource("3_ehm7c")
-dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(11, 132)

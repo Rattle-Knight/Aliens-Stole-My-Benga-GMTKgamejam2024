@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://ddpmlyemc4k3x"]
+[gd_scene load_steps=45 format=3 uid="uid://ddpmlyemc4k3x"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_31b14"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="3_da6ib"]
+[ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="4_wvs65"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="5_mf33t"]
 [ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="6_le5qt"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="7_p4t3u"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="18_frojf"]
 [ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="19_d4rbe"]
 [ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="20_cd471"]
+[ext_resource type="PackedScene" uid="uid://d3m1keebkrooa" path="res://levels/objects/book4.tscn" id="20_lwf3i"]
 [ext_resource type="PackedScene" uid="uid://boukts8nwxx5c" path="res://levels/objects/book8.tscn" id="21_07nlh"]
 [ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="21_ni0f6"]
 [ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="22_fxfn4"]
@@ -24,8 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="23_y6lfa"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="24_lk6is"]
 [ext_resource type="Texture2D" uid="uid://bdnnumb6j1kwh" path="res://sprites/objects/ball paper.png" id="25_j6tld"]
+[ext_resource type="PackedScene" uid="uid://bhiyd1xdbgpto" path="res://levels/objects/plant_1.tscn" id="27_xwn1w"]
+[ext_resource type="PackedScene" uid="uid://dsijsdwrny47s" path="res://levels/objects/plant_2.tscn" id="28_8tn48"]
+[ext_resource type="PackedScene" uid="uid://bkmwtijp1p52i" path="res://levels/objects/plant_3.tscn" id="29_ji6vv"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="29_kis8c"]
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_mwilu"]
+[ext_resource type="Texture2D" uid="uid://dh82le6o0hx1e" path="res://sprites/objects/water bottle.png" id="31_eh23t"]
+[ext_resource type="Script" path="res://scripts/climbable.gd" id="32_b71lt"]
+[ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="32_ow0ai"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("5_mf33t")
@@ -38,13 +46,25 @@ sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
 size = Vector2(160, 2028)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pryon"]
-size = Vector2(234, 186)
+size = Vector2(293, 567)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tna10"]
+size = Vector2(320, 487)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh6t1"]
 size = Vector2(432.832, 610.258)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tna10"]
-size = Vector2(320, 487)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiqof"]
+size = Vector2(79, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyovp"]
+size = Vector2(504.146, 70.5352)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e20vd"]
+size = Vector2(35.2588, 79.4385)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbdrm"]
+size = Vector2(834.226, 1045.01)
 
 [node name="level2" type="Node2D"]
 
@@ -79,7 +99,7 @@ texture = ExtResource("3_da6ib")
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("6_le5qt")]
 z_index = 2
-position = Vector2(-448, 628)
+position = Vector2(-241, 584)
 shrinking = false
 timer = 90
 
@@ -96,11 +116,19 @@ isplaying = true
 firerate = 3
 
 [node name="scene_change" parent="." instance=ExtResource("30_mwilu")]
-position = Vector2(12486, 482)
+position = Vector2(10357, 114)
+connected_scene = "levelbenga"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
-position = Vector2(150, 83)
+position = Vector2(179.5, 273.5)
 shape = SubResource("RectangleShape2D_pryon")
+
+[node name="takeaway5" type="Area2D" parent="."]
+position = Vector2(11038, -297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="takeaway5"]
+position = Vector2(-515, 640)
+shape = SubResource("RectangleShape2D_tna10")
 
 [node name="objects" type="Node2D" parent="."]
 
@@ -247,6 +275,158 @@ rotation = -0.109853
 position = Vector2(2981, 57)
 rotation = 0.138367
 
+[node name="Book12" parent="objects" instance=ExtResource("21_07nlh")]
+position = Vector2(3614, 220)
+rotation = 0.28771
+
+[node name="laundry" parent="objects" instance=ExtResource("17_f74u0")]
+position = Vector2(3555, 448)
+scale = Vector2(1.47778, 1.23324)
+
+[node name="Book13" parent="objects" instance=ExtResource("15_de2lv")]
+position = Vector2(3555, 255)
+rotation = -0.421419
+
+[node name="BallPaper" type="Sprite2D" parent="objects"]
+position = Vector2(3268, 580)
+texture = ExtResource("25_j6tld")
+
+[node name="ball of paper" parent="objects" instance=ExtResource("19_d4rbe")]
+position = Vector2(4347, 560)
+
+[node name="plant1" parent="objects" instance=ExtResource("27_xwn1w")]
+position = Vector2(4757, 549)
+
+[node name="plant2" parent="objects" instance=ExtResource("28_8tn48")]
+position = Vector2(4949, 553)
+
+[node name="plant3" parent="objects" instance=ExtResource("27_xwn1w")]
+position = Vector2(5147, 556)
+
+[node name="plant4" parent="objects" instance=ExtResource("29_ji6vv")]
+position = Vector2(5343, 556)
+
+[node name="Box8" type="Sprite2D" parent="objects"]
+position = Vector2(7340, 360)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("23_y6lfa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/Box8"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/Box8/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Box9" type="Sprite2D" parent="objects"]
+position = Vector2(8178, 436)
+rotation = -3.128
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("24_lk6is")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/Box9"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/Box9/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Box10" type="Sprite2D" parent="objects"]
+position = Vector2(9086, 356)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("22_fxfn4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/Box10"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/Box10/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Book14" parent="objects" instance=ExtResource("21_ni0f6")]
+position = Vector2(5886, 548)
+
+[node name="Book15" parent="objects" instance=ExtResource("20_lwf3i")]
+position = Vector2(5888, 615)
+
+[node name="Book16" parent="objects" instance=ExtResource("11_hc2hd")]
+position = Vector2(5812, 507)
+rotation = -0.0126574
+
+[node name="Book17" parent="objects" instance=ExtResource("16_8f0rh")]
+position = Vector2(6174, 520)
+rotation = 0.470311
+
+[node name="Book18" parent="objects" instance=ExtResource("21_07nlh")]
+position = Vector2(6695, 172)
+rotation = -0.274127
+
+[node name="Book19" parent="objects" instance=ExtResource("21_ni0f6")]
+position = Vector2(6412, 478)
+rotation = -1.11878
+
+[node name="Book20" parent="objects" instance=ExtResource("21_ni0f6")]
+position = Vector2(6625, 476)
+rotation = -2.05368
+scale = Vector2(1, 1)
+
+[node name="WaterBottle" type="Sprite2D" parent="objects"]
+z_index = 2
+position = Vector2(6306, 461)
+texture = ExtResource("31_eh23t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/WaterBottle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/WaterBottle/StaticBody2D"]
+position = Vector2(-0.5, -191)
+shape = SubResource("RectangleShape2D_kiqof")
+
+[node name="Book21" type="Sprite2D" parent="objects"]
+position = Vector2(5901, 376)
+rotation = -0.270313
+texture = ExtResource("32_ow0ai")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/Book21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/Book21/StaticBody2D"]
+position = Vector2(-0.00585938, -3.46936)
+shape = SubResource("RectangleShape2D_kyovp")
+
+[node name="Area2D" type="Area2D" parent="objects/Book21"]
+position = Vector2(269.971, 40.564)
+rotation = 0.263935
+scale = Vector2(1, 1)
+script = ExtResource("32_b71lt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/Book21/Area2D"]
+position = Vector2(-18.8337, -26.1206)
+shape = SubResource("RectangleShape2D_e20vd")
+
+[node name="Area2D2" type="Area2D" parent="objects/Book21"]
+position = Vector2(-248.038, 22.5857)
+rotation = 0.263935
+scale = Vector2(1, 1)
+script = ExtResource("32_b71lt")
+dir = "l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects/Book21/Area2D2"]
+position = Vector2(-18.8337, -26.1206)
+shape = SubResource("RectangleShape2D_e20vd")
+
+[node name="gum5" parent="objects" instance=ExtResource("20_cd471")]
+position = Vector2(7689, 112)
+
+[node name="Box11" type="Sprite2D" parent="objects"]
+position = Vector2(9968, 351)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("24_lk6is")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects/Box11"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="objects/Box11/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="gum6" parent="objects" instance=ExtResource("20_cd471")]
+position = Vector2(8716, 129)
+
 [node name="i see you" type="Node" parent="."]
 script = ExtResource("23_v0jp6")
 
@@ -257,23 +437,45 @@ position = Vector2(681, -411)
 position = Vector2(432, 327.5)
 shape = SubResource("RectangleShape2D_tna10")
 
-[node name="Book" parent="." instance=ExtResource("21_07nlh")]
-position = Vector2(3614, 220)
-rotation = 0.28771
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(11707, -380)
+scale = Vector2(2.98611, 3.42438)
+texture = ExtResource("4_wvs65")
 
-[node name="laundry" parent="." instance=ExtResource("17_f74u0")]
-position = Vector2(3555, 448)
-scale = Vector2(1.47778, 1.23324)
+[node name="Box2" type="Sprite2D" parent="."]
+position = Vector2(11083, 358)
+texture = ExtResource("24_lk6is")
 
-[node name="Book2" parent="." instance=ExtResource("15_de2lv")]
-position = Vector2(3555, 255)
-rotation = -0.421419
+[node name="Box3" type="Sprite2D" parent="."]
+position = Vector2(11065, -170)
+rotation = -0.02847
+texture = ExtResource("22_fxfn4")
 
-[node name="BallPaper" type="Sprite2D" parent="."]
-position = Vector2(3268, 580)
-texture = ExtResource("25_j6tld")
+[node name="StaticBody2D" type="StaticBody2D" parent="Box3"]
 
-[node name="ball of paper" parent="." instance=ExtResource("19_d4rbe")]
-position = Vector2(4757, 580)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3/StaticBody2D"]
+position = Vector2(9.48145, 305.974)
+shape = SubResource("RectangleShape2D_xbdrm")
 
+[node name="ColorRect" type="ColorRect" parent="Box3"]
+z_index = -1
+anchors_preset = -1
+anchor_left = 0.000366714
+anchor_top = -0.00123916
+anchor_right = 0.288561
+anchor_bottom = 0.000304046
+offset_left = -712.651
+offset_top = 244.627
+offset_right = -204.651
+offset_bottom = 926.627
+rotation = 0.0241574
+color = Color(0.141176, 0.141176, 0.141176, 0.709804)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="takeaway5" to="i see you" method="_on_takeaway_5_body_entered"]
+[connection signal="body_entered" from="objects/Book21/Area2D" to="objects/Book21/Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="objects/Book21/Area2D" to="objects/Book21/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="objects/Book21/Area2D2" to="objects/Book21/Area2D2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="objects/Book21/Area2D2" to="objects/Book21/Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="takeaway4" to="i see you" method="_on_takeaway_4_body_entered"]

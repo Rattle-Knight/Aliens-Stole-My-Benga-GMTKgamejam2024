@@ -23,6 +23,7 @@ texture = ExtResource("1_codi8")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-36, -9)
 script = ExtResource("2_4qq60")
+dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 4.5)
@@ -31,7 +32,6 @@ shape = SubResource("RectangleShape2D_vn3vj")
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(57, -9)
 script = ExtResource("2_4qq60")
-dir = "l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-4, 4.5)
