@@ -46,7 +46,9 @@ func _ready():
 	change_size()
 
 func check_scale():
-	if scale <= Vector2(0,0):
+	print(scale)
+	if scale <= Vector2(0.1,0.1):
+		Global.playerisatom = true
 		print("dead")
 	else:
 		#speed and jump power increases with size
@@ -182,12 +184,9 @@ func change_size():
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
 		
-		tween.connect("finished", on_tween_finished)
 		
 
-func on_tween_finished():
-	print("died")
-	#GameOver.game_over()
+
 
 func play_animation():
 	pass

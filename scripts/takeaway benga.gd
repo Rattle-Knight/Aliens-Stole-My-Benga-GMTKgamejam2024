@@ -20,6 +20,7 @@ func _on_takeaway_body_entered(body):
 			
 			var tween = create_tween()
 			tween.tween_property(benga,"position",Vector2(158, -502),3)
+			$"../objects/mini benga tower/AudioStreamPlayer2D".play()
 			$"../objects/mini benga tower/BlastAlien".visible = true
 			$"../objects/mini benga tower/BlastAlienBlackHole".visible = true
 			await tween.finished

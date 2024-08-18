@@ -54,6 +54,7 @@ scale = Vector2(0.38, 0.38)
 texture = ExtResource("7_vth3n")
 
 [node name="notes" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.45098)
 script = ExtResource("8_q8w1a")
 
 [node name="MusicNote1" type="Sprite2D" parent="notes"]

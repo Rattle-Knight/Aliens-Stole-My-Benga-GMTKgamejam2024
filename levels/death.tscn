@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck8ynwi3x84ia"]
+
+[ext_resource type="Script" path="res://scripts/death.gd" id="1_80awl"]
+[ext_resource type="PackedScene" uid="uid://7g8wa0gm3470" path="res://scenes/game_over.tscn" id="2_oxo0f"]
+
+[node name="death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80awl")
+
+[node name="game_over" parent="." instance=ExtResource("2_oxo0f")]
+layout_mode = 1
+offset_left = -2.0
+offset_right = -2.0

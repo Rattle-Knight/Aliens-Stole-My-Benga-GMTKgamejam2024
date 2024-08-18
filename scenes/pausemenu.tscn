@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct4xl5bcuhari"]
+[gd_scene load_steps=5 format=3 uid="uid://ct4xl5bcuhari"]
 
 [ext_resource type="Script" path="res://scripts/pausemenu.gd" id="1_kwyd1"]
 [ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="2_13yte"]
-[ext_resource type="AudioStream" uid="uid://d34dkc8jc7i1a" path="res://assets/audio/In the name of all.wav" id="3_cqho5"]
 [ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="4_36oi5"]
 [ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="5_jf0jo"]
 
@@ -118,16 +117,14 @@ text = "Music"
 layout_mode = 2
 theme = ExtResource("2_13yte")
 
-[node name="pause_music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_cqho5")
-bus = &"Music"
-
 [node name="hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_36oi5")
+max_distance = 100000.0
 bus = &"SFX"
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_jf0jo")
+max_distance = 1e+06
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/resume" to="." method="_on_resume_mouse_entered"]

@@ -35,7 +35,7 @@ func _shoot():
 	add_child(bullet)
 	bullet.position = position
 	bullet.direction = (ray_cast.target_position).normalized()
-
+	$"../AudioStreamPlayer2D".play_with_random_pitch()
 	
 	#bullet cleanup
 	var children = get_children()

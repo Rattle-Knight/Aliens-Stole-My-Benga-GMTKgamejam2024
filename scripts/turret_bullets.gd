@@ -20,6 +20,6 @@ func _on_area_2d_body_entered(body):
 	if body == player:
 		if player.scale >  Vector2(0.1,0.1):
 			var tween = create_tween()
-			tween.tween_property(player, "scale", player.scale - Vector2(0.1,0.1) , shrinkdur)
+			tween.tween_property(player, "scale", player.scale - Vector2(0.5,0.5) , shrinkdur)
 
 

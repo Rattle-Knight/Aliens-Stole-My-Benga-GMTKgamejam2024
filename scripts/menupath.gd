@@ -19,14 +19,14 @@ func _ready():
 
 func _process(delta):
 	if current_follow_node:
-		if current_follow_node.progress_ratio > 0.99:
+		if current_follow_node.progress_ratio < 0.01:
 			current_path_index += 1
 			if current_path_index >= paths.size():
 				current_path_index = 0  # Reset to the first path
 			start_next_path()
 	
 	if current_follow_node:
-		current_follow_node.progress += flyspeed * delta
+		current_follow_node.progress -= flyspeed * delta
 
 func start_next_path():
 	# Get the current path and set up PathFollow2D

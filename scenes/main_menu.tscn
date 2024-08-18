@@ -30,7 +30,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_6qefi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 127, -165, 0, 0, 0, 0, 119, 35, 0, 0, 0, 0, 107, 195, 0, 0, 0, 0, 105, 351, 0, 0, 0, 0, 96, 586, 0, 0, 0, 0, 78, 1139, 0, 0, 0, 0, 48, 1705)
+"points": PackedVector2Array(0, 0, 0, 0, 120, -381, 0, 0, 0, 0, 119, 35, 0, 0, 0, 0, 107, 195, 0, 0, 0, 0, 105, 351, 0, 0, 0, 0, 96, 586, 0, 0, 0, 0, 78, 1139, 0, 0, 0, 0, 48, 1705)
 }
 point_count = 7
 
@@ -135,8 +135,8 @@ curve = SubResource("Curve2D_6qefi")
 script = ExtResource("12_ymjxj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(127, -165)
-rotation = 1.61077
+position = Vector2(120, -381)
+rotation = 1.5732
 
 [node name="Book3" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-34.3326, -7.63391)
@@ -151,8 +151,8 @@ texture = ExtResource("8_74eku")
 script = ExtResource("9_jonhm")
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D"]
-position = Vector2(127, -165)
-rotation = 1.61077
+position = Vector2(120, -381)
+rotation = 1.5732
 
 [node name="Benga4" type="Sprite2D" parent="Path2D/PathFollow2D2"]
 position = Vector2(6.99441, -0.279779)
@@ -168,8 +168,8 @@ texture = ExtResource("8_74eku")
 script = ExtResource("9_jonhm")
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Path2D"]
-position = Vector2(127, -165)
-rotation = 1.61077
+position = Vector2(120, -381)
+rotation = 1.5732
 
 [node name="Benga7" type="Sprite2D" parent="Path2D/PathFollow2D3"]
 position = Vector2(-7.43408, -10.7114)

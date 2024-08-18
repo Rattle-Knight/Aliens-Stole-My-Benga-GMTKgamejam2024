@@ -13,11 +13,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event .is_action_pressed("pause"):
 			_is_paused =  !_is_paused
 			$click.play()
-		
-		if _is_paused == true:
-			$pause_music.play()
-		elif _is_paused == false:
-			$pause_music.stop()
 
 func set_paused(value:bool) ->void:
 	_is_paused = value

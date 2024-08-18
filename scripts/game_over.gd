@@ -1,24 +1,25 @@
 extends Control
 
+@onready var player = get_tree().get_first_node_in_group("player")
 func _ready():
-	self.hide()
+	visible = false
 
+func _process(delta):
+	if Global.playerisatom:
+		
+		visible = true
+		get_tree().paused = true
+		self.show()
+		
 
-func game_over():
-	get_tree().paused = true
-	self.show()
-	$gameover_music.play()
-	Pausemenu.can_esc = false
 
 func _on_retry_button_pressed():
 	$click.play()
-	$gameover_music.stop()
 	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	self.hide()
-	Pausemenu.can_esc = true
-	#Global.playerdead = false
+	Global.playerisatom = false
 
 
 func _on_button_mouse_entered():
