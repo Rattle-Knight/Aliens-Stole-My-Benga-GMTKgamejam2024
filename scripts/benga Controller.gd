@@ -87,7 +87,7 @@ func _on_benga_movement_3_body_entered(body):
 				var movetween = create_tween()
 				movetween.set_parallel()
 				movetween.tween_property(infpieceL,"position",Vector2(-79, -1867),1)
-				movetween.tween_property(infpieceR,"position",Vector2(-88, -1882),1)
+				movetween.tween_property(infpieceR,"position",Vector2(-88, -1872),1)
 				
 				await alientween.finished
 				movetween = create_tween()
@@ -96,6 +96,8 @@ func _on_benga_movement_3_body_entered(body):
 				$badonk.play()
 				alientween = create_tween()
 				Global.forcestop = false
+				
+				$"../alien".isplaying = false
 				alientween.tween_property(alien2,"position",Vector2(623, -204),0.8)
 				alientween.tween_property(alien2,"rotation_degrees",alien2.rotation_degrees + 97,0.8)
 				
