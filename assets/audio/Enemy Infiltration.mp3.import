@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beoj4il60jf2e"
+path="res://.godot/imported/Enemy Infiltration.mp3-eea9caf9b5cf3666b42d41476d48ac63.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Enemy Infiltration.mp3"
+dest_files=["res://.godot/imported/Enemy Infiltration.mp3-eea9caf9b5cf3666b42d41476d48ac63.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
