@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ctl7b8mhjt07i"]
+[gd_scene load_steps=30 format=3 uid="uid://ctl7b8mhjt07i"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
@@ -19,6 +19,14 @@
 [ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="17_acumo"]
 [ext_resource type="AudioStream" uid="uid://bb28m7b6ohyfc" path="res://assets/audio/Goblin_Tinker_Soldier_Spy.mp3" id="17_v420c"]
 [ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="18_ravww"]
+[ext_resource type="Script" path="res://scripts/notes.gd" id="20_ai3hm"]
+[ext_resource type="Texture2D" uid="uid://cncly37i0fgsk" path="res://sprites/alien/music note 1.png" id="21_ox2lp"]
+[ext_resource type="Texture2D" uid="uid://cxlrswywmlw3c" path="res://sprites/alien/music note 2.png" id="22_4gnld"]
+[ext_resource type="Texture2D" uid="uid://b23m8tmb6wqxd" path="res://sprites/alien/music note 3.png" id="23_mjqqd"]
+[ext_resource type="Texture2D" uid="uid://dyccs0yac4xp6" path="res://sprites/alien/music note 4.png" id="24_q6xbw"]
+[ext_resource type="Texture2D" uid="uid://cycdkrqpijeu" path="res://sprites/alien/music note 5.png" id="25_buoes"]
+[ext_resource type="Texture2D" uid="uid://4jmgtmpjvkfd" path="res://sprites/alien/music note 6.png" id="26_o28n4"]
+[ext_resource type="Texture2D" uid="uid://5q816x336a2l" path="res://sprites/alien/music note 7.png" id="27_smooh"]
 
 [sub_resource type="Curve2D" id="Curve2D_6qefi"]
 _data = {
@@ -58,12 +66,13 @@ color = Color(0.0338533, 0.0338533, 0.0338533, 0.243137)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 2
-offset_left = 722.0
-offset_top = 217.0
-offset_right = 1007.0
-offset_bottom = 270.0
+offset_left = 613.0
+offset_top = 132.0
+offset_right = 1593.0
+offset_bottom = 337.0
 theme = ExtResource("2_vnwco")
-text = "Awesome Game"
+text = "			ALIENS STOLE
+ 			 	MY BENGA"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -257,7 +266,44 @@ stream = ExtResource("17_acumo")
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_ravww")
 
+[node name="notes" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.188235)
+position = Vector2(-13, -67)
+script = ExtResource("20_ai3hm")
+
+[node name="MusicNote1" type="Sprite2D" parent="notes"]
+position = Vector2(658, 457)
+texture = ExtResource("21_ox2lp")
+
+[node name="MusicNote2" type="Sprite2D" parent="notes"]
+position = Vector2(562, 396)
+texture = ExtResource("22_4gnld")
+
+[node name="MusicNote3" type="Sprite2D" parent="notes"]
+position = Vector2(679, 331)
+texture = ExtResource("23_mjqqd")
+
+[node name="MusicNote4" type="Sprite2D" parent="notes"]
+position = Vector2(563, 268)
+texture = ExtResource("24_q6xbw")
+
+[node name="MusicNote5" type="Sprite2D" parent="notes"]
+position = Vector2(646, 242)
+texture = ExtResource("25_buoes")
+
+[node name="MusicNote6" type="Sprite2D" parent="notes"]
+position = Vector2(554, 185)
+texture = ExtResource("26_o28n4")
+
+[node name="MusicNote7" type="Sprite2D" parent="notes"]
+position = Vector2(625, 125)
+texture = ExtResource("27_smooh")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="mouse_entered" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="mouse_entered" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="Timer" to="notes" method="_on_timer_timeout"]

@@ -58,7 +58,7 @@ size = Vector2(260, 306)
 size = Vector2(260, 306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bswly"]
-size = Vector2(246, 487)
+size = Vector2(320, 487)
 
 [node name="level1" type="Node2D"]
 
@@ -255,6 +255,15 @@ rotation = -0.106083
 texture = ExtResource("23_22uil")
 flip_h = true
 
+[node name="ColorRect" type="ColorRect" parent="objects/Box2"]
+z_index = -1
+offset_left = -391.0
+offset_top = 298.0
+offset_right = 117.0
+offset_bottom = 980.0
+rotation = 0.0241574
+color = Color(0.141176, 0.141176, 0.141176, 0.709804)
+
 [node name="Box3" type="Sprite2D" parent="objects"]
 z_index = -1
 position = Vector2(13131, 361.168)
@@ -327,7 +336,7 @@ shape = SubResource("RectangleShape2D_xmnr7")
 position = Vector2(12133, 92)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="takeaway4"]
-position = Vector2(469, 327.5)
+position = Vector2(432, 327.5)
 shape = SubResource("RectangleShape2D_bswly")
 
 [connection signal="body_entered" from="takeaway" to="takeaway benga" method="_on_takeaway_body_entered"]
