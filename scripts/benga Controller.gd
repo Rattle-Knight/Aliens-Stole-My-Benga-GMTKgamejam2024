@@ -16,6 +16,7 @@ extends Node
 var turn3 = 0
 var turn = 0
 var turn2 = 0
+var turn4 = 0
 
 
 func _on_benga_movement_1_body_entered(body):
@@ -97,8 +98,19 @@ func _on_benga_movement_3_body_entered(body):
 				alientween = create_tween()
 				Global.forcestop = false
 				
+				
 				$"../alien".isplaying = false
 				alientween.tween_property(alien2,"position",Vector2(623, -204),0.8)
 				alientween.tween_property(alien2,"rotation_degrees",alien2.rotation_degrees + 97,0.8)
 				
 
+
+
+func _on_scene_change_body_entered(body):
+		if body == player:
+			turn4 += 1
+			if turn4 == 1:
+				#finale
+				$"../alien".isplaying = true
+				var alientween = create_tween()
+				alientween.tween_property(alien1,"position",Vector2(-468, -1788),5)
