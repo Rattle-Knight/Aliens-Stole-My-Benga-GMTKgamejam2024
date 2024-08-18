@@ -93,6 +93,7 @@ func _on_benga_movement_3_body_entered(body):
 				movetween = create_tween()
 				movetween.tween_property(lone,"position",Vector2(609, -1574),1)
 				await movetween.finished
+				$badonk.play()
 				alientween = create_tween()
 				Global.forcestop = false
 				alientween.tween_property(alien2,"position",Vector2(623, -204),0.8)

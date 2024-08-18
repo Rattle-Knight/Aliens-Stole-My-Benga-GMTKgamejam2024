@@ -100,7 +100,7 @@ func _process(delta: float):
 	#CODE FOR GUM QUICKTIME EVENT 3
 	if _is_mashing and gum:
 		if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
-			$gum.play()
+			$gum.play_with_random_pitch()
 			_press_count += 1
 			gum_dir = Input.get_axis("left", "right")
 			
@@ -171,11 +171,9 @@ func player_movement():
 	move_and_slide()
 
 func jump(input_dir):
-	if Input.is_action_just_released("space") and velocity.y < 0:
-		velocity.y += jump_power /4
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y += jump_power 
-		$jump.play()
+		$jump.play_with_random_pitch()
 
 @export var timer = 100
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf1cwi7y53112"]
+
+[ext_resource type="Texture2D" uid="uid://dg2vt2n7c17hu" path="res://sprites/objects/chess knight.png" id="1_p30n0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j6630"]
+radius = 14.0
+height = 66.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbqi7"]
+radius = 12.0
+height = 66.0126
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_keh0n"]
+radius = 8.99998
+height = 45.53
+
+[node name="chess1" type="StaticBody2D"]
+
+[node name="BallPaper" type="Sprite2D" parent="."]
+position = Vector2(-11.3495, -16.0222)
+scale = Vector2(0.725, 0.725)
+texture = ExtResource("1_p30n0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -1)
+shape = SubResource("CapsuleShape2D_j6630")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 25)
+rotation = -1.57291
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_pbqi7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -48)
+rotation = -0.208119
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_keh0n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -60)
+rotation = -1.57319
+shape = SubResource("CapsuleShape2D_keh0n")
