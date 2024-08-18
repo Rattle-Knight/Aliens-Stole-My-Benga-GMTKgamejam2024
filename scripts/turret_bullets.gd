@@ -1,7 +1,7 @@
 extends Node2D
 
 var direction : Vector2 = Vector2.RIGHT
-var speed: float = 300
+@export var speed: float = 400
 
 @onready var player = get_tree().get_first_node_in_group("player")
 @export var shrinkdur = 1

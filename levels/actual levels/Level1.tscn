@@ -324,7 +324,6 @@ shape = SubResource("RectangleShape2D_xmnr7")
 [node name="alien" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(-2082, -1266)
 isplaying = true
-firerate = 1
 
 [node name="alien2" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(2264, -2274)
@@ -333,8 +332,8 @@ flipsprite = true
 
 [node name="Wall" type="Sprite2D" parent="."]
 z_index = -11
-position = Vector2(1866.5, -302)
-scale = Vector2(5.42274, 3.26852)
+position = Vector2(898.501, -320)
+scale = Vector2(3.74219, 3.32407)
 texture = ExtResource("1_buxbu")
 
 [node name="takeaway2" type="Area2D" parent="."]
@@ -360,6 +359,7 @@ shape = SubResource("RectangleShape2D_bswly")
 
 [node name="scene_change" parent="." instance=ExtResource("30_oprhe")]
 position = Vector2(12486, 482)
+connected_scene = "Level2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
 position = Vector2(150, 83)

@@ -80,7 +80,7 @@ func check_gum():
 func gumquicktimeevent():
 	var camt : Tween
 	if not quicktimesuccess:
-		camt =create_tween()
+		camt = create_tween()
 		_start_mashing()
 	
 	#CAMERA TWEENS
@@ -90,12 +90,10 @@ func gumquicktimeevent():
 		camt.tween_property(camera,"zoom",Vector2(1.3,1.3),1)
 	
 	if quicktimesuccess:
-		var tween = create_tween()
-		tween.tween_property(self,"position",Global.gumpos + Vector2(100*gum_dir,-10),0.1)
-		tween.tween_property(camera,"rotation",camera.rotation_degrees - 7,0.1)
-		tween.tween_property(camera,"zoom",Vector2(1.0,1.0),0.1)
+		position = Global.gumpos + Vector2(100*gum_dir,-10)
+		camera.rotation_degrees = camera.rotation_degrees - 7
+		camera.zoom = Vector2(1.0,1.0)
 		_reset_mashing()
-		await tween.finished
 		quicktimesuccess = false
 		Global.steppedingum = false
 		gumtrig = 0
