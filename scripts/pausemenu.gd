@@ -14,7 +14,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_is_paused =  !_is_paused
 			$click.play()
 
-func set_paused(value:bool) ->void:
+func set_paused(value:bool) -> void:
 	_is_paused = value
 	get_tree().paused = _is_paused
 	visible = _is_paused
@@ -27,8 +27,8 @@ func _on_resume_pressed():
 func _on_restart_pressed():
 	$click.play()
 	await get_tree().create_timer(0.1).timeout
-	get_tree().reload_current_scene()
 	_is_paused = false
+	get_tree().reload_current_scene()
 
 func _on_quit_pressed():
 	$click.play()
@@ -44,7 +44,11 @@ func _on_restart_mouse_entered():
 func _on_quit_mouse_entered():
 	$hover.play()
 
-
-func _on_mvolume_drag_ended(value_changed):
+func _on_volume_drag_ended(value_changed):
 	$click.play()
 
+func _on_volume_2_drag_ended(value_changed):
+	$click.play()
+
+func _on_volume_3_drag_ended(value_changed):
+	$click.play()

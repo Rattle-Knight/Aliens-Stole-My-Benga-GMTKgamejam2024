@@ -151,3 +151,6 @@ bus = &"SFX"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="drag_ended" from="MarginContainer2/VBoxContainer/volume" to="." method="_on_volume_drag_ended"]
+[connection signal="drag_ended" from="MarginContainer2/VBoxContainer/volume2" to="." method="_on_volume_2_drag_ended"]
+[connection signal="drag_ended" from="MarginContainer2/VBoxContainer/volume3" to="." method="_on_volume_3_drag_ended"]
