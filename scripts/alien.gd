@@ -7,7 +7,11 @@ var FOLLOW_SPEED = 0.5
 @export var isplaying = false
 @export var flipsprite = false
 
+@export var firerate = 4
+
 func _ready():
+	$turret.get_node("Timer").wait_time = firerate
+	$turret2.get_node("Timer").wait_time = firerate
 	if flipsprite:
 		$body.flip_h = true
 		$turret.position = Vector2(546, 103)
@@ -25,6 +29,7 @@ func _ready():
 func _process(delta):
 	if not isplaying:
 		position.x = lerp(position.x,player.position.x-100,delta*FOLLOW_SPEED)
+		position.y = lerp(position.y,player.position.y-500,delta*FOLLOW_SPEED)
 		Global.ceasefire = false
 	if isplaying:
 		Global.ceasefire = true

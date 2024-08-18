@@ -324,6 +324,7 @@ shape = SubResource("RectangleShape2D_xmnr7")
 [node name="alien" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(-2082, -1266)
 isplaying = true
+firerate = 1
 
 [node name="alien2" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(2264, -2274)
@@ -363,6 +364,12 @@ position = Vector2(12486, 482)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
 position = Vector2(150, 83)
 shape = SubResource("RectangleShape2D_pryon")
+
+[node name="TileWall" type="Sprite2D" parent="."]
+position = Vector2(13736, 336)
+scale = Vector2(1, 24.44)
+texture = ExtResource("32_c83r7")
+flip_h = true
 
 [connection signal="body_entered" from="takeaway" to="takeaway benga" method="_on_takeaway_body_entered"]
 [connection signal="body_entered" from="takeaway2" to="takeaway benga" method="_on_takeaway_2_body_entered"]
