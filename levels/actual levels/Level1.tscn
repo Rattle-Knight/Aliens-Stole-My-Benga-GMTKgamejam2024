@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b2pje2cydnmbu"]
+[gd_scene load_steps=48 format=3 uid="uid://b2pje2cydnmbu"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_buxbu"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_u5gax"]
@@ -33,6 +33,9 @@
 [ext_resource type="PackedScene" path="res://levels/scene_change.tscn" id="30_oprhe"]
 [ext_resource type="Texture2D" uid="uid://jtby8sbnkyxh" path="res://bg/tile wall.png" id="32_c83r7"]
 [ext_resource type="AudioStream" uid="uid://d2bd5ph673ceo" path="res://assets/audio/dizzy_racing.wav" id="33_knb3u"]
+[ext_resource type="Texture2D" uid="uid://glgfhmcpiav" path="res://sprites/ui/button .png" id="34_2upt4"]
+[ext_resource type="Texture2D" uid="uid://dyt3obrvudn5x" path="res://sprites/ui/button spacebar.png" id="35_o80yb"]
+[ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="35_tv0xj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s54ar"]
 shader = ExtResource("2_75s8v")
@@ -378,6 +381,93 @@ autoplay = true
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("33_knb3u")
+
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2(-147, 135.5)
+
+[node name="Label move" type="Label" parent="Instructions"]
+offset_left = -39.0
+offset_top = 27.5
+offset_right = 56.0
+offset_bottom = 60.5
+theme = ExtResource("35_tv0xj")
+text = "to move"
+
+[node name="ButtonA" type="Sprite2D" parent="Instructions/Label move"]
+position = Vector2(-123, 15.5)
+texture = ExtResource("34_2upt4")
+
+[node name="LabelA" type="Label" parent="Instructions/Label move/ButtonA"]
+offset_left = -11.0
+offset_top = -20.5
+offset_right = 29.0
+offset_bottom = 12.5
+theme = ExtResource("35_tv0xj")
+text = "A"
+
+[node name="ButtonD" type="Sprite2D" parent="Instructions/Label move"]
+position = Vector2(-50, 15.5)
+texture = ExtResource("34_2upt4")
+
+[node name="LabelD" type="Label" parent="Instructions/Label move/ButtonD"]
+offset_left = -9.0
+offset_top = -20.5
+offset_right = 31.0
+offset_bottom = 12.5
+theme = ExtResource("35_tv0xj")
+text = "D"
+
+[node name="Label climb" type="Label" parent="Instructions"]
+offset_left = 271.0
+offset_top = 26.5
+offset_right = 377.0
+offset_bottom = 59.5
+theme = ExtResource("35_tv0xj")
+text = "to climb"
+
+[node name="ButtonW" type="Sprite2D" parent="Instructions/Label climb"]
+position = Vector2(-123, 15.5)
+texture = ExtResource("34_2upt4")
+
+[node name="LabelW" type="Label" parent="Instructions/Label climb/ButtonW"]
+offset_left = -11.0
+offset_top = -24.5
+offset_right = 29.0
+offset_bottom = 8.5
+theme = ExtResource("35_tv0xj")
+text = "W"
+
+[node name="ButtonS" type="Sprite2D" parent="Instructions/Label climb"]
+position = Vector2(-50, 15.5)
+texture = ExtResource("34_2upt4")
+
+[node name="LabelS" type="Label" parent="Instructions/Label climb/ButtonS"]
+offset_left = -9.0
+offset_top = -21.5
+offset_right = 31.0
+offset_bottom = 11.5
+theme = ExtResource("35_tv0xj")
+text = "S"
+
+[node name="Label jump" type="Label" parent="Instructions"]
+offset_left = 635.0
+offset_top = 23.5
+offset_right = 730.0
+offset_bottom = 56.5
+theme = ExtResource("35_tv0xj")
+text = "to jump"
+
+[node name="ButtonSpacebar" type="Sprite2D" parent="Instructions/Label jump"]
+position = Vector2(-116, 18)
+texture = ExtResource("35_o80yb")
+
+[node name="LabelSpacebar" type="Label" parent="Instructions/Label jump/ButtonSpacebar"]
+offset_left = -42.0
+offset_top = -24.0
+offset_right = 34.0
+offset_bottom = 9.0
+theme = ExtResource("35_tv0xj")
+text = "SPACE"
 
 [connection signal="body_entered" from="takeaway" to="takeaway benga" method="_on_takeaway_body_entered"]
 [connection signal="body_entered" from="takeaway2" to="takeaway benga" method="_on_takeaway_2_body_entered"]
