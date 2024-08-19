@@ -888,6 +888,9 @@ position = Vector2(4262, -1823)
 position = Vector2(451, 80)
 shape = SubResource("RectangleShape2D_tuqdx")
 
+[node name="gum2" parent="." instance=ExtResource("12_mlujb")]
+position = Vector2(2870, -1519)
+
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Table/Area2D" to="Table/Area2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Table/Area2D" to="Table/Area2D" method="_on_body_exited"]
