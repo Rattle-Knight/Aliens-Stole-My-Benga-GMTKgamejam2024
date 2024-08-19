@@ -684,7 +684,6 @@ texture = ExtResource("33_x3er2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShelfWall1/StaticBody2D"]
 position = Vector2(-24.0649, -4.58347)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gxpdu")
 
 [node name="Book4" type="Sprite2D" parent="."]
@@ -711,7 +710,6 @@ texture = ExtResource("37_ubnpo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Book7/StaticBody2D"]
 position = Vector2(-24.4302, -62.0132)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_23rrp")
 
 [node name="Book8" type="Sprite2D" parent="."]

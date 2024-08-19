@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ctl7b8mhjt07i"]
+[gd_scene load_steps=31 format=3 uid="uid://ctl7b8mhjt07i"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ulhngdklc0hh" path="res://sprites/alien/alieneyes.png" id="3_4pw6n"]
 [ext_resource type="Texture2D" uid="uid://l1abj8x1d2vb" path="res://sprites/alien/alien cropped.png" id="3_p2e4p"]
 [ext_resource type="Texture2D" uid="uid://brp6y2kivkbvk" path="res://sprites/alien/eyeball.png" id="4_ntwog"]
+[ext_resource type="Script" path="res://scripts/Eyeballmm.gd" id="6_gymr2"]
 [ext_resource type="Texture2D" uid="uid://dawsxko3nn5rr" path="res://sprites/objects/book 3.png" id="7_2wgq2"]
 [ext_resource type="Texture2D" uid="uid://bbdtinltvna4w" path="res://sprites/objects/benga 2.png" id="7_lkkym"]
 [ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="8_74eku"]
@@ -109,11 +110,13 @@ texture = ExtResource("3_4pw6n")
 position = Vector2(427, 262)
 scale = Vector2(0.560005, 0.560005)
 texture = ExtResource("4_ntwog")
+script = ExtResource("6_gymr2")
 
 [node name="Eyeball2" type="Sprite2D" parent="."]
-position = Vector2(323, 270)
-scale = Vector2(0.560005, 0.560005)
+position = Vector2(319, 268)
+scale = Vector2(0.795, 0.795)
 texture = ExtResource("4_ntwog")
+script = ExtResource("6_gymr2")
 
 [node name="AlienCropped" type="Sprite2D" parent="."]
 position = Vector2(345, 330)
