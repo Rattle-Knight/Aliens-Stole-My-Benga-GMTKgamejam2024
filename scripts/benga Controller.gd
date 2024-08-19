@@ -17,6 +17,8 @@ var turn3 = 0
 var turn = 0
 var turn2 = 0
 var turn4 = 0
+var turn5 = 0
+var turn6  = 0
 
 
 func _on_benga_movement_1_body_entered(body):
@@ -114,3 +116,22 @@ func _on_scene_change_body_entered(body):
 				$"../alien".isplaying = true
 				var alientween = create_tween()
 				alientween.tween_property(alien1,"position",Vector2(-468, -1788),5)
+
+
+func _on_benga_movement_4_body_entered(body):
+		if body == player:
+			turn5 += 1
+			if turn5 == 1:
+				#finaleblock1
+				var alientween = create_tween()
+				alientween.tween_property($"../benga tower/LoneBenga2","position",Vector2(3791, -1597),0.5)
+
+
+
+func _on_benga_movement_5_body_entered(body):
+		if body == player:
+			turn6 += 1
+			if turn6 == 1:
+				#finaleblock1
+				var alientween = create_tween()
+				alientween.tween_property($"../benga tower/final benga","position",Vector2(-1, 1588),0.5)
