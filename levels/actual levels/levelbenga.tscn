@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=63 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="3_bt5dn"]
@@ -40,6 +40,15 @@
 [ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="37_ubnpo"]
 [ext_resource type="PackedScene" uid="uid://cuhjunc20slnp" path="res://levels/objects/plant_4.tscn" id="38_0fbs4"]
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="40_p1i3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmwa"]
+size = Vector2(277, 369)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf7st"]
+size = Vector2(280, 302.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tpx1"]
+size = Vector2(271, 369.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7xr"]
 size = Vector2(58, 63)
@@ -112,6 +121,14 @@ position = Vector2(124, 51)
 limit_bottom = 2700
 editor_draw_limits = true
 script = ExtResource("3_yyxy3")
+
+[node name="BlastAlien" type="Sprite2D" parent="player"]
+visible = false
+modulate = Color(1, 1, 1, 0.603922)
+z_index = -1
+position = Vector2(6, -4)
+texture = ExtResource("7_4l4ws")
+script = ExtResource("8_7wyc1")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -325,13 +342,13 @@ texture = ExtResource("9_nrbh8")
 position = Vector2(-53, -1479)
 
 [node name="Benga1" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
-position = Vector2(241, 432)
+position = Vector2(236, 431)
 
 [node name="Benga2" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
-position = Vector2(334, 432)
+position = Vector2(329, 431)
 
 [node name="Benga3" parent="benga tower/benga 14" instance=ExtResource("6_r01u1")]
-position = Vector2(428, 432)
+position = Vector2(423, 431)
 
 [node name="Benga8" type="Sprite2D" parent="benga tower/benga 14"]
 modulate = Color(0.447059, 0.447059, 0.447059, 1)
@@ -413,7 +430,7 @@ position = Vector2(334, 496)
 position = Vector2(-102, -3295)
 
 [node name="Benga1" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
-position = Vector2(260, 377)
+position = Vector2(259, 389)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga1"]
 position = Vector2(6, -4)
@@ -429,7 +446,7 @@ texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
 [node name="Benga5" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
-position = Vector2(254, 241)
+position = Vector2(259, 269)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga5"]
 position = Vector2(6, -4)
@@ -437,7 +454,7 @@ texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
 [node name="Benga6" parent="benga tower/benga left" instance=ExtResource("6_r01u1")]
-position = Vector2(255, 309)
+position = Vector2(259, 329)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga left/Benga6"]
 position = Vector2(6, -4)
@@ -448,7 +465,7 @@ script = ExtResource("8_7wyc1")
 position = Vector2(-102, -3295)
 
 [node name="Benga2" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
-position = Vector2(472, 382)
+position = Vector2(472, 390)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga2"]
 position = Vector2(6, -4)
@@ -464,7 +481,7 @@ texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
 [node name="Benga4" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
-position = Vector2(474, 316)
+position = Vector2(472, 330)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga4"]
 position = Vector2(6, -4)
@@ -472,7 +489,7 @@ texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
 [node name="Benga5" parent="benga tower/benga right" instance=ExtResource("6_r01u1")]
-position = Vector2(472, 249)
+position = Vector2(472, 270)
 
 [node name="BlastAlien" type="Sprite2D" parent="benga tower/benga right/Benga5"]
 position = Vector2(6, -4)
@@ -610,6 +627,23 @@ position = Vector2(6, -4)
 texture = ExtResource("7_4l4ws")
 script = ExtResource("8_7wyc1")
 
+[node name="overallshape" type="StaticBody2D" parent="benga tower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="benga tower/overallshape"]
+position = Vector2(333.5, 336.5)
+shape = SubResource("RectangleShape2D_tcmwa")
+debug_color = Color(0.937255, 0.0901961, 0.584314, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="benga tower/overallshape"]
+position = Vector2(332, -69.75)
+shape = SubResource("RectangleShape2D_vf7st")
+debug_color = Color(0.937255, 0.0901961, 0.584314, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="benga tower/overallshape"]
+position = Vector2(284, -1143.13)
+shape = SubResource("RectangleShape2D_7tpx1")
+debug_color = Color(0.937255, 0.0901961, 0.584314, 0.419608)
+
 [node name="benga Controller" type="Node" parent="."]
 script = ExtResource("10_h0mjx")
 
@@ -687,11 +721,10 @@ shape = SubResource("RectangleShape2D_4h7xr")
 [node name="alien" parent="." instance=ExtResource("16_5qy7l")]
 position = Vector2(-717, -481)
 isplaying = true
-firerate = 2
 
 [node name="alien2" parent="." instance=ExtResource("16_5qy7l")]
 z_index = -1
-position = Vector2(607, -168)
+position = Vector2(980, 1597)
 isplaying = true
 flipsprite = true
 
@@ -791,6 +824,7 @@ shape = SubResource("CircleShape2D_r2xfe")
 
 [node name="scene_change" parent="." instance=ExtResource("40_p1i3s")]
 position = Vector2(6354, -2061)
+connected_scene = "Level_4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
 position = Vector2(199.5, 295)
@@ -887,6 +921,38 @@ position = Vector2(4262, -1823)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Benga movement5"]
 position = Vector2(451, 80)
 shape = SubResource("RectangleShape2D_tuqdx")
+
+[node name="gum2" parent="." instance=ExtResource("12_mlujb")]
+position = Vector2(2870, -1519)
+
+[node name="Box12" type="Sprite2D" parent="."]
+position = Vector2(-617, 1252)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("29_nnvgi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box12"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Box12/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Box4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-632, 806)
+rotation = -0.02847
+scale = Vector2(1, 0.72353)
+texture = ExtResource("30_anuyo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Box4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/StaticBody2D"]
+position = Vector2(9.48145, 305.974)
+shape = SubResource("RectangleShape2D_ogvot")
+
+[node name="ShelfWall1" type="Sprite2D" parent="."]
+position = Vector2(8370, -1329)
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("33_x3er2")
 
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Table/Area2D" to="Table/Area2D" method="_on_area_2d_body_entered"]

@@ -33,6 +33,7 @@ var gum = false
 var gum_dir = 1
 @export var shrinking = true
 var forcestop = false
+@export var zoomlevel = Vector2(1.0,1.0)
 
 #coyote time vars
 @onready var coyotetimer = $CoyoteTimer
@@ -92,7 +93,7 @@ func gumquicktimeevent():
 	if quicktimesuccess:
 		position = Global.gumpos + Vector2(100*gum_dir,-10)
 		camera.rotation_degrees = camera.rotation_degrees - 7
-		camera.zoom = Vector2(1.0,1.0)
+		camera.zoom = zoomlevel
 		_reset_mashing()
 		quicktimesuccess = false
 		Global.steppedingum = false

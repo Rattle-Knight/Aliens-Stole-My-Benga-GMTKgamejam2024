@@ -1,0 +1,1048 @@
+[gd_scene load_steps=55 format=3 uid="uid://bmqu8tabbcbxd"]
+
+[ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_jtlvg"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ct6yl"]
+[ext_resource type="Texture2D" uid="uid://bhwivxhxo7hfl" path="res://sprites/objects/plush.png" id="17_eceyi"]
+[ext_resource type="Texture2D" uid="uid://csms1rb1wiwk0" path="res://sprites/objects/chess king 2.png" id="18_1wbms"]
+[ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="18_bolq2"]
+[ext_resource type="Texture2D" uid="uid://de0f12lejgwrq" path="res://sprites/objects/chess king.png" id="19_dw08u"]
+[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="21_mo06h"]
+[ext_resource type="PackedScene" uid="uid://de378bmpncqyy" path="res://levels/objects/book2.tscn" id="22_3uos7"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="22_b7tu4"]
+[ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="23_43lip"]
+[ext_resource type="Texture2D" uid="uid://br3r6bn5a060v" path="res://sprites/objects/sticky note.png" id="23_255u3"]
+[ext_resource type="PackedScene" uid="uid://bf1cwi7y53112" path="res://levels/objects/chess2.tscn" id="24_cqk4g"]
+[ext_resource type="Texture2D" uid="uid://dj75aflurcwco" path="res://sprites/ui/arrow.png" id="24_jvh7a"]
+[ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="24_n80ib"]
+[ext_resource type="PackedScene" uid="uid://cywn3qyoggmvy" path="res://levels/objects/book3.tscn" id="25_i37v7"]
+[ext_resource type="PackedScene" uid="uid://cxnn7jb8hf5mr" path="res://levels/objects/book7.tscn" id="25_qkkpn"]
+[ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="26_v5q50"]
+[ext_resource type="PackedScene" uid="uid://boukts8nwxx5c" path="res://levels/objects/book8.tscn" id="27_vq46r"]
+[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="27_x2b6h"]
+[ext_resource type="Script" path="res://scripts/shelf player.gd" id="28_f74wc"]
+[ext_resource type="Texture2D" uid="uid://vj6fr6wyou3s" path="res://bg/wall 2.png" id="28_ob7og"]
+[ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="28_p2n1v"]
+[ext_resource type="PackedScene" uid="uid://dhyghet38wiay" path="res://levels/objects/book1.tscn" id="29_h4ixy"]
+[ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="29_y7pqk"]
+[ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="30_gndw6"]
+[ext_resource type="Script" path="res://scripts/atomised zone.gd" id="31_gjxx2"]
+[ext_resource type="Texture2D" uid="uid://cu2j01g3cijq" path="res://sprites/objects/gum box.png" id="32_dgtvr"]
+[ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="33_1umcw"]
+[ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="33_matrf"]
+[ext_resource type="Texture2D" uid="uid://cq8gtkn3if5g1" path="res://sprites/objects/box 4.png" id="33_ms11n"]
+[ext_resource type="Texture2D" uid="uid://tpcmmfduc2ka" path="res://sprites/objects/shelf wall 1.png" id="34_08pcr"]
+[ext_resource type="PackedScene" uid="uid://kf0hqxeqmamg" path="res://levels/objects/book6.tscn" id="34_mmdot"]
+[ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="35_5wlw4"]
+[ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="35_qmkht"]
+[ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="36_xdcy8"]
+[ext_resource type="Texture2D" uid="uid://d36xavavgoije" path="res://sprites/objects/book 9.png" id="37_er5tb"]
+[ext_resource type="PackedScene" uid="uid://dsijsdwrny47s" path="res://levels/objects/plant_2.tscn" id="38_k6jam"]
+[ext_resource type="PackedScene" uid="uid://cuhjunc20slnp" path="res://levels/objects/plant_4.tscn" id="39_chu2a"]
+[ext_resource type="PackedScene" uid="uid://bhiyd1xdbgpto" path="res://levels/objects/plant_1.tscn" id="40_a402b"]
+[ext_resource type="Texture2D" uid="uid://cdicx1cbydg01" path="res://sprites/objects/tablet 1.png" id="40_moo8n"]
+[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="41_lwdh7"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
+scenes/1/scene = ExtResource("27_x2b6h")
+
+[sub_resource type="TileSet" id="TileSet_bpwl6"]
+tile_size = Vector2i(165, 128)
+sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m053u"]
+size = Vector2(509, 6900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as3x5"]
+size = Vector2(135, 518)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxpdu"]
+size = Vector2(705.486, 84.5987)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23rrp"]
+size = Vector2(518.052, 199.458)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8il"]
+size = Vector2(654.115, 30.4239)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nm55"]
+size = Vector2(648.628, 26.1846)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnufi"]
+size = Vector2(654.115, 18.2044)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_saj32"]
+size = Vector2(15241, 779)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewhhw"]
+size = Vector2(465, 510)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ir75"]
+size = Vector2(228, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbuy"]
+size = Vector2(575, 379)
+
+[node name="Level_4" type="Node2D"]
+position = Vector2(12, 2)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_jtlvg")]
+z_index = 2
+position = Vector2(6550, -1553)
+zoomlevel = Vector2(0.5, 0.5)
+timer = 90
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(124, 51)
+limit_bottom = 2700
+editor_draw_limits = true
+script = ExtResource("2_ct6yl")
+
+[node name="alien" parent="." instance=ExtResource("22_b7tu4")]
+z_index = 2
+position = Vector2(5582, -249)
+isplaying = true
+shelving = true
+firerate = 5.0
+
+[node name="alien2" parent="." instance=ExtResource("22_b7tu4")]
+z_index = -1
+position = Vector2(10318, 2186)
+rotation = -4.67942
+isplaying = true
+flipsprite = true
+
+[node name="floor" type="TileMap" parent="."]
+z_index = 2
+position = Vector2(-6878, 2062)
+tile_set = SubResource("TileSet_bpwl6")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 327679, 0, 65536, 327678, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 327677, 0, 65536, 327676, 0, 65536, 327675, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 327674, 0, 65536, 327673, 0, 65536, 327672, 0, 65536, 262157, 0, 65536, 262158, 0, 65536, 262159, 0, 65536, 262160, 0, 65536, 262161, 0, 65536, 262162, 0, 65536, 262163, 0, 65536, 262164, 0, 65536, 262165, 0, 65536, 262166, 0, 65536, 262167, 0, 65536, 262168, 0, 65536, 262169, 0, 65536, 262170, 0, 65536, 262171, 0, 65536, 262172, 0, 65536, 262173, 0, 65536, 262174, 0, 65536, 262175, 0, 65536, 262176, 0, 65536, 262177, 0, 65536, 262178, 0, 65536, 262179, 0, 65536, 262180, 0, 65536, 262181, 0, 65536, 262182, 0, 65536, 262183, 0, 65536, 262184, 0, 65536, 262185, 0, 65536, 262186, 0, 65536, 262187, 0, 65536, 262188, 0, 65536, 262189, 0, 65536, 262190, 0, 65536, 262191, 0, 65536, 262192, 0, 65536, 262193, 0, 65536, 262194, 0, 65536, 262195, 0, 65536, 262196, 0, 65536, 262197, 0, 65536, 262198, 0, 65536, 262199, 0, 65536, 262200, 0, 65536, 262201, 0, 65536, 262202, 0, 65536, 262203, 0, 65536, 262204, 0, 65536, 262205, 0, 65536, 262206, 0, 65536, 262207, 0, 65536, 262208, 0, 65536, 262209, 0, 65536, 262210, 0, 65536, 262211, 0, 65536, 262212, 0, 65536, 262213, 0, 65536, 262214, 0, 65536, 262215, 0, 65536, 262216, 0, 65536, 262217, 0, 65536, 262218, 0, 65536, 262219, 0, 65536, 262220, 0, 65536, 262221, 0, 65536, 262222, 0, 65536, 262223, 0, 65536, 262224, 0, 65536, 262225, 0, 65536, 262226, 0, 65536, 262227, 0, 65536, 262228, 0, 65536, 262229, 0, 65536, 262230, 0, 65536, 262231, 0, 65536, 262232, 0, 65536, 262233, 0, 65536, 262234, 0, 65536, 262235, 0, 65536, 262236, 0, 65536, 262237, 0, 65536, 262238, 0, 65536, 262239, 0, 65536, 262240, 0, 65536, 262241, 0, 65536, 262242, 0, 65536, 262243, 0, 65536, 262244, 0, 65536, 262245, 0, 65536, 262246, 0, 65536, 262247, 0, 65536, 262248, 0, 65536, 262249, 0, 65536, 262250, 0, 65536, 262251, 0, 65536, 262252, 0, 65536, 262253, 0, 65536, 262254, 0, 65536, 262255, 0, 65536, 262256, 0, 65536, 262257, 0, 65536, 262258, 0, 65536, 262259, 0, 65536, 262260, 0, 65536, 262261, 0, 65536, 262262, 0, 65536, 262263, 0, 65536, 262264, 0, 65536, 262265, 0, 65536, 262266, 0, 65536, 262267, 0, 65536, 262268, 0, 65536, 262269, 0, 65536, 262270, 0, 65536, 262271, 0, 65536, 262272, 0, 65536, 262273, 0, 65536, 262274, 0, 65536, 262275, 0, 65536, 262276, 0, 65536, 262277, 0, 65536, 262278, 0, 65536, 262279, 0, 65536, 262280, 0, 65536, 262281, 0, 65536, 262282, 0, 65536, 262283, 0, 65536, 262284, 0, 65536, 262285, 0, 65536, 262286, 0, 65536, 262287, 0, 65536, 262288, 0, 65536, 262289, 0, 65536, 262290, 0, 65536, 262291, 0, 65536, 262292, 0, 65536, 262293, 0, 65536, 262294, 0, 65536, 262295, 0, 65536, 262296, 0, 65536, 262297, 0, 65536, 262298, 0, 65536, 262299, 0, 65536, 262300, 0, 65536, 262301, 0, 65536, 262302, 0, 65536, 262303, 0, 65536, 262304, 0, 65536, 262305, 0, 65536, 262306, 0, 65536, 262307, 0, 65536, 262308, 0, 65536, 262309, 0, 65536, 262310, 0, 65536, 262311, 0, 65536, 262312, 0, 65536, 262313, 0, 65536, 262314, 0, 65536, 262315, 0, 65536, 262316, 0, 65536, 262317, 0, 65536, 262318, 0, 65536, 262319, 0, 65536, 262320, 0, 65536, 262321, 0, 65536, 262322, 0, 65536, 262323, 0, 65536, 262324, 0, 65536, 262325, 0, 65536, 262326, 0, 65536, 262327, 0, 65536, 262328, 0, 65536, 262329, 0, 65536, 262330, 0, 65536, 262331, 0, 65536, 262332, 0, 65536, 262333, 0, 65536, 262334, 0, 65536, 262335, 0, 65536, 262336, 0, 65536, 262337, 0, 65536, 262338, 0, 65536, 262339, 0, 65536, 262340, 0, 65536, 262341, 0, 65536, 262342, 0, 65536, 262343, 0, 65536, 262344, 0, 65536, 262345, 0, 65536, 262346, 0, 65536, 262347, 0, 65536, 262348, 0, 65536, 262349, 0, 65536, 262350, 0, 65536, 262351, 0, 65536, 262352, 0, 65536, 262353, 0, 65536, 262354, 0, 65536, 262355, 0, 65536, 262356, 0, 65536, 262357, 0, 65536, 262358, 0, 65536, 262359, 0, 65536, 262360, 0, 65536, 262361, 0, 65536, 262362, 0, 65536, 262363, 0, 65536)
+
+[node name="wall" type="StaticBody2D" parent="floor"]
+z_index = 2
+position = Vector2(31025, -2101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall"]
+position = Vector2(-1079.5, -716)
+shape = SubResource("RectangleShape2D_m053u")
+
+[node name="TileWall" type="Sprite2D" parent="floor/wall"]
+position = Vector2(-1275, -748.95)
+scale = Vector2(1, 41.2733)
+texture = ExtResource("28_p2n1v")
+flip_h = true
+
+[node name="scene_change" parent="." instance=ExtResource("33_1umcw")]
+position = Vector2(10117, 2099)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
+position = Vector2(199.5, 295)
+shape = SubResource("RectangleShape2D_as3x5")
+
+[node name="shelves and obj" type="Node2D" parent="."]
+
+[node name="ShelfWall1" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(2957, -1327)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall1/StaticBody2D"]
+position = Vector2(-24.0649, -4.58347)
+shape = SubResource("RectangleShape2D_gxpdu")
+
+[node name="Book4" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6371.83, -1761.11)
+rotation = 1.5592
+texture = ExtResource("35_5wlw4")
+
+[node name="Book5" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6306.83, -1750.11)
+rotation = 1.5592
+texture = ExtResource("36_xdcy8")
+
+[node name="Book6" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6449, -1758.05)
+rotation = 1.5592
+texture = ExtResource("35_5wlw4")
+
+[node name="Book7" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6638, -1745.05)
+rotation = 1.5592
+texture = ExtResource("36_xdcy8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/Book7"]
+position = Vector2(3.37714, 317.063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/Book7/StaticBody2D"]
+position = Vector2(-24.4302, -62.0132)
+shape = SubResource("RectangleShape2D_23rrp")
+
+[node name="Book8" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6697, -1765.05)
+rotation = 1.5592
+texture = ExtResource("18_bolq2")
+
+[node name="ColorRect" type="ColorRect" parent="shelves and obj/Book8"]
+z_index = -1
+offset_left = -235.0
+offset_top = 17.0
+offset_right = 289.0
+offset_bottom = 224.0
+color = Color(0.254902, 0.254902, 0.254902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Book9" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6766, -1751.05)
+rotation = 1.5592
+texture = ExtResource("37_er5tb")
+
+[node name="plant1" parent="shelves and obj" instance=ExtResource("38_k6jam")]
+position = Vector2(1848, -1626)
+
+[node name="plant2" parent="shelves and obj" instance=ExtResource("39_chu2a")]
+position = Vector2(2162, -1613)
+
+[node name="plant3" parent="shelves and obj" instance=ExtResource("40_a402b")]
+position = Vector2(2463, -1616)
+
+[node name="ShelfWall2" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(5691, -1332)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall2"]
+position = Vector2(-0.997628, -26.9327)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall2/StaticBody2D"]
+position = Vector2(1.62085, -4.20938)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="ShelfWall3" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(8379, -1332)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall3"]
+position = Vector2(0.997506, -27.9302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall3/StaticBody2D"]
+position = Vector2(1.62085, -4.20938)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shelves and obj/ShelfWall3/StaticBody2D"]
+position = Vector2(168.828, -96.5087)
+scale = Vector2(0.255, 0.255)
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Box2" type="Sprite2D" parent="shelves and obj/ShelfWall3"]
+position = Vector2(167.83, -120.2)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("29_y7pqk")
+
+[node name="Book" parent="shelves and obj/ShelfWall3" instance=ExtResource("22_3uos7")]
+position = Vector2(4.98755, -55.611)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book2" parent="shelves and obj/ShelfWall3" instance=ExtResource("23_43lip")]
+position = Vector2(16.7085, -69.3267)
+rotation = 0.0498223
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book3" parent="shelves and obj/ShelfWall3" instance=ExtResource("24_n80ib")]
+position = Vector2(16.7083, -82.0449)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book4" parent="shelves and obj/ShelfWall3" instance=ExtResource("25_i37v7")]
+position = Vector2(4.48877, -98.2544)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book5" parent="shelves and obj/ShelfWall3" instance=ExtResource("26_v5q50")]
+position = Vector2(16.2095, -113.965)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book6" parent="shelves and obj/ShelfWall3" instance=ExtResource("22_3uos7")]
+position = Vector2(28.429, -128.928)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book7" parent="shelves and obj/ShelfWall3" instance=ExtResource("27_vq46r")]
+position = Vector2(42.6436, -144.14)
+rotation = 0.062392
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book8" parent="shelves and obj/ShelfWall3" instance=ExtResource("24_n80ib")]
+position = Vector2(68.3293, -157.606)
+rotation = 0.0494054
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book9" parent="shelves and obj/ShelfWall3" instance=ExtResource("27_vq46r")]
+position = Vector2(178.055, -188.279)
+rotation = -0.0297116
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book10" parent="shelves and obj/ShelfWall3" instance=ExtResource("24_n80ib")]
+position = Vector2(203.741, -201.746)
+rotation = -0.0426982
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book11" parent="shelves and obj/ShelfWall3" instance=ExtResource("25_i37v7")]
+position = Vector2(222.444, -218.703)
+rotation = -0.0342049
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book12" parent="shelves and obj/ShelfWall3" instance=ExtResource("22_3uos7")]
+position = Vector2(222.444, -239.651)
+rotation = -0.0318326
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book13" parent="shelves and obj/ShelfWall3" instance=ExtResource("29_h4ixy")]
+position = Vector2(237.406, -255.112)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="ShelfWall4" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(10764, -2237)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall4/StaticBody2D"]
+position = Vector2(1.62085, -30.9228)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="ShelfWall5" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(18511, -2026)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall5"]
+position = Vector2(0, -28.6783)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall5/StaticBody2D"]
+position = Vector2(1.12305, -2.36908)
+shape = SubResource("RectangleShape2D_5nm55")
+
+[node name="plant1" parent="shelves and obj/ShelfWall5" instance=ExtResource("38_k6jam")]
+position = Vector2(-224.438, -71.8205)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant2" parent="shelves and obj/ShelfWall5" instance=ExtResource("39_chu2a")]
+position = Vector2(273.317, -73.0674)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant3" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(-114.464, -73.0674)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant4" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(0.249512, -72.0699)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant5" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(110.474, -72.0699)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="ShelfWall6" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(20782, -1057)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall6/StaticBody2D"]
+position = Vector2(0.997408, -30.4239)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="StickyNote" type="Sprite2D" parent="shelves and obj/ShelfWall6"]
+position = Vector2(295.761, -10.4738)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("23_255u3")
+
+[node name="Arrow" type="Sprite2D" parent="shelves and obj/ShelfWall6/StickyNote"]
+position = Vector2(5, -6)
+rotation = -1.95509
+texture = ExtResource("24_jvh7a")
+
+[node name="Book" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-284.29, -52.6184)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book2" parent="shelves and obj/ShelfWall6" instance=ExtResource("27_vq46r")]
+position = Vector2(-230.424, -68.3292)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book3" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_i37v7")]
+position = Vector2(-285.786, -89.5262)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book4" parent="shelves and obj/ShelfWall6" instance=ExtResource("22_3uos7")]
+position = Vector2(-244.639, -109.726)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book5" parent="shelves and obj/ShelfWall6" instance=ExtResource("29_h4ixy")]
+position = Vector2(-261.098, -124.688)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book6" parent="shelves and obj/ShelfWall6" instance=ExtResource("24_n80ib")]
+position = Vector2(-285.786, -138.155)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book7" parent="shelves and obj/ShelfWall6" instance=ExtResource("22_3uos7")]
+position = Vector2(-285.038, -155.112)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book8" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_i37v7")]
+position = Vector2(-260.349, -173.067)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book9" parent="shelves and obj/ShelfWall6" instance=ExtResource("29_h4ixy")]
+position = Vector2(-276.808, -189.526)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book10" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-281.546, -204.988)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book11" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-276.808, -221.696)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="ShelfWall7" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(21546, -295)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(0, -26.6833)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall7/StaticBody2D"]
+position = Vector2(1.62085, -4.20938)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="Book4" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(285.245, -109.24)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("35_5wlw4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall7/Book4"]
+position = Vector2(24.5436, 44.1224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall7/Book4/StaticBody2D"]
+position = Vector2(-24.4302, -62.0132)
+shape = SubResource("RectangleShape2D_23rrp")
+
+[node name="Book5" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(269.036, -106.497)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("36_xdcy8")
+
+[node name="Book6" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(304.49, -108.477)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("35_5wlw4")
+
+[node name="ShelfWall8" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(20142, 1062)
+rotation = -0.00572664
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall8"]
+position = Vector2(-1.24688, -27.9302)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall8/StaticBody2D"]
+position = Vector2(1.62085, -4.20938)
+shape = SubResource("RectangleShape2D_oe8il")
+
+[node name="Shelfplushhie" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(14530, -2631)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("34_08pcr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/Shelfplushhie"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/Shelfplushhie/StaticBody2D"]
+position = Vector2(1.62085, -37.0324)
+shape = SubResource("RectangleShape2D_dnufi")
+
+[node name="Plush" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-277.556, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush2" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-218.953, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush3" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-156.858, -76.5586)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush4" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-94.0153, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush5" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-29.9255, -74.0648)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush6" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(85.0371, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush7" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(151.621, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush8" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(215.71, -74.5635)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="Plush9" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(278.553, -74.5635)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_eceyi")
+
+[node name="ChessKing2" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(15.2117, -67.8304)
+scale = Vector2(0.158354, 0.158354)
+texture = ExtResource("18_1wbms")
+
+[node name="ChessKing" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-63.0922, -66.3341)
+scale = Vector2(0.158354, 0.158354)
+texture = ExtResource("19_dw08u")
+
+[node name="chess1" parent="shelves and obj/Shelfplushhie" instance=ExtResource("24_cqk4g")]
+position = Vector2(33.915, -57.606)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="atomised zone2" type="Area2D" parent="."]
+position = Vector2(6857, 1559)
+script = ExtResource("31_gjxx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atomised zone2"]
+position = Vector2(4996.5, -2407.5)
+shape = SubResource("RectangleShape2D_saj32")
+
+[node name="shelf player" type="Node" parent="."]
+script = ExtResource("28_f74wc")
+
+[node name="zomout" type="Area2D" parent="."]
+position = Vector2(7071, -1966)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zomout"]
+position = Vector2(95, 187)
+shape = SubResource("RectangleShape2D_ewhhw")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(11069, -2190)
+scale = Vector2(26.8976, 15.9105)
+texture = ExtResource("28_ob7og")
+
+[node name="Boxtowers" type="Node2D" parent="."]
+
+[node name="Boxt1" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(12628, -2204)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt1"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt1/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt1"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("29_y7pqk")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt2" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(13562, -2038.42)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("29_y7pqk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt2"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt2/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt2"]
+position = Vector2(25.6898, 12.3552)
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("33_ms11n")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-95.836, 4106.92)
+scale = Vector2(1.083, 1.785)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt4" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(15405, -1953.42)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("33_ms11n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt4"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt4/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt4"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("35_qmkht")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-82.0022, 4018.76)
+scale = Vector2(0.988, 1.69)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Boxt5" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(16320, -1732)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("29_y7pqk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt5"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt5/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt5"]
+position = Vector2(0.00096484, 31.8443)
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("29_y7pqk")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-71.1352, 3923.81)
+scale = Vector2(0.988, 1.1)
+texture = ExtResource("33_ms11n")
+flip_h = true
+
+[node name="Book" parent="Boxtowers/Boxt5" instance=ExtResource("34_mmdot")]
+position = Vector2(231.192, -274.657)
+scale = Vector2(0.987996, 0.995134)
+
+[node name="Boxt6" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(17167, -1850)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt6"]
+position = Vector2(-2.96399, 87.5719)
+rotation = 0.0368844
+scale = Vector2(-1.01, -1.01)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt6/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt6"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-68.1721, 3988.5)
+scale = Vector2(0.988, 1.37)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt3" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(14460, -2128)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt3"]
+position = Vector2(-2.96399, 87.5719)
+rotation = 0.0368844
+scale = Vector2(-1.01, -1.01)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt3/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt3"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("33_ms11n")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="GumBox" type="Sprite2D" parent="."]
+position = Vector2(11083, -2453)
+texture = ExtResource("32_dgtvr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GumBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GumBox/StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_1ir75")
+
+[node name="gum" parent="." instance=ExtResource("21_mo06h")]
+position = Vector2(11023, -2490)
+
+[node name="gum2" parent="." instance=ExtResource("21_mo06h")]
+position = Vector2(10688, -2422)
+
+[node name="GumSticky2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(11057, -2474)
+rotation = -0.696883
+scale = Vector2(1.285, 1.285)
+texture = ExtResource("33_matrf")
+
+[node name="GumSticky" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(10991, -2470)
+rotation = 0.534575
+scale = Vector2(1.285, 1.285)
+texture = ExtResource("33_matrf")
+
+[node name="Plush" type="Sprite2D" parent="."]
+position = Vector2(17091, 1764)
+texture = ExtResource("17_eceyi")
+
+[node name="Tablet1" type="Sprite2D" parent="."]
+position = Vector2(14740, 2336)
+texture = ExtResource("40_moo8n")
+
+[node name="ball of paper" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16403, 2465)
+
+[node name="ball of paper2" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16205, 2465)
+
+[node name="ball of paper3" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16301, 2363)
+
+[node name="Boxt1" type="Sprite2D" parent="."]
+position = Vector2(21019, 553)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt1"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt1/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Boxt2" type="Sprite2D" parent="."]
+position = Vector2(19273, 2261)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt2"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt2/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Boxt1" type="Sprite2D" parent="Boxt2"]
+position = Vector2(198.587, -535.382)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("35_qmkht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt2/Boxt1"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt2/Boxt1/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(9683, 2206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(278, 178)
+shape = SubResource("RectangleShape2D_ixbuy")
+
+[node name="zomout2" type="Area2D" parent="."]
+position = Vector2(20367, -894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zomout2"]
+position = Vector2(95, 187)
+shape = SubResource("RectangleShape2D_ewhhw")
+
+[node name="Book" parent="." instance=ExtResource("25_qkkpn")]
+position = Vector2(17202, -2122)
+
+[node name="Book2" parent="." instance=ExtResource("26_v5q50")]
+position = Vector2(19592, -2003)
+
+[node name="Book3" parent="." instance=ExtResource("23_43lip")]
+position = Vector2(19724, -2044)
+
+[node name="Book4" parent="." instance=ExtResource("25_qkkpn")]
+position = Vector2(19622, -2101)
+
+[connection signal="body_entered" from="scene_change" to="shelf player" method="_on_scene_change_body_entered"]
+[connection signal="body_entered" from="atomised zone2" to="atomised zone2" method="_on_body_entered"]
+[connection signal="body_entered" from="zomout" to="shelf player" method="_on_zomout_body_entered"]
+[connection signal="body_entered" from="zomout2" to="shelf player" method="_on_zomout_2_body_entered"]
