@@ -55,7 +55,7 @@ firerate = 3.5
 z_index = 2
 position = Vector2(5582, -249)
 dmg = Vector2(0.25, 0.25)
-firerate = 0.5
+firerate = 0.7
 
 [node name="alienhitbox" type="StaticBody2D" parent="alien" groups=["alien"]]
 

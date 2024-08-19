@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_oprhe"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="32_c83r7"]
 [ext_resource type="AudioStream" uid="uid://d2bd5ph673ceo" path="res://assets/audio/dizzy_racing.wav" id="33_knb3u"]
-[ext_resource type="Texture2D" uid="uid://glgfhmcpiav" path="res://sprites/ui/button .png" id="34_2upt4"]
+[ext_resource type="Texture2D" uid="uid://bacqujer76ety" path="res://sprites/ui/button .png" id="34_2upt4"]
 [ext_resource type="Texture2D" uid="uid://dyt3obrvudn5x" path="res://sprites/ui/button spacebar.png" id="35_o80yb"]
 [ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="35_tv0xj"]
 
@@ -327,6 +327,7 @@ shape = SubResource("RectangleShape2D_xmnr7")
 [node name="alien" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(-2082, -1266)
 isplaying = true
+isenemy = false
 
 [node name="alien2" parent="." instance=ExtResource("9_5jq3i")]
 position = Vector2(2264, -2274)

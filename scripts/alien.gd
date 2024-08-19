@@ -48,7 +48,7 @@ func _process(delta):
 		position.y = lerp(position.y,player.position.y-500,delta*FOLLOW_SPEED)
 		Global.ceasefire = false
 	if not isplaying and shelving:
-		position.x = lerp(position.x,player.position.x-100,delta*FOLLOW_SPEED)
+		position.x = lerp(position.x,player.position.x-300,delta*FOLLOW_SPEED)
 		position.y = lerp(position.y,player.position.y+250,delta*FOLLOW_SPEED)
 		Global.ceasefire = false
 	if Global.under_control and isenemy:

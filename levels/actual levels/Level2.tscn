@@ -113,6 +113,7 @@ script = ExtResource("7_p4t3u")
 [node name="alien" parent="." instance=ExtResource("29_kis8c")]
 position = Vector2(509, 938)
 isplaying = true
+isenemy = false
 
 [node name="scene_change" parent="." instance=ExtResource("30_mwilu")]
 position = Vector2(10357, 114)
