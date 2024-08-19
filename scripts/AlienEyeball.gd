@@ -20,3 +20,11 @@ func _process(_delta):
 		var clamped_distance = min(distance_to_player, eye_radius)
 		
 		position = eye_center + direction * clamped_distance
+		
+	if Global.under_control:
+		var mouse_pos = get_global_mouse_position()
+		var direction = (mouse_pos - global_position).normalized()
+		var distance_to_player = global_position.distance_to(mouse_pos)
+		var clamped_distance = min(distance_to_player, eye_radius)
+		
+		position = eye_center + direction * clamped_distance

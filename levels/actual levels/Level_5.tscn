@@ -1,0 +1,146 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg1gkoaqts5wv"]
+
+[ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_oa8lb"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ahlrt"]
+[ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="3_k2mvd"]
+[ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="4_2ggjf"]
+[ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="5_lsfnr"]
+[ext_resource type="Script" path="res://scripts/Battle_controller.gd" id="6_pke1k"]
+[ext_resource type="Texture2D" uid="uid://bxvlyarujqke8" path="res://levels/objects/shelf longer.png" id="7_blo38"]
+[ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="8_a6022"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etret"]
+size = Vector2(564, 858)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h5y5"]
+radius = 1625.19
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
+scenes/1/scene = ExtResource("4_2ggjf")
+
+[sub_resource type="TileSet" id="TileSet_bpwl6"]
+tile_size = Vector2i(165, 128)
+sources/0 = SubResource("TileSetScenesCollectionSource_mfvo4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m053u"]
+size = Vector2(509, 6900)
+
+[node name="Level_5" type="Node2D"]
+position = Vector2(12, 2)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_oa8lb")]
+z_index = 2
+position = Vector2(11249, 2543)
+zoomlevel = Vector2(0.5, 0.5)
+timer = 90
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(124, 51)
+limit_bottom = 2700
+editor_draw_limits = true
+script = ExtResource("2_ahlrt")
+
+[node name="alien2" parent="player" instance=ExtResource("3_k2mvd")]
+z_index = -1
+position = Vector2(42, -498)
+rotation = 1.57444
+isplaying = true
+flipsprite = true
+shelving = true
+isenemy = false
+dmg = Vector2(0.3, 0.3)
+firerate = 3.5
+
+[node name="alien" parent="." groups=["actualalien"] instance=ExtResource("3_k2mvd")]
+z_index = 2
+position = Vector2(5582, -249)
+dmg = Vector2(0.25, 0.25)
+firerate = 0.5
+
+[node name="alienhitbox" type="StaticBody2D" parent="alien" groups=["alien"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien/alienhitbox"]
+position = Vector2(329, 470)
+shape = SubResource("RectangleShape2D_etret")
+
+[node name="Timer2" type="Timer" parent="alien"]
+wait_time = 0.5
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="alien"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alien/Area2D"]
+position = Vector2(317, 394)
+shape = SubResource("CircleShape2D_2h5y5")
+
+[node name="floor" type="TileMap" parent="."]
+z_index = 2
+position = Vector2(-6878, 2062)
+tile_set = SubResource("TileSet_bpwl6")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 327679, 0, 65536, 327678, 0, 65536, 262151, 0, 65536, 262152, 0, 65536, 262153, 0, 65536, 327677, 0, 65536, 327676, 0, 65536, 327675, 0, 65536, 262154, 0, 65536, 262155, 0, 65536, 262156, 0, 65536, 327674, 0, 65536, 327673, 0, 65536, 327672, 0, 65536, 262157, 0, 65536, 262158, 0, 65536, 262159, 0, 65536, 262160, 0, 65536, 262161, 0, 65536, 262162, 0, 65536, 262163, 0, 65536, 262164, 0, 65536, 262165, 0, 65536, 262166, 0, 65536, 262167, 0, 65536, 262168, 0, 65536, 262169, 0, 65536, 262170, 0, 65536, 262171, 0, 65536, 262172, 0, 65536, 262173, 0, 65536, 262174, 0, 65536, 262175, 0, 65536, 262176, 0, 65536, 262177, 0, 65536, 262178, 0, 65536, 262179, 0, 65536, 262180, 0, 65536, 262181, 0, 65536, 262182, 0, 65536, 262183, 0, 65536, 262184, 0, 65536, 262185, 0, 65536, 262186, 0, 65536, 262187, 0, 65536, 262188, 0, 65536, 262189, 0, 65536, 262190, 0, 65536, 262191, 0, 65536, 262192, 0, 65536, 262193, 0, 65536, 262194, 0, 65536, 262195, 0, 65536, 262196, 0, 65536, 262197, 0, 65536, 262198, 0, 65536, 262199, 0, 65536, 262200, 0, 65536, 262201, 0, 65536, 262202, 0, 65536, 262203, 0, 65536, 262204, 0, 65536, 262205, 0, 65536, 262206, 0, 65536, 262207, 0, 65536, 262208, 0, 65536, 262209, 0, 65536, 262210, 0, 65536, 262211, 0, 65536, 262212, 0, 65536, 262213, 0, 65536, 262214, 0, 65536, 262215, 0, 65536, 262216, 0, 65536, 262217, 0, 65536, 262218, 0, 65536, 262219, 0, 65536, 262220, 0, 65536, 262221, 0, 65536, 262222, 0, 65536, 262223, 0, 65536, 262224, 0, 65536, 262225, 0, 65536, 262226, 0, 65536, 262227, 0, 65536, 262228, 0, 65536, 262229, 0, 65536, 262230, 0, 65536, 262231, 0, 65536, 262232, 0, 65536, 262233, 0, 65536, 262234, 0, 65536, 262235, 0, 65536, 262236, 0, 65536, 262237, 0, 65536, 262238, 0, 65536, 262239, 0, 65536, 262240, 0, 65536, 262241, 0, 65536, 262242, 0, 65536, 262243, 0, 65536, 262244, 0, 65536, 262245, 0, 65536, 262246, 0, 65536, 262247, 0, 65536, 262248, 0, 65536, 262249, 0, 65536, 262250, 0, 65536, 262251, 0, 65536, 262252, 0, 65536, 262253, 0, 65536, 262254, 0, 65536, 262255, 0, 65536, 262256, 0, 65536, 262257, 0, 65536, 262258, 0, 65536, 262259, 0, 65536, 262260, 0, 65536, 262261, 0, 65536, 262262, 0, 65536, 262263, 0, 65536, 262264, 0, 65536, 262265, 0, 65536, 262266, 0, 65536, 262267, 0, 65536, 262268, 0, 65536, 262269, 0, 65536, 262270, 0, 65536, 262271, 0, 65536, 262272, 0, 65536, 262273, 0, 65536, 262274, 0, 65536, 262275, 0, 65536, 262276, 0, 65536, 262277, 0, 65536, 262278, 0, 65536, 262279, 0, 65536, 262280, 0, 65536, 262281, 0, 65536, 262282, 0, 65536, 262283, 0, 65536, 262284, 0, 65536, 262285, 0, 65536, 262286, 0, 65536, 262287, 0, 65536, 262288, 0, 65536, 262289, 0, 65536, 262290, 0, 65536, 262291, 0, 65536, 262292, 0, 65536, 262293, 0, 65536, 262294, 0, 65536, 262295, 0, 65536, 262296, 0, 65536, 262297, 0, 65536, 262298, 0, 65536, 262299, 0, 65536, 262300, 0, 65536, 262301, 0, 65536, 262302, 0, 65536, 262303, 0, 65536, 262304, 0, 65536, 262305, 0, 65536, 262306, 0, 65536, 262307, 0, 65536, 262308, 0, 65536, 262309, 0, 65536, 262310, 0, 65536, 262311, 0, 65536, 262312, 0, 65536, 262313, 0, 65536, 262314, 0, 65536, 262315, 0, 65536, 262316, 0, 65536, 262317, 0, 65536, 262318, 0, 65536, 262319, 0, 65536, 262320, 0, 65536, 262321, 0, 65536, 262322, 0, 65536, 262323, 0, 65536, 262324, 0, 65536, 262325, 0, 65536, 262326, 0, 65536, 262327, 0, 65536, 262328, 0, 65536, 262329, 0, 65536, 262330, 0, 65536, 262331, 0, 65536, 262332, 0, 65536, 262333, 0, 65536, 262334, 0, 65536, 262335, 0, 65536, 262336, 0, 65536, 262337, 0, 65536, 262338, 0, 65536, 262339, 0, 65536, 262340, 0, 65536, 262341, 0, 65536, 262342, 0, 65536, 262343, 0, 65536, 262344, 0, 65536, 262345, 0, 65536, 262346, 0, 65536, 262347, 0, 65536, 262348, 0, 65536, 262349, 0, 65536, 262350, 0, 65536, 262351, 0, 65536, 262352, 0, 65536, 262353, 0, 65536, 262354, 0, 65536, 262355, 0, 65536, 262356, 0, 65536, 262357, 0, 65536, 262358, 0, 65536, 262359, 0, 65536, 262360, 0, 65536, 262361, 0, 65536, 262362, 0, 65536, 262363, 0, 65536)
+
+[node name="wall" type="StaticBody2D" parent="floor"]
+z_index = 2
+position = Vector2(31025, -2101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall"]
+position = Vector2(-1079.5, -716)
+shape = SubResource("RectangleShape2D_m053u")
+
+[node name="TileWall" type="Sprite2D" parent="floor/wall"]
+position = Vector2(-1275, -748.95)
+scale = Vector2(1, 41.2733)
+texture = ExtResource("5_lsfnr")
+flip_h = true
+
+[node name="wall2" type="StaticBody2D" parent="floor"]
+z_index = 2
+position = Vector2(8671, -3665)
+rotation = -3.14129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall2"]
+position = Vector2(-1079.5, -716)
+shape = SubResource("RectangleShape2D_m053u")
+
+[node name="TileWall" type="Sprite2D" parent="floor/wall2"]
+position = Vector2(-1275, -748.95)
+scale = Vector2(1, 41.2733)
+texture = ExtResource("5_lsfnr")
+flip_h = true
+
+[node name="wall3" type="StaticBody2D" parent="floor"]
+z_index = 2
+position = Vector2(22448, -7531)
+rotation = -1.56843
+scale = Vector2(1, 4.20009)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall3"]
+position = Vector2(-1079.5, -716)
+shape = SubResource("RectangleShape2D_m053u")
+
+[node name="TileWall" type="Sprite2D" parent="floor/wall3"]
+position = Vector2(-1275, -748.95)
+scale = Vector2(1, 41.2733)
+texture = ExtResource("5_lsfnr")
+flip_h = true
+
+[node name="Battle_controller" type="Node" parent="."]
+script = ExtResource("6_pke1k")
+connected_scene = "cinematic outro"
+
+[node name="ShelfLonger" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(11206, 863)
+scale = Vector2(3.595, 3.595)
+texture = ExtResource("7_blo38")
+
+[node name="Table" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(9946, 1911)
+scale = Vector2(2.19, 2.19)
+texture = ExtResource("8_a6022")
+
+[connection signal="timeout" from="alien/Timer2" to="alien" method="_on_timer_2_timeout"]
+[connection signal="body_entered" from="alien/Area2D" to="alien" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="alien/Area2D" to="alien" method="_on_area_2d_body_exited"]

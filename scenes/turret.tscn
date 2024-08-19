@@ -27,7 +27,7 @@ ammo = ExtResource("2_qdyk1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_dqj8o")
+volume_db = -14.079
 script = ExtResource("5_g7wqf")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="bulletmanager" method="_on_timer_timeout"]

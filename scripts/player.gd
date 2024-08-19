@@ -17,6 +17,7 @@ var jump_power = -750
 var gumtrig = 0
 var acc = 50
 const friction = 70
+var alienfriction = 0.01
 
 
 #QUICKTIME VARS
@@ -119,12 +120,29 @@ func check_global_force():
 		forcestop = true
 	elif not Global.forcestop:
 		forcestop = false
+		
+
+func check_under_control():
+	if Global.under_control:
+		var input_dir: Vector2 = input()
+		if Input.is_action_pressed("down"):
+			input_dir.y += 1
+		if Input.is_action_pressed("up"):
+			input_dir.y -= 1
+		if input_dir != Vector2.ZERO:
+			var direction = input_dir.normalized()
+			velocity = direction * speed
+		else:
+			velocity = velocity.lerp(Vector2.ZERO, alienfriction)
+		
+		player_movement()
 
 func _physics_process(delta):
 	#change_size()
 	check_scale()
 	check_gum()
 	check_global_force()
+	check_under_control()
 	
 	last_floor = is_on_floor()
 	#gum disables movement mostly
