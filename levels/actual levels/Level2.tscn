@@ -52,8 +52,8 @@ size = Vector2(293, 567)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tna10"]
 size = Vector2(320, 487)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh6t1"]
-size = Vector2(432.832, 610.258)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4m6y"]
+size = Vector2(673.903, 608.268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kiqof"]
 size = Vector2(79, 24)
@@ -164,42 +164,42 @@ texture = ExtResource("22_fxfn4")
 [node name="StaticBody2D" type="StaticBody2D" parent="objects/Box4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/Box4/StaticBody2D"]
-position = Vector2(202.584, 68.7006)
-shape = SubResource("RectangleShape2D_wh6t1")
+position = Vector2(82.0485, 69.6955)
+shape = SubResource("RectangleShape2D_x4m6y")
 
 [node name="Book" parent="objects" instance=ExtResource("11_hc2hd")]
 position = Vector2(180, 625)
 
 [node name="Book2" parent="objects" instance=ExtResource("12_clkek")]
-position = Vector2(199, 554)
+position = Vector2(199, 560)
 
 [node name="Book3" parent="objects" instance=ExtResource("13_1fvs4")]
-position = Vector2(243, 488)
+position = Vector2(246, 492)
 
 [node name="Book4" parent="objects" instance=ExtResource("14_td14f")]
-position = Vector2(198, 422)
+position = Vector2(194, 428)
 
 [node name="Book5" parent="objects" instance=ExtResource("11_hc2hd")]
-position = Vector2(174, 361)
+position = Vector2(177, 368)
 rotation = 0.0405966
 
 [node name="Book6" parent="objects" instance=ExtResource("15_de2lv")]
-position = Vector2(239, 319)
+position = Vector2(245, 334)
 rotation = 0.119033
 
 [node name="Book7" parent="objects" instance=ExtResource("14_td14f")]
-position = Vector2(191, 233)
+position = Vector2(196, 249)
 
 [node name="Book8" parent="objects" instance=ExtResource("16_8f0rh")]
-position = Vector2(194, 161)
+position = Vector2(200, 179)
 rotation = 0.0400571
 
 [node name="Gum" type="Sprite2D" parent="objects"]
-position = Vector2(312, 307)
+position = Vector2(305.5, 328.179)
 texture = ExtResource("17_trqrt")
 
 [node name="Gum2" type="Sprite2D" parent="objects"]
-position = Vector2(315, 263)
+position = Vector2(308.5, 284.179)
 rotation = 3.1383
 texture = ExtResource("17_trqrt")
 
@@ -263,15 +263,15 @@ rotation = 0.00501317
 scale = Vector2(0.995, 0.915)
 
 [node name="Book9" parent="objects" instance=ExtResource("21_07nlh")]
-position = Vector2(2545, 81)
+position = Vector2(2547, 93)
 rotation = 0.0265392
 
 [node name="Book10" parent="objects" instance=ExtResource("13_1fvs4")]
-position = Vector2(2545, -6)
-rotation = -0.109853
+position = Vector2(2538, 8)
+rotation = -0.0835564
 
 [node name="Book11" parent="objects" instance=ExtResource("21_ni0f6")]
-position = Vector2(2981, 57)
+position = Vector2(2983, 69)
 rotation = 0.138367
 
 [node name="Book12" parent="objects" instance=ExtResource("21_07nlh")]
