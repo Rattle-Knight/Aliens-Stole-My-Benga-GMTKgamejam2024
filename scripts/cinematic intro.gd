@@ -29,4 +29,5 @@ func _on_timer_timeout():
 	elif trig == 8:
 		$ParallaxBackground7.visible = false
 		$ParallaxBackground8.visible = true
-		
+	elif trig == 9:
+		get_tree().change_scene_to_file("res://levels/actual levels/Level1.tscn")
