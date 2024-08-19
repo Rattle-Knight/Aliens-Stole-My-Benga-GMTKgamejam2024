@@ -104,7 +104,7 @@ func _on_benga_movement_3_body_entered(body):
 				
 				
 				$"../alien".isplaying = false
-				alientween.tween_property(alien2,"position",Vector2(623, -204),0.8)
+				alientween.tween_property(alien2,"position",Vector2(980, 1597),0.8)
 				alientween.tween_property(alien2,"rotation_degrees",alien2.rotation_degrees + 97,0.8)
 				
 

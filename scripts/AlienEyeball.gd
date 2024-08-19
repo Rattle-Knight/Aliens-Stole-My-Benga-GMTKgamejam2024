@@ -8,11 +8,13 @@ extends Sprite2D
 
 var eye_center: Vector2
 
+var shelfing = false
+
 func _ready():
 	eye_center = position
 
 func _process(_delta):
-	if player:
+	if player and not shelfing:
 		var direction = (player.global_position - global_position).normalized()
 		var distance_to_player = global_position.distance_to(player.global_position)
 		var clamped_distance = min(distance_to_player, eye_radius)

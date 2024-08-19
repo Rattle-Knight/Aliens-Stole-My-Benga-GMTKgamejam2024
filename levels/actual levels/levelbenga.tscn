@@ -721,11 +721,10 @@ shape = SubResource("RectangleShape2D_4h7xr")
 [node name="alien" parent="." instance=ExtResource("16_5qy7l")]
 position = Vector2(-717, -481)
 isplaying = true
-firerate = 2
 
 [node name="alien2" parent="." instance=ExtResource("16_5qy7l")]
 z_index = -1
-position = Vector2(607, -168)
+position = Vector2(980, 1597)
 isplaying = true
 flipsprite = true
 
@@ -825,6 +824,7 @@ shape = SubResource("CircleShape2D_r2xfe")
 
 [node name="scene_change" parent="." instance=ExtResource("40_p1i3s")]
 position = Vector2(6354, -2061)
+connected_scene = "Level_4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
 position = Vector2(199.5, 295)
@@ -948,6 +948,11 @@ texture = ExtResource("30_anuyo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box4/StaticBody2D"]
 position = Vector2(9.48145, 305.974)
 shape = SubResource("RectangleShape2D_ogvot")
+
+[node name="ShelfWall1" type="Sprite2D" parent="."]
+position = Vector2(8370, -1329)
+scale = Vector2(3.86, 3.86)
+texture = ExtResource("33_x3er2")
 
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Table/Area2D" to="Table/Area2D" method="_on_area_2d_body_entered"]
