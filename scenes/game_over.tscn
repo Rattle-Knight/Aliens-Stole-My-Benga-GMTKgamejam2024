@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://7g8wa0gm3470"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_qdy7j"]
-[ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="2_bh85l"]
+[ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="2_olowy"]
 [ext_resource type="FontFile" uid="uid://bvpytbeeuugk4" path="res://assets/fonts/Vanilla.ttf" id="2_tiir0"]
 [ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="3_m75yk"]
 [ext_resource type="AudioStream" uid="uid://baqe8q6muw8tf" path="res://assets/SFX/171697__nenadsimic__menu-selection-click.wav" id="4_af5pk"]
-[ext_resource type="Theme" uid="uid://chj0t5k1pukfn" path="res://themes/mainmenu theme.tres" id="4_h334a"]
+[ext_resource type="Theme" uid="uid://chj0t5k1pukfn" path="res://themes/mainmenu theme.tres" id="4_i5k4w"]
 
 [node name="game_over" type="Control"]
 process_mode = 3
@@ -40,7 +40,7 @@ offset_right = 119.0
 offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_bh85l")
+theme = ExtResource("2_olowy")
 theme_override_fonts/font = ExtResource("2_tiir0")
 text = "YOU WERE ATOMIZED"
 
@@ -52,15 +52,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -74.0
-offset_top = -9.0
+offset_top = -10.0
 offset_right = 74.0
-offset_bottom = 50.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_h334a")
+theme = ExtResource("4_i5k4w")
 theme_override_fonts/font = ExtResource("2_tiir0")
 text = "Retry"
 flat = true
