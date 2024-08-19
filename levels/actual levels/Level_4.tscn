@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bmqu8tabbcbxd"]
+[gd_scene load_steps=55 format=3 uid="uid://bmqu8tabbcbxd"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_jtlvg"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ct6yl"]
@@ -78,6 +78,9 @@ size = Vector2(465, 510)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ir75"]
 size = Vector2(228, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbuy"]
+size = Vector2(575, 379)
 
 [node name="Level_4" type="Node2D"]
 position = Vector2(12, 2)
@@ -1013,6 +1016,33 @@ position = Vector2(0, -16.9173)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt2/Boxt1/StaticBody2D"]
 polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(9683, 2206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(278, 178)
+shape = SubResource("RectangleShape2D_ixbuy")
+
+[node name="zomout2" type="Area2D" parent="."]
+position = Vector2(20367, -894)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zomout2"]
+position = Vector2(95, 187)
+shape = SubResource("RectangleShape2D_ewhhw")
+
+[node name="Book" parent="." instance=ExtResource("25_qkkpn")]
+position = Vector2(17202, -2122)
+
+[node name="Book2" parent="." instance=ExtResource("26_v5q50")]
+position = Vector2(19592, -2003)
+
+[node name="Book3" parent="." instance=ExtResource("23_43lip")]
+position = Vector2(19724, -2044)
+
+[node name="Book4" parent="." instance=ExtResource("25_qkkpn")]
+position = Vector2(19622, -2101)
+
 [connection signal="body_entered" from="scene_change" to="shelf player" method="_on_scene_change_body_entered"]
 [connection signal="body_entered" from="atomised zone2" to="atomised zone2" method="_on_body_entered"]
 [connection signal="body_entered" from="zomout" to="shelf player" method="_on_zomout_body_entered"]
+[connection signal="body_entered" from="zomout2" to="shelf player" method="_on_zomout_2_body_entered"]
