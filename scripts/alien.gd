@@ -11,6 +11,10 @@ var FOLLOW_SPEED = 0.5
 @export var firerate : float = 4
 
 func _ready():
+	if shelving:
+		$AlienEyeball.shelfing = true
+		$AlienEyeball2.shelfing = true
+	
 	$turret.get_node("Timer").wait_time = firerate
 	$turret2.get_node("Timer").wait_time = firerate
 	if flipsprite:
@@ -35,8 +39,6 @@ func _process(delta):
 	if not isplaying and shelving:
 		position.x = lerp(position.x,player.position.x-100,delta*FOLLOW_SPEED)
 		position.y = lerp(position.y,player.position.y+250,delta*FOLLOW_SPEED)
-		$AlienEyeball.shelfing = true
-		$AlienEyeball2.shelfing = true
 		Global.ceasefire = false
 	if isplaying:
 		Global.ceasefire = true

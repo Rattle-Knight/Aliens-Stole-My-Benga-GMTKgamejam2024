@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bmqu8tabbcbxd"]
+[gd_scene load_steps=54 format=3 uid="uid://bmqu8tabbcbxd"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_jtlvg"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ct6yl"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dj75aflurcwco" path="res://sprites/ui/arrow.png" id="24_jvh7a"]
 [ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="24_n80ib"]
 [ext_resource type="PackedScene" uid="uid://cywn3qyoggmvy" path="res://levels/objects/book3.tscn" id="25_i37v7"]
+[ext_resource type="PackedScene" uid="uid://cxnn7jb8hf5mr" path="res://levels/objects/book7.tscn" id="25_qkkpn"]
 [ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="26_v5q50"]
 [ext_resource type="PackedScene" uid="uid://boukts8nwxx5c" path="res://levels/objects/book8.tscn" id="27_vq46r"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="27_x2b6h"]
@@ -23,17 +24,23 @@
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="28_p2n1v"]
 [ext_resource type="PackedScene" uid="uid://dhyghet38wiay" path="res://levels/objects/book1.tscn" id="29_h4ixy"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="29_y7pqk"]
+[ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="30_gndw6"]
 [ext_resource type="Script" path="res://scripts/atomised zone.gd" id="31_gjxx2"]
 [ext_resource type="Texture2D" uid="uid://cu2j01g3cijq" path="res://sprites/objects/gum box.png" id="32_dgtvr"]
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="33_1umcw"]
 [ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="33_matrf"]
+[ext_resource type="Texture2D" uid="uid://cq8gtkn3if5g1" path="res://sprites/objects/box 4.png" id="33_ms11n"]
 [ext_resource type="Texture2D" uid="uid://tpcmmfduc2ka" path="res://sprites/objects/shelf wall 1.png" id="34_08pcr"]
+[ext_resource type="PackedScene" uid="uid://kf0hqxeqmamg" path="res://levels/objects/book6.tscn" id="34_mmdot"]
 [ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="35_5wlw4"]
+[ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="35_qmkht"]
 [ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="36_xdcy8"]
 [ext_resource type="Texture2D" uid="uid://d36xavavgoije" path="res://sprites/objects/book 9.png" id="37_er5tb"]
 [ext_resource type="PackedScene" uid="uid://dsijsdwrny47s" path="res://levels/objects/plant_2.tscn" id="38_k6jam"]
 [ext_resource type="PackedScene" uid="uid://cuhjunc20slnp" path="res://levels/objects/plant_4.tscn" id="39_chu2a"]
 [ext_resource type="PackedScene" uid="uid://bhiyd1xdbgpto" path="res://levels/objects/plant_1.tscn" id="40_a402b"]
+[ext_resource type="Texture2D" uid="uid://cdicx1cbydg01" path="res://sprites/objects/tablet 1.png" id="40_moo8n"]
+[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="41_lwdh7"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("27_x2b6h")
@@ -96,7 +103,7 @@ firerate = 5.0
 
 [node name="alien2" parent="." instance=ExtResource("22_b7tu4")]
 z_index = -1
-position = Vector2(1816, 2126)
+position = Vector2(10318, 2186)
 rotation = -4.67942
 isplaying = true
 flipsprite = true
@@ -123,7 +130,7 @@ texture = ExtResource("28_p2n1v")
 flip_h = true
 
 [node name="scene_change" parent="." instance=ExtResource("33_1umcw")]
-position = Vector2(1553, 2045)
+position = Vector2(10117, 2099)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_change"]
 position = Vector2(199.5, 295)
@@ -313,6 +320,26 @@ position = Vector2(0, -28.6783)
 position = Vector2(1.12305, -2.36908)
 shape = SubResource("RectangleShape2D_5nm55")
 
+[node name="plant1" parent="shelves and obj/ShelfWall5" instance=ExtResource("38_k6jam")]
+position = Vector2(-224.438, -71.8205)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant2" parent="shelves and obj/ShelfWall5" instance=ExtResource("39_chu2a")]
+position = Vector2(273.317, -73.0674)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant3" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(-114.464, -73.0674)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant4" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(0.249512, -72.0699)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="plant5" parent="shelves and obj/ShelfWall5" instance=ExtResource("40_a402b")]
+position = Vector2(110.474, -72.0699)
+scale = Vector2(0.249377, 0.249377)
+
 [node name="ShelfWall6" type="Sprite2D" parent="shelves and obj"]
 position = Vector2(20782, -1057)
 scale = Vector2(4.01, 4.01)
@@ -334,6 +361,50 @@ position = Vector2(5, -6)
 rotation = -1.95509
 texture = ExtResource("24_jvh7a")
 
+[node name="Book" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-284.29, -52.6184)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book2" parent="shelves and obj/ShelfWall6" instance=ExtResource("27_vq46r")]
+position = Vector2(-230.424, -68.3292)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book3" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_i37v7")]
+position = Vector2(-285.786, -89.5262)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book4" parent="shelves and obj/ShelfWall6" instance=ExtResource("22_3uos7")]
+position = Vector2(-244.639, -109.726)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book5" parent="shelves and obj/ShelfWall6" instance=ExtResource("29_h4ixy")]
+position = Vector2(-261.098, -124.688)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book6" parent="shelves and obj/ShelfWall6" instance=ExtResource("24_n80ib")]
+position = Vector2(-285.786, -138.155)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book7" parent="shelves and obj/ShelfWall6" instance=ExtResource("22_3uos7")]
+position = Vector2(-285.038, -155.112)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book8" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_i37v7")]
+position = Vector2(-260.349, -173.067)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book9" parent="shelves and obj/ShelfWall6" instance=ExtResource("29_h4ixy")]
+position = Vector2(-276.808, -189.526)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book10" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-281.546, -204.988)
+scale = Vector2(0.249377, 0.249377)
+
+[node name="Book11" parent="shelves and obj/ShelfWall6" instance=ExtResource("25_qkkpn")]
+position = Vector2(-276.808, -221.696)
+scale = Vector2(0.249377, 0.249377)
+
 [node name="ShelfWall7" type="Sprite2D" parent="shelves and obj"]
 position = Vector2(21546, -295)
 scale = Vector2(4.01, 4.01)
@@ -346,8 +417,34 @@ position = Vector2(0, -26.6833)
 position = Vector2(1.62085, -4.20938)
 shape = SubResource("RectangleShape2D_oe8il")
 
+[node name="Book4" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(285.245, -109.24)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("35_5wlw4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="shelves and obj/ShelfWall7/Book4"]
+position = Vector2(24.5436, 44.1224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelves and obj/ShelfWall7/Book4/StaticBody2D"]
+position = Vector2(-24.4302, -62.0132)
+shape = SubResource("RectangleShape2D_23rrp")
+
+[node name="Book5" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(269.036, -106.497)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("36_xdcy8")
+
+[node name="Book6" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(304.49, -108.477)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("35_5wlw4")
+
 [node name="ShelfWall8" type="Sprite2D" parent="shelves and obj"]
-position = Vector2(20793, 469)
+position = Vector2(20142, 1062)
+rotation = -0.00572664
 scale = Vector2(4.01, 4.01)
 texture = ExtResource("34_08pcr")
 
@@ -454,74 +551,387 @@ texture = ExtResource("28_ob7og")
 
 [node name="Boxtowers" type="Node2D" parent="."]
 
-[node name="Box11" type="Sprite2D" parent="Boxtowers"]
+[node name="Boxt1" type="Sprite2D" parent="Boxtowers"]
 position = Vector2(12628, -2204)
 scale = Vector2(1.01215, 1.00489)
-texture = ExtResource("29_y7pqk")
+texture = ExtResource("30_gndw6")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box11"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt1"]
 position = Vector2(0, -16.9173)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box11/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt1/StaticBody2D"]
 polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
 
-[node name="Box12" type="Sprite2D" parent="Boxtowers"]
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt1"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("29_y7pqk")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt2" type="Sprite2D" parent="Boxtowers"]
 position = Vector2(13562, -2038.42)
 scale = Vector2(1.01215, 1.00489)
 texture = ExtResource("29_y7pqk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box12"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt2"]
 position = Vector2(0, -16.9173)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box12/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt2/StaticBody2D"]
 polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
 
-[node name="Box13" type="Sprite2D" parent="Boxtowers"]
-position = Vector2(14495, -2132.42)
-scale = Vector2(1.01215, 1.00489)
-texture = ExtResource("29_y7pqk")
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt2"]
+position = Vector2(25.6898, 12.3552)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box13"]
-position = Vector2(0, -16.9173)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box13/StaticBody2D"]
-polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
-
-[node name="Box14" type="Sprite2D" parent="Boxtowers"]
-position = Vector2(15405, -1953.42)
-scale = Vector2(1.01215, 1.00489)
-texture = ExtResource("29_y7pqk")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box14"]
-position = Vector2(0, -16.9173)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box14/StaticBody2D"]
-polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
-
-[node name="Box15" type="Sprite2D" parent="Boxtowers"]
-position = Vector2(16320, -1780)
-scale = Vector2(1.01215, 1.00489)
-texture = ExtResource("29_y7pqk")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box15"]
-position = Vector2(0, -16.9173)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box15/StaticBody2D"]
-polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
-
-[node name="Box16" type="Sprite2D" parent="Boxtowers"]
-position = Vector2(17167, -1850)
-scale = Vector2(1.01215, 1.00489)
-texture = ExtResource("29_y7pqk")
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Box16"]
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("33_ms11n")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-95.836, 4106.92)
+scale = Vector2(1.083, 1.785)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt4" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(15405, -1953.42)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("33_ms11n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt4"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt4/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt4"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("35_qmkht")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-82.0022, 4018.76)
+scale = Vector2(0.988, 1.69)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Boxt5" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(16320, -1732)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("29_y7pqk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt5"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt5/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt5"]
+position = Vector2(0.00096484, 31.8443)
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("29_y7pqk")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-71.1352, 3923.81)
+scale = Vector2(0.988, 1.1)
+texture = ExtResource("33_ms11n")
+flip_h = true
+
+[node name="Book" parent="Boxtowers/Boxt5" instance=ExtResource("34_mmdot")]
+position = Vector2(231.192, -274.657)
+scale = Vector2(0.987996, 0.995134)
+
+[node name="Boxt6" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(17167, -1850)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt6"]
 position = Vector2(-2.96399, 87.5719)
 rotation = 0.0368844
 scale = Vector2(-1.01, -1.01)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Box16/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt6/StaticBody2D"]
 polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt6"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-68.1721, 3988.5)
+scale = Vector2(0.988, 1.37)
+texture = ExtResource("30_gndw6")
+
+[node name="Boxt3" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(14460, -2128)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxtowers/Boxt3"]
+position = Vector2(-2.96399, 87.5719)
+rotation = 0.0368844
+scale = Vector2(-1.01, -1.01)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxtowers/Boxt3/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt3"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("30_gndw6")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("33_ms11n")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("30_gndw6")
 
 [node name="GumBox" type="Sprite2D" parent="."]
 position = Vector2(11083, -2453)
@@ -537,7 +947,7 @@ shape = SubResource("RectangleShape2D_1ir75")
 position = Vector2(11023, -2490)
 
 [node name="gum2" parent="." instance=ExtResource("21_mo06h")]
-position = Vector2(10859, -2427)
+position = Vector2(10688, -2422)
 
 [node name="GumSticky2" type="Sprite2D" parent="."]
 z_index = 2
@@ -553,5 +963,56 @@ rotation = 0.534575
 scale = Vector2(1.285, 1.285)
 texture = ExtResource("33_matrf")
 
+[node name="Plush" type="Sprite2D" parent="."]
+position = Vector2(17091, 1764)
+texture = ExtResource("17_eceyi")
+
+[node name="Tablet1" type="Sprite2D" parent="."]
+position = Vector2(14740, 2336)
+texture = ExtResource("40_moo8n")
+
+[node name="ball of paper" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16403, 2465)
+
+[node name="ball of paper2" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16205, 2465)
+
+[node name="ball of paper3" parent="." instance=ExtResource("41_lwdh7")]
+position = Vector2(16301, 2363)
+
+[node name="Boxt1" type="Sprite2D" parent="."]
+position = Vector2(21019, 553)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt1"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt1/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Boxt2" type="Sprite2D" parent="."]
+position = Vector2(19273, 2261)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("30_gndw6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt2"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt2/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[node name="Boxt1" type="Sprite2D" parent="Boxt2"]
+position = Vector2(198.587, -535.382)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("35_qmkht")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boxt2/Boxt1"]
+position = Vector2(0, -16.9173)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boxt2/Boxt1/StaticBody2D"]
+polygon = PackedVector2Array(-438.669, -199.204, 411.993, -219.106, 411.993, 314.284, -435.705, 324.235, -408.041, 97.3456)
+
+[connection signal="body_entered" from="scene_change" to="shelf player" method="_on_scene_change_body_entered"]
 [connection signal="body_entered" from="atomised zone2" to="atomised zone2" method="_on_body_entered"]
 [connection signal="body_entered" from="zomout" to="shelf player" method="_on_zomout_body_entered"]
