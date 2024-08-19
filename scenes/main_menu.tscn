@@ -261,13 +261,15 @@ script = ExtResource("9_jonhm")
 [node name="menu_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_v420c")
 autoplay = true
-bus = &"Music"
+bus = &"SFX"
 
 [node name="hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_acumo")
+bus = &"SFX"
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_ravww")
+bus = &"SFX"
 
 [node name="notes" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.188235)

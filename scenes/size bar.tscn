@@ -17,9 +17,9 @@ script = ExtResource("1_fcy1d")
 [node name="SizeBar" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 67.0
-offset_top = 40.0
+offset_top = 50.0
 offset_right = 108.0
-offset_bottom = 531.0
+offset_bottom = 541.0
 theme = ExtResource("1_emyap")
 fill_mode = 3
 
