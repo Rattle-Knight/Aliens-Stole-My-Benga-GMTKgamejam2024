@@ -79,7 +79,7 @@ size = Vector2(834.226, 1045.01)
 size = Vector2(3558, 1211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0qp6"]
-size = Vector2(5612, 999)
+size = Vector2(8857, 920)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2xfe"]
 radius = 193.146
@@ -778,7 +778,7 @@ shape = SubResource("RectangleShape2D_82nva")
 position = Vector2(6907, -57)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atomised zone/atomised zone"]
-position = Vector2(-626, 448.5)
+position = Vector2(996.5, 488)
 shape = SubResource("RectangleShape2D_b0qp6")
 
 [node name="semiatomised zone2" type="Area2D" parent="."]
