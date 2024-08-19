@@ -1,39 +1,40 @@
-[gd_scene load_steps=45 format=3 uid="uid://ddpmlyemc4k3x"]
+[gd_scene load_steps=46 format=3 uid="uid://ddpmlyemc4k3x"]
 
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_3butq"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="3_da6ib"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="4_wvs65"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="5_mf33t"]
-[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="6_le5qt"]
+[ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="6_le5qt"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="7_p4t3u"]
 [ext_resource type="Texture2D" uid="uid://cq8gtkn3if5g1" path="res://sprites/objects/box 4.png" id="9_oaspw"]
-[ext_resource type="PackedScene" uid="uid://dhyghet38wiay" path="res://levels/objects/book1.tscn" id="11_hc2hd"]
-[ext_resource type="PackedScene" uid="uid://cywn3qyoggmvy" path="res://levels/objects/book3.tscn" id="12_clkek"]
-[ext_resource type="PackedScene" uid="uid://uajrcow1uksj" path="res://levels/objects/book9.tscn" id="13_1fvs4"]
-[ext_resource type="PackedScene" uid="uid://cxnn7jb8hf5mr" path="res://levels/objects/book7.tscn" id="14_td14f"]
-[ext_resource type="PackedScene" uid="uid://bru3rxmkhndn0" path="res://levels/objects/book10.tscn" id="15_de2lv"]
-[ext_resource type="PackedScene" uid="uid://kf0hqxeqmamg" path="res://levels/objects/book6.tscn" id="16_8f0rh"]
+[ext_resource type="PackedScene" path="res://levels/objects/book1.tscn" id="11_hc2hd"]
+[ext_resource type="PackedScene" path="res://levels/objects/book3.tscn" id="12_clkek"]
+[ext_resource type="PackedScene" path="res://levels/objects/book9.tscn" id="13_1fvs4"]
+[ext_resource type="PackedScene" path="res://levels/objects/book7.tscn" id="14_td14f"]
+[ext_resource type="PackedScene" path="res://levels/objects/book10.tscn" id="15_de2lv"]
+[ext_resource type="PackedScene" path="res://levels/objects/book6.tscn" id="16_8f0rh"]
 [ext_resource type="PackedScene" uid="uid://ct7vaaj07qx84" path="res://levels/objects/laundry.tscn" id="17_f74u0"]
 [ext_resource type="Texture2D" uid="uid://djt2hr4thdyne" path="res://sprites/objects/gum.png" id="17_trqrt"]
 [ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="18_frojf"]
-[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="19_d4rbe"]
-[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="20_cd471"]
-[ext_resource type="PackedScene" uid="uid://d3m1keebkrooa" path="res://levels/objects/book4.tscn" id="20_lwf3i"]
-[ext_resource type="PackedScene" uid="uid://boukts8nwxx5c" path="res://levels/objects/book8.tscn" id="21_07nlh"]
-[ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="21_ni0f6"]
+[ext_resource type="PackedScene" path="res://levels/objects/ball_of_paper.tscn" id="19_d4rbe"]
+[ext_resource type="PackedScene" path="res://levels/objects/gum.tscn" id="20_cd471"]
+[ext_resource type="PackedScene" path="res://levels/objects/book4.tscn" id="20_lwf3i"]
+[ext_resource type="PackedScene" path="res://levels/objects/book8.tscn" id="21_07nlh"]
+[ext_resource type="PackedScene" path="res://levels/objects/book5.tscn" id="21_ni0f6"]
 [ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="22_fxfn4"]
 [ext_resource type="Script" path="res://scripts/i see you.gd" id="23_v0jp6"]
 [ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="23_y6lfa"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="24_lk6is"]
 [ext_resource type="Texture2D" uid="uid://bdnnumb6j1kwh" path="res://sprites/objects/ball paper.png" id="25_j6tld"]
-[ext_resource type="PackedScene" uid="uid://bhiyd1xdbgpto" path="res://levels/objects/plant_1.tscn" id="27_xwn1w"]
-[ext_resource type="PackedScene" uid="uid://dsijsdwrny47s" path="res://levels/objects/plant_2.tscn" id="28_8tn48"]
-[ext_resource type="PackedScene" uid="uid://bkmwtijp1p52i" path="res://levels/objects/plant_3.tscn" id="29_ji6vv"]
+[ext_resource type="PackedScene" path="res://levels/objects/plant_1.tscn" id="27_xwn1w"]
+[ext_resource type="PackedScene" path="res://levels/objects/plant_2.tscn" id="28_8tn48"]
+[ext_resource type="PackedScene" path="res://levels/objects/plant_3.tscn" id="29_ji6vv"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="29_kis8c"]
-[ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_mwilu"]
+[ext_resource type="PackedScene" path="res://levels/scene_change.tscn" id="30_mwilu"]
 [ext_resource type="Texture2D" uid="uid://dh82le6o0hx1e" path="res://sprites/objects/water bottle.png" id="31_eh23t"]
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="32_b71lt"]
 [ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="32_ow0ai"]
+[ext_resource type="AudioStream" uid="uid://bpbyv60bjhm7n" path="res://assets/audio/80s_midnight_rush.ogg" id="35_u73ar"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("5_mf33t")
@@ -100,7 +101,6 @@ texture = ExtResource("3_da6ib")
 [node name="player" parent="." groups=["player"] instance=ExtResource("6_le5qt")]
 z_index = 2
 position = Vector2(-241, 584)
-shrinking = false
 timer = 90
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -469,6 +469,11 @@ offset_bottom = 926.627
 rotation = 0.0241574
 color = Color(0.141176, 0.141176, 0.141176, 0.709804)
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_u73ar")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="body_entered" from="takeaway5" to="i see you" method="_on_takeaway_5_body_entered"]
 [connection signal="body_entered" from="objects/Book21/Area2D" to="objects/Book21/Area2D" method="_on_area_2d_body_entered"]

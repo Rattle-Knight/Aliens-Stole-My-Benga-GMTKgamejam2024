@@ -43,7 +43,6 @@ func _on_takeaway_2_body_entered(body):
 			await altween.finished
 			$"../alien".isplaying = false
 			
-			
 
 func bgsqequence():
 	var altween = create_tween()

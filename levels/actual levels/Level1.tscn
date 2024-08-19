@@ -1,8 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://b2pje2cydnmbu"]
+[gd_scene load_steps=45 format=3 uid="uid://b2pje2cydnmbu"]
 
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="1_buxbu"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_u5gax"]
-[ext_resource type="PackedScene" uid="uid://bq5tfgn8r368l" path="res://scenes/player.tscn" id="2_2nb44"]
+[ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="2_2nb44"]
 [ext_resource type="Shader" path="res://shader/blur.gdshader" id="2_75s8v"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_bvvq6"]
 [ext_resource type="Texture2D" uid="uid://bxvlyarujqke8" path="res://levels/objects/shelf longer.png" id="3_kblo3"]
@@ -18,20 +18,21 @@
 [ext_resource type="Texture2D" uid="uid://btt5ake4a1yv4" path="res://sprites/objects/benga 4.png" id="10_qqo4s"]
 [ext_resource type="Texture2D" uid="uid://bndtssryskey3" path="res://sprites/objects/blast alien black hole.png" id="10_tojb6"]
 [ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="14_hpp2n"]
-[ext_resource type="Texture2D" uid="uid://grsu0bq2vylt" path="res://sprites/objects/laundry sock.png" id="14_l5vmu"]
+[ext_resource type="Texture2D" uid="uid://c5lcc0vwosikq" path="res://sprites/objects/laundry sock.png" id="14_l5vmu"]
 [ext_resource type="PackedScene" uid="uid://ct7vaaj07qx84" path="res://levels/objects/laundry.tscn" id="15_jaka7"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="16_lqr8i"]
-[ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="17_dxk8q"]
-[ext_resource type="PackedScene" uid="uid://d3m1keebkrooa" path="res://levels/objects/book4.tscn" id="19_cbd1d"]
+[ext_resource type="PackedScene" path="res://levels/objects/ball_of_paper.tscn" id="17_dxk8q"]
+[ext_resource type="PackedScene" path="res://levels/objects/book4.tscn" id="19_cbd1d"]
 [ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="21_n1dab"]
-[ext_resource type="PackedScene" uid="uid://d3cdoejoe3q5v" path="res://levels/objects/book5.tscn" id="22_5kmyu"]
+[ext_resource type="PackedScene" path="res://levels/objects/book5.tscn" id="22_5kmyu"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="23_2xox8"]
 [ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="23_22uil"]
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="24_1v4ql"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="25_f6ljg"]
 [ext_resource type="PackedScene" uid="uid://cjtenyecu44ha" path="res://levels/objects/shoe.tscn" id="26_uu8xl"]
-[ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="30_oprhe"]
+[ext_resource type="PackedScene" path="res://levels/scene_change.tscn" id="30_oprhe"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="32_c83r7"]
+[ext_resource type="AudioStream" uid="uid://d2bd5ph673ceo" path="res://assets/audio/dizzy_racing.wav" id="33_knb3u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s54ar"]
 shader = ExtResource("2_75s8v")
@@ -117,7 +118,6 @@ texture = ExtResource("32_c83r7")
 [node name="player" parent="." groups=["player"] instance=ExtResource("2_2nb44")]
 z_index = 2
 position = Vector2(136, 412)
-shrinking = false
 timer = 90
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -370,6 +370,14 @@ position = Vector2(13736, 336)
 scale = Vector2(1, 24.44)
 texture = ExtResource("32_c83r7")
 flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_knb3u")
+volume_db = -15.0
+autoplay = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_knb3u")
 
 [connection signal="body_entered" from="takeaway" to="takeaway benga" method="_on_takeaway_body_entered"]
 [connection signal="body_entered" from="takeaway2" to="takeaway benga" method="_on_takeaway_2_body_entered"]

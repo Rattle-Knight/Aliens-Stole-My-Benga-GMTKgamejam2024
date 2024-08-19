@@ -120,6 +120,7 @@ func check_global_force():
 		forcestop = false
 
 func _physics_process(delta):
+	#change_size()
 	check_scale()
 	check_gum()
 	check_global_force()
@@ -185,8 +186,6 @@ func change_size():
 	if shrinking:
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
-		
-		
 
 
 
