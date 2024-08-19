@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg1gkoaqts5wv"]
+[gd_scene load_steps=15 format=3 uid="uid://cg1gkoaqts5wv"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_oa8lb"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ahlrt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/Battle_controller.gd" id="6_pke1k"]
 [ext_resource type="Texture2D" uid="uid://bxvlyarujqke8" path="res://levels/objects/shelf longer.png" id="7_blo38"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="8_a6022"]
+[ext_resource type="Texture2D" uid="uid://vj6fr6wyou3s" path="res://bg/wall 2.png" id="9_io1di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etret"]
 size = Vector2(564, 858)
@@ -36,6 +37,9 @@ timer = 90
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(124, 51)
+limit_left = 3100
+limit_top = -4230
+limit_right = 22900
 limit_bottom = 2700
 editor_draw_limits = true
 script = ExtResource("2_ahlrt")
@@ -83,6 +87,7 @@ layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146,
 [node name="wall" type="StaticBody2D" parent="floor"]
 z_index = 2
 position = Vector2(31025, -2101)
+scale = Vector2(1, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall"]
 position = Vector2(-1079.5, -716)
@@ -96,8 +101,9 @@ flip_h = true
 
 [node name="wall2" type="StaticBody2D" parent="floor"]
 z_index = 2
-position = Vector2(8671, -3665)
+position = Vector2(8671, -3437)
 rotation = -3.14129
+scale = Vector2(1, 1.28002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall2"]
 position = Vector2(-1079.5, -716)
@@ -140,6 +146,12 @@ z_index = -3
 position = Vector2(9946, 1911)
 scale = Vector2(2.19, 2.19)
 texture = ExtResource("8_a6022")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+z_index = -106
+position = Vector2(12590.5, -987.5)
+scale = Vector2(19.2439, 13.1528)
+texture = ExtResource("9_io1di")
 
 [connection signal="timeout" from="alien/Timer2" to="alien" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="alien/Area2D" to="alien" method="_on_area_2d_body_entered"]
