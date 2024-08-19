@@ -26,6 +26,7 @@ func _on_resume_pressed():
 
 func _on_restart_pressed():
 	$click.play()
+	Global.steppedingum = false
 	await get_tree().create_timer(0.1).timeout
 	_is_paused = false
 	get_tree().reload_current_scene()
