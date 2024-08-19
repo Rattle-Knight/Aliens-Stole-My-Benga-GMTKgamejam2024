@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Goblin_Tinker_Soldier_Spy.mp3-c55701ba1239d71
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
