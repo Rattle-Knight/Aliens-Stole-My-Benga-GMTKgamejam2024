@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://ddpmlyemc4k3x"]
+[gd_scene load_steps=48 format=3 uid="uid://ddpmlyemc4k3x"]
 
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="1_3butq"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="3_da6ib"]
@@ -35,6 +35,7 @@
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="32_b71lt"]
 [ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="32_ow0ai"]
 [ext_resource type="AudioStream" uid="uid://bpbyv60bjhm7n" path="res://assets/audio/80s_midnight_rush.ogg" id="35_u73ar"]
+[ext_resource type="Texture2D" uid="uid://cu2j01g3cijq" path="res://sprites/objects/gum box.png" id="36_ihg2a"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("5_mf33t")
@@ -66,6 +67,9 @@ size = Vector2(35.2588, 79.4385)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbdrm"]
 size = Vector2(834.226, 1045.01)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7opc8"]
+size = Vector2(228, 74)
 
 [node name="level2" type="Node2D"]
 
@@ -474,6 +478,28 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("35_u73ar")
 volume_db = -5.0
 autoplay = true
+
+[node name="gum6" parent="." instance=ExtResource("20_cd471")]
+position = Vector2(8337, 129)
+
+[node name="gum7" parent="." instance=ExtResource("20_cd471")]
+position = Vector2(8945, 121)
+
+[node name="gum8" parent="." instance=ExtResource("20_cd471")]
+position = Vector2(9550, 123)
+
+[node name="gum9" parent="." instance=ExtResource("20_cd471")]
+position = Vector2(9218, 113)
+
+[node name="GumBox" type="Sprite2D" parent="."]
+position = Vector2(8109, 94)
+texture = ExtResource("36_ihg2a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="GumBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GumBox/StaticBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7opc8")
 
 [connection signal="body_entered" from="takeaway5" to="i see you" method="_on_takeaway_5_body_entered"]
 [connection signal="body_entered" from="objects/Book21/Area2D" to="objects/Book21/Area2D" method="_on_area_2d_body_entered"]
