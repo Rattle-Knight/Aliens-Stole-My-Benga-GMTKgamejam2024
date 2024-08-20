@@ -47,6 +47,7 @@ var last_floor = false  # Last frame's on-floor state
 
 
 func _ready():
+	anim.flip_h = true
 	$CanvasLayer/SizeBar.visible = false
 	if Global.showhud:
 		$CanvasLayer/SizeBar.visible = true
