@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mu2ogokk2w0"]
+[gd_scene load_steps=14 format=3 uid="uid://5mu2ogokk2w0"]
 
 [ext_resource type="Script" path="res://scripts/cinematic outro.gd" id="1_dl072"]
 [ext_resource type="Script" path="res://scripts/ParallaxLayerscroll.gd" id="2_my61e"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bm86ct284ut0v" path="res://sprites/cinematic/outro 3 layer 2.png" id="10_6ard8"]
 [ext_resource type="Texture2D" uid="uid://cwk3dtj5auahk" path="res://sprites/cinematic/outro 3 layer 3.png" id="11_yqy0k"]
 [ext_resource type="AudioStream" uid="uid://s2fr0ufi44is" path="res://assets/audio/jazznbrass loop.wav" id="12_18kne"]
+[ext_resource type="PackedScene" uid="uid://ct4xl5bcuhari" path="res://scenes/pausemenu.tscn" id="13_w8hyp"]
 
 [node name="CinematicIntro" type="Node2D"]
 script = ExtResource("1_dl072")
@@ -124,5 +125,15 @@ texture = ExtResource("11_yqy0k")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_18kne")
 autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="pausemenu" parent="CanvasLayer2" instance=ExtResource("13_w8hyp")]
+visible = false
+offset_left = -1.0
+offset_top = 6.0
+offset_right = -1.0
+offset_bottom = 6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1xwevn3oliy"
+path="res://.godot/imported/265306__lextrack__climbing-a-ladder (1).mp3-b51e3a1b33706cf0688f8567730b3690.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX/265306__lextrack__climbing-a-ladder (1).mp3"
+dest_files=["res://.godot/imported/265306__lextrack__climbing-a-ladder (1).mp3-b51e3a1b33706cf0688f8567730b3690.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

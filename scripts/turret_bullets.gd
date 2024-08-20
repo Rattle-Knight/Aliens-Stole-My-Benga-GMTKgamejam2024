@@ -30,6 +30,9 @@ func _on_area_2d_body_entered(body):
 		if player.scale >  Vector2(0.1,0.1):
 			var tween = create_tween()
 			tween.tween_property(player, "scale", player.scale - dmg , shrinkdur)
+			$hit_player.play()
+			await get_tree().create_timer(0.1).timeout
+			queue_free()
 	if alien and body == alien and Global.under_control and not is_enemy:
 		if alien.scale >  Vector2(0.1,0.1):
 			var tween = create_tween()

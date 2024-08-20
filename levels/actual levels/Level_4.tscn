@@ -1067,7 +1067,7 @@ position = Vector2(19622, -2101)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("42_xkamr")
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
 
 [node name="Poster" type="Sprite2D" parent="."]

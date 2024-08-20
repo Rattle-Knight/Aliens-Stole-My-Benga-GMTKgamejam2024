@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c5lcc0vwosikq" path="res://sprites/objects/laundry sock.png" id="14_l5vmu"]
 [ext_resource type="PackedScene" uid="uid://ct7vaaj07qx84" path="res://levels/objects/laundry.tscn" id="15_jaka7"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="16_lqr8i"]
-[ext_resource type="PackedScene" path="res://levels/objects/ball_of_paper.tscn" id="17_dxk8q"]
+[ext_resource type="PackedScene" uid="uid://cvtbep861vv2k" path="res://levels/objects/ball_of_paper.tscn" id="17_dxk8q"]
 [ext_resource type="PackedScene" path="res://levels/objects/book4.tscn" id="19_cbd1d"]
 [ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="21_n1dab"]
 [ext_resource type="PackedScene" path="res://levels/objects/book5.tscn" id="22_5kmyu"]

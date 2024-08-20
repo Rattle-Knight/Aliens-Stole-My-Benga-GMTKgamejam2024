@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnkitg5dut2uv"]
+[gd_scene load_steps=6 format=3 uid="uid://bnkitg5dut2uv"]
 
 [ext_resource type="Script" path="res://scripts/turret_bullets.gd" id="1_adnxe"]
 [ext_resource type="Texture2D" uid="uid://boqdvppuc7g8p" path="res://sprites/objects/blast alien.png" id="2_j4vxt"]
 [ext_resource type="Script" path="res://scripts/BlastAlien.gd" id="3_1b2u7"]
+[ext_resource type="AudioStream" uid="uid://du2rdfhv2mlux" path="res://assets/SFX/55843__sergenious__port.wav" id="4_i321b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k62x6"]
 radius = 15.0
@@ -20,5 +21,9 @@ script = ExtResource("3_1b2u7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_k62x6")
+
+[node name="hit_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i321b")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]

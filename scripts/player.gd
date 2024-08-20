@@ -104,7 +104,6 @@ func gumquicktimeevent():
 		gumtrig = 0
 
 
-
 func _process(_delta: float):
 	#CODE FOR GUM QUICKTIME EVENT 3
 	if _is_mashing and gum:
@@ -212,6 +211,7 @@ func change_size():
 		tween.tween_property(self, "scale", Vector2(0,0), timer)
 
 
+@onready var run = $run
 
 func play_animation():
 	
@@ -224,11 +224,14 @@ func play_animation():
 	if is_on_floor():
 		if direction == 0:
 			anim.play("idle")
+			run.stop()
 		else:
 			anim.play("run")
+			if !run.playing:
+				run.play()
 	else:
 		anim.play("jump")
-	
+		run.stop()
 
 
 

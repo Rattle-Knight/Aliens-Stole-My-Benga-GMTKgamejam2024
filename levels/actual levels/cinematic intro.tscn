@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dqfs1l2wbx2p2"]
+[gd_scene load_steps=34 format=3 uid="uid://dqfs1l2wbx2p2"]
 
 [ext_resource type="Script" path="res://scripts/cinematic intro.gd" id="1_73fra"]
 [ext_resource type="Script" path="res://scripts/ParallaxLayerscroll.gd" id="2_v2cmc"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://xni667csdjun" path="res://sprites/cinematic/intro 8 layer 2.png" id="29_s6c7m"]
 [ext_resource type="Texture2D" uid="uid://dus8en84wauq3" path="res://sprites/cinematic/intro 8 layer 3.png" id="30_0t3jh"]
 [ext_resource type="AudioStream" uid="uid://beoj4il60jf2e" path="res://assets/audio/Enemy Infiltration.mp3" id="31_60b3w"]
+[ext_resource type="PackedScene" uid="uid://ct4xl5bcuhari" path="res://scenes/pausemenu.tscn" id="32_qvnj4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cvwc2"]
 shader = ExtResource("10_kbkg5")
@@ -340,5 +341,15 @@ texture = ExtResource("30_0t3jh")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_60b3w")
 autoplay = true
+bus = &"Music"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="pausemenu" parent="CanvasLayer2" instance=ExtResource("32_qvnj4")]
+visible = false
+offset_left = -1.0
+offset_top = 6.0
+offset_right = -1.0
+offset_bottom = 6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

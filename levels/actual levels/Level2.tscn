@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ct7vaaj07qx84" path="res://levels/objects/laundry.tscn" id="17_f74u0"]
 [ext_resource type="Texture2D" uid="uid://djt2hr4thdyne" path="res://sprites/objects/gum.png" id="17_trqrt"]
 [ext_resource type="Texture2D" uid="uid://jpgxjjgl8h0v" path="res://sprites/objects/gum sticky.png" id="18_frojf"]
-[ext_resource type="PackedScene" path="res://levels/objects/ball_of_paper.tscn" id="19_d4rbe"]
+[ext_resource type="PackedScene" uid="uid://cvtbep861vv2k" path="res://levels/objects/ball_of_paper.tscn" id="19_d4rbe"]
 [ext_resource type="PackedScene" path="res://levels/objects/gum.tscn" id="20_cd471"]
 [ext_resource type="PackedScene" path="res://levels/objects/book4.tscn" id="20_lwf3i"]
 [ext_resource type="PackedScene" path="res://levels/objects/book8.tscn" id="21_07nlh"]
