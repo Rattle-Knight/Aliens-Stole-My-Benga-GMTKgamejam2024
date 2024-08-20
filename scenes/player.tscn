@@ -173,7 +173,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"climb",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +286,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"struggle",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dm5g"]
@@ -325,7 +325,7 @@ script = ExtResource("1_51acg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.450833, 0.450833)
 sprite_frames = SubResource("SpriteFrames_i2ub0")
-animation = &"climb"
+animation = &"struggle"
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0.5)

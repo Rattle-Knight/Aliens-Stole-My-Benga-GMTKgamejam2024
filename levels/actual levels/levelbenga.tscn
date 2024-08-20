@@ -701,11 +701,6 @@ position = Vector2(21.843, -108.874)
 scale = Vector2(0.341297, 0.341297)
 texture = ExtResource("14_vdo7l")
 
-[node name="Book8" type="Sprite2D" parent="Shelf"]
-position = Vector2(-145.051, 78.4983)
-scale = Vector2(0.341297, 0.341297)
-texture = ExtResource("15_de15l")
-
 [node name="Table" type="Sprite2D" parent="."]
 position = Vector2(330, 1520)
 scale = Vector2(3.6, 3.4)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctl7b8mhjt07i"]
+[gd_scene load_steps=37 format=3 uid="uid://ctl7b8mhjt07i"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pwasb"]
 [ext_resource type="Texture2D" uid="uid://b6h1d5yfo1ogp" path="res://sprites/bg/wall.png" id="2_fk27q"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cycdkrqpijeu" path="res://sprites/alien/music note 5.png" id="25_buoes"]
 [ext_resource type="Texture2D" uid="uid://4jmgtmpjvkfd" path="res://sprites/alien/music note 6.png" id="26_o28n4"]
 [ext_resource type="Texture2D" uid="uid://5q816x336a2l" path="res://sprites/alien/music note 7.png" id="27_smooh"]
+[ext_resource type="Texture2D" uid="uid://cdmiuugxc7nyo" path="res://sprites/players/sprite_sheet.png" id="29_fga7c"]
 
 [sub_resource type="Curve2D" id="Curve2D_6qefi"]
 _data = {
@@ -40,6 +41,42 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 497, -238, 0, 0, 0, 0, 494, -54, 0, 0, 0, 0, 494, 92, 0, 0, 0, 0, 494, 204, 0, 0, 0, 0, 492, 357, 0, 0, 0, 0, 485, 556, 0, 0, 0, 0, 463, 673, 0, 0, 0, 0, 483, 745)
 }
 point_count = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aqo5"]
+atlas = ExtResource("29_fga7c")
+region = Rect2(150, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwa7i"]
+atlas = ExtResource("29_fga7c")
+region = Rect2(300, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvqch"]
+atlas = ExtResource("29_fga7c")
+region = Rect2(450, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16ul5"]
+atlas = ExtResource("29_fga7c")
+region = Rect2(600, 810, 150, 162)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okc6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aqo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwa7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvqch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16ul5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -306,6 +343,12 @@ texture = ExtResource("27_smooh")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="playerjumping" type="AnimatedSprite2D" parent="."]
+position = Vector2(856, 114)
+scale = Vector2(0.375, 0.375)
+sprite_frames = SubResource("SpriteFrames_okc6c")
+autoplay = "default"
 
 [connection signal="mouse_entered" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Start" to="." method="_on_start_pressed"]

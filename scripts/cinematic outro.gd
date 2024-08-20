@@ -7,12 +7,9 @@ var trig = 0
 func _on_timer_timeout():
 	trig += 1
 	if trig == 1:
-		$ParallaxBackground.visible = true 
+		$ParallaxBackground2.visible = true 
 	elif trig == 2:
 		$ParallaxBackground.visible = false
-		$ParallaxBackground2.visible = true
-	elif trig == 3:
-		$ParallaxBackground2.visible = false
 		$ParallaxBackground3.visible = true
 	elif trig == 4:
 		Global.steppedingum = false
