@@ -13,6 +13,7 @@ func _ready():
 	readyup.tween_property($"../player/CollisionShape2D2","position",Vector2(0, 377),4)
 	readyup.tween_property($"../player/CollisionShape2D2","scale",Vector2(10,15),4)
 	await readyup.finished
+	$"../alien".isplaying = false
 	Global.under_control = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

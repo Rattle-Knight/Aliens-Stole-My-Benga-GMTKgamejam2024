@@ -59,6 +59,7 @@ firerate = 3.5
 [node name="alien" parent="." groups=["actualalien"] instance=ExtResource("3_k2mvd")]
 z_index = 2
 position = Vector2(5582, -249)
+isplaying = true
 dmg = Vector2(0.25, 0.25)
 firerate = 0.7
 

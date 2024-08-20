@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bmqu8tabbcbxd"]
+[gd_scene load_steps=57 format=3 uid="uid://bmqu8tabbcbxd"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_jtlvg"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ct6yl"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://cdicx1cbydg01" path="res://sprites/objects/tablet 1.png" id="40_moo8n"]
 [ext_resource type="PackedScene" uid="uid://b1h5nukvgvccf" path="res://levels/objects/ball_of_paper.tscn" id="41_lwdh7"]
 [ext_resource type="AudioStream" uid="uid://d0tahk4c03syg" path="res://assets/audio/hot_roadway_bpm160.ogg" id="42_1nbuh"]
+[ext_resource type="Texture2D" uid="uid://b0ykik83ud43a" path="res://sprites/objects/poster.png" id="43_p8q7f"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
 scenes/1/scene = ExtResource("27_x2b6h")
@@ -1068,6 +1069,11 @@ position = Vector2(19622, -2101)
 stream = ExtResource("42_1nbuh")
 volume_db = -10.0
 autoplay = true
+
+[node name="Poster" type="Sprite2D" parent="."]
+position = Vector2(19281, 174)
+scale = Vector2(1.815, 1.815)
+texture = ExtResource("43_p8q7f")
 
 [connection signal="body_entered" from="scene_change" to="shelf player" method="_on_scene_change_body_entered"]
 [connection signal="body_entered" from="atomised zone2" to="atomised zone2" method="_on_body_entered"]
