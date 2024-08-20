@@ -411,9 +411,9 @@ offset_bottom = -2.0
 [node name="pausemenu" parent="CanvasLayer2" instance=ExtResource("12_e47kr")]
 visible = false
 offset_left = -1.0
-offset_top = 6.0
+offset_top = 1.0
 offset_right = -1.0
-offset_bottom = 6.0
+offset_bottom = 1.0
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 

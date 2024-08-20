@@ -1075,6 +1075,15 @@ position = Vector2(19281, 174)
 scale = Vector2(1.815, 1.815)
 texture = ExtResource("43_p8q7f")
 
+[node name="gum3" parent="." instance=ExtResource("21_mo06h")]
+position = Vector2(14333, -2373)
+
+[node name="gum4" parent="." instance=ExtResource("21_mo06h")]
+position = Vector2(11432, -2426)
+
+[node name="gum5" parent="." instance=ExtResource("21_mo06h")]
+position = Vector2(16616, -2050)
+
 [connection signal="body_entered" from="scene_change" to="shelf player" method="_on_scene_change_body_entered"]
 [connection signal="body_entered" from="atomised zone2" to="atomised zone2" method="_on_body_entered"]
 [connection signal="body_entered" from="zomout" to="shelf player" method="_on_zomout_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=69 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="3_bt5dn"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="37_ubnpo"]
 [ext_resource type="PackedScene" uid="uid://cuhjunc20slnp" path="res://levels/objects/plant_4.tscn" id="38_0fbs4"]
 [ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="40_p1i3s"]
+[ext_resource type="Texture2D" uid="uid://316sf22tsrrt" path="res://sprites/objects/benga 5.png" id="43_krl2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmwa"]
 size = Vector2(277, 369)
@@ -51,6 +52,9 @@ size = Vector2(280, 302.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tpx1"]
 size = Vector2(271, 369.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg1rn"]
+size = Vector2(43.5, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h7xr"]
 size = Vector2(58, 63)
@@ -109,6 +113,12 @@ size = Vector2(654.115, 83.8505)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tuqdx"]
 size = Vector2(378, 436)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yrur"]
+size = Vector2(90, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjwcb"]
+size = Vector2(28, 58)
 
 [node name="bengalevel" type="Node2D"]
 position = Vector2(12, 2)
@@ -288,10 +298,6 @@ position = Vector2(-5, -744)
 [node name="Benga1" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
 position = Vector2(61, 349)
 rotation = 0.343222
-
-[node name="Benga2" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
-position = Vector2(-93, 251)
-rotation = 0.132071
 
 [node name="Benga3" parent="benga tower/benga 14 b" instance=ExtResource("6_r01u1")]
 position = Vector2(679, 322)
@@ -646,6 +652,14 @@ position = Vector2(284, -1143.13)
 shape = SubResource("RectangleShape2D_7tpx1")
 debug_color = Color(0.937255, 0.0901961, 0.584314, 0.419608)
 
+[node name="Area2D" type="Area2D" parent="benga tower"]
+position = Vector2(1721, 16)
+script = ExtResource("20_j87wu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="benga tower/Area2D"]
+position = Vector2(-1253, -72)
+shape = SubResource("RectangleShape2D_yg1rn")
+
 [node name="benga Controller" type="Node" parent="."]
 script = ExtResource("10_h0mjx")
 
@@ -972,6 +986,26 @@ position = Vector2(8370, -1329)
 scale = Vector2(3.86, 3.86)
 texture = ExtResource("33_x3er2")
 
+[node name="Benga5" type="Sprite2D" parent="."]
+position = Vector2(-97, -497)
+rotation = 0.123479
+texture = ExtResource("43_krl2a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Benga5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benga5/StaticBody2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2yrur")
+
+[node name="Area2D" type="Area2D" parent="Benga5"]
+script = ExtResource("20_j87wu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Benga5/Area2D"]
+position = Vector2(49, 0)
+shape = SubResource("RectangleShape2D_xjwcb")
+
+[connection signal="body_entered" from="benga tower/Area2D" to="benga tower/Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="benga tower/Area2D" to="benga tower/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Benga movement1" to="benga Controller" method="_on_benga_movement_1_body_entered"]
 [connection signal="body_entered" from="Table/Area2D" to="Table/Area2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Table/Area2D" to="Table/Area2D" method="_on_body_exited"]
@@ -983,3 +1017,5 @@ texture = ExtResource("33_x3er2")
 [connection signal="body_entered" from="scene_change" to="benga Controller" method="_on_scene_change_body_entered"]
 [connection signal="body_entered" from="Benga movement4" to="benga Controller" method="_on_benga_movement_4_body_entered"]
 [connection signal="body_entered" from="Benga movement5" to="benga Controller" method="_on_benga_movement_5_body_entered"]
+[connection signal="body_entered" from="Benga5/Area2D" to="Benga5/Area2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Benga5/Area2D" to="Benga5/Area2D" method="_on_body_exited"]

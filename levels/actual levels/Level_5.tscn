@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cg1gkoaqts5wv"]
+[gd_scene load_steps=38 format=3 uid="uid://cg1gkoaqts5wv"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_oa8lb"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ahlrt"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://br3r6bn5a060v" path="res://sprites/objects/sticky note.png" id="30_bxo4y"]
 [ext_resource type="Texture2D" uid="uid://b0ykik83ud43a" path="res://sprites/objects/poster.png" id="30_yl7md"]
 [ext_resource type="Texture2D" uid="uid://dj75aflurcwco" path="res://sprites/ui/arrow.png" id="31_2l5ny"]
+[ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="31_ib2gu"]
+[ext_resource type="Texture2D" uid="uid://bh38utuhebo3n" path="res://sprites/ui/button mouse.png" id="32_q5klg"]
 [ext_resource type="Texture2D" uid="uid://bhwivxhxo7hfl" path="res://sprites/objects/plush.png" id="33_rcauy"]
 [ext_resource type="Texture2D" uid="uid://csms1rb1wiwk0" path="res://sprites/objects/chess king 2.png" id="34_mef10"]
 [ext_resource type="Texture2D" uid="uid://de0f12lejgwrq" path="res://sprites/objects/chess king.png" id="35_polxl"]
@@ -791,6 +793,22 @@ texture = ExtResource("12_a3uqp")
 position = Vector2(7506.78, 2265.76)
 scale = Vector2(1.01215, 1.00489)
 texture = ExtResource("11_psn7p")
+
+[node name="Instructions" type="Node2D" parent="."]
+position = Vector2(10463, 716)
+scale = Vector2(2.25, 2.25)
+
+[node name="Label move" type="Label" parent="Instructions"]
+offset_left = 184.0
+offset_top = 27.5
+offset_right = 279.0
+offset_bottom = 60.5
+theme = ExtResource("31_ib2gu")
+text = "to Aim"
+
+[node name="ButtonMouse" type="Sprite2D" parent="Instructions"]
+position = Vector2(146, 40)
+texture = ExtResource("32_q5klg")
 
 [connection signal="timeout" from="alien/Timer2" to="alien" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="alien/Area2D" to="alien" method="_on_area_2d_body_entered"]

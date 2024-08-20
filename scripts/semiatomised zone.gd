@@ -9,3 +9,4 @@ func _on_body_entered(body):
 		if trig == 1:
 			var tween = create_tween()
 			tween.tween_property(player,"scale",Vector2(0.75,0.75),1)
+			$"../benga Controller/womp".play()
