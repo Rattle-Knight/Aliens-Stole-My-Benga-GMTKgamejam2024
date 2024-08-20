@@ -18,6 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if $"../alien".scale < Vector2(0.1, 0.1):
+		$"../alien".scale = Vector2(0.0, 0.0)
 		_on_vitory()
 
 

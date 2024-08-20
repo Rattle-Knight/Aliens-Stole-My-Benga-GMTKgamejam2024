@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mu2ogokk2w0"]
+[gd_scene load_steps=13 format=3 uid="uid://b843ru3ttjg0h"]
 
 [ext_resource type="Script" path="res://scripts/cinematic outro.gd" id="1_dl072"]
 [ext_resource type="Script" path="res://scripts/ParallaxLayerscroll.gd" id="2_my61e"]
