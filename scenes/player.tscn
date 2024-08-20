@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://21hk8qfeso4"]
+[gd_scene load_steps=20 format=3 uid="uid://21hk8qfeso4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51acg"]
 [ext_resource type="Texture2D" uid="uid://b6f7fthk7vrvc" path="res://icon.svg" id="2_61dkt"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bbj16q118yehi" path="res://assets/SFX/331381__qubodup__public-domain-jump-sound.wav" id="9_c471e"]
 [ext_resource type="PackedScene" uid="uid://7g8wa0gm3470" path="res://scenes/game_over.tscn" id="11_ratkj"]
 [ext_resource type="PackedScene" uid="uid://ct4xl5bcuhari" path="res://scenes/pausemenu.tscn" id="12_e47kr"]
+[ext_resource type="PackedScene" uid="uid://bh8quwyeu3dyr" path="res://scenes/Bosssize bar.tscn" id="12_gwumh"]
 [ext_resource type="PackedScene" uid="uid://xv5iloism1du" path="res://scenes/size bar.tscn" id="13_6x36i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qa7b"]
@@ -125,6 +126,11 @@ one_shot = true
 visible = false
 offset_top = 1.0
 offset_bottom = 1.0
+
+[node name="SizeBar2" parent="CanvasLayer" instance=ExtResource("12_gwumh")]
+visible = false
+offset_top = -2.0
+offset_bottom = -2.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

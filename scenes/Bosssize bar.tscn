@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh8quwyeu3dyr"]
+
+[ext_resource type="Script" path="res://scripts/Bosssize bar.gd" id="1_i4rqw"]
+[ext_resource type="Theme" uid="uid://cfb1vr0rwtoks" path="res://themes/side bar theme.tres" id="2_mm1wc"]
+[ext_resource type="Texture2D" uid="uid://ct2c0obyyvkmx" path="res://sprites/ui/side bar 2.png" id="3_78gel"]
+[ext_resource type="Texture2D" uid="uid://btdcxxyfnb72o" path="res://sprites/ui/side bar 3.png" id="5_g8a5k"]
+
+[node name="SizeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i4rqw")
+
+[node name="SizeBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 22.0
+offset_right = 1090.0
+offset_bottom = 513.0
+theme = ExtResource("2_mm1wc")
+fill_mode = 3
+
+[node name="SideBar3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1059, 557)
+texture = ExtResource("5_g8a5k")
+
+[node name="SideBar4" type="Sprite2D" parent="."]
+position = Vector2(1069, 284)
+texture = ExtResource("3_78gel")

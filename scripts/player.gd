@@ -124,6 +124,7 @@ func check_global_force():
 
 func check_under_control():
 	if Global.under_control:
+		$CanvasLayer/SizeBar2.visible = true
 		var input_dir: Vector2 = input()
 		if Input.is_action_pressed("down"):
 			input_dir.y += 1

@@ -7,5 +7,5 @@ var ceasefire = false
 var forcestop = false
 var playerisatom = false
 
-var showhud = true
+var showhud = false
 var under_control = false
