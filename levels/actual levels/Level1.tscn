@@ -32,7 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtenyecu44ha" path="res://levels/objects/shoe.tscn" id="26_uu8xl"]
 [ext_resource type="PackedScene" path="res://levels/scene_change.tscn" id="30_oprhe"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="32_c83r7"]
-[ext_resource type="AudioStream" uid="uid://d2bd5ph673ceo" path="res://assets/audio/dizzy_racing.wav" id="33_knb3u"]
+[ext_resource type="AudioStream" uid="uid://t75yyvxdqbgm" path="res://assets/audio/dizzy_racing_2.mp3" id="33_lv1v0"]
 [ext_resource type="Texture2D" uid="uid://bacqujer76ety" path="res://sprites/ui/button .png" id="34_2upt4"]
 [ext_resource type="Texture2D" uid="uid://dyt3obrvudn5x" path="res://sprites/ui/button spacebar.png" id="35_o80yb"]
 [ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="35_tv0xj"]
@@ -376,12 +376,9 @@ texture = ExtResource("32_c83r7")
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("33_knb3u")
+stream = ExtResource("33_lv1v0")
 volume_db = -15.0
 autoplay = true
-
-[node name="music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("33_knb3u")
 
 [node name="Instructions" type="Node2D" parent="."]
 position = Vector2(-147, 135.5)

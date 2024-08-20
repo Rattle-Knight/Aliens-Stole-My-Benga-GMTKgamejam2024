@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dh82le6o0hx1e" path="res://sprites/objects/water bottle.png" id="31_eh23t"]
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="32_b71lt"]
 [ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="32_ow0ai"]
-[ext_resource type="AudioStream" uid="uid://bpbyv60bjhm7n" path="res://assets/audio/80s_midnight_rush.ogg" id="35_u73ar"]
+[ext_resource type="AudioStream" uid="uid://b3mufj74pupfa" path="res://assets/audio/80s_midnight_rush.mp3" id="35_gaw87"]
 [ext_resource type="Texture2D" uid="uid://cu2j01g3cijq" path="res://sprites/objects/gum box.png" id="36_ihg2a"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mfvo4"]
@@ -475,7 +475,7 @@ color = Color(0.141176, 0.141176, 0.141176, 0.709804)
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("35_u73ar")
+stream = ExtResource("35_gaw87")
 volume_db = -5.0
 autoplay = true
 bus = &"Music"
