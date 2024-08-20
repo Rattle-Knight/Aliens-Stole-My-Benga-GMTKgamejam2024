@@ -221,7 +221,14 @@ func play_animation():
 	elif direction < 0:
 		anim.flip_h = false
 	
-	if is_on_floor():
+	if gum:
+		run.stop()
+		anim.play("struggle")
+	if climbable and not gum:
+		run.stop()
+		anim.play("climb")
+	
+	if is_on_floor() and not gum and not climbable:
 		if direction == 0:
 			anim.play("idle")
 			run.stop()
@@ -229,7 +236,7 @@ func play_animation():
 			anim.play("run")
 			if !run.playing:
 				run.play()
-	else:
+	elif not gum and not climbable:
 		anim.play("jump")
 		run.stop()
 

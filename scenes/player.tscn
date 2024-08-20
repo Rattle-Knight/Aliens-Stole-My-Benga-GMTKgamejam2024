@@ -1,7 +1,6 @@
-[gd_scene load_steps=50 format=3 uid="uid://21hk8qfeso4"]
+[gd_scene load_steps=57 format=3 uid="uid://21hk8qfeso4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_51acg"]
-[ext_resource type="Texture2D" uid="uid://b6f7fthk7vrvc" path="res://icon.svg" id="2_61dkt"]
 [ext_resource type="Texture2D" uid="uid://cdmiuugxc7nyo" path="res://sprites/players/sprite_sheet.png" id="3_0o1wh"]
 [ext_resource type="Texture2D" uid="uid://bacqujer76ety" path="res://sprites/ui/button .png" id="3_vdtcb"]
 [ext_resource type="Texture2D" uid="uid://vaatkebjm530" path="res://sprites/ui/button pressed.png" id="4_jpgf2"]
@@ -13,9 +12,25 @@
 [ext_resource type="AudioStream" uid="uid://bbj16q118yehi" path="res://assets/SFX/331381__qubodup__public-domain-jump-sound.wav" id="9_c471e"]
 [ext_resource type="PackedScene" uid="uid://7g8wa0gm3470" path="res://scenes/game_over.tscn" id="11_ratkj"]
 [ext_resource type="PackedScene" uid="uid://ct4xl5bcuhari" path="res://scenes/pausemenu.tscn" id="12_e47kr"]
-[ext_resource type="PackedScene" path="res://scenes/Bosssize bar.tscn" id="12_gwumh"]
+[ext_resource type="PackedScene" uid="uid://bh8quwyeu3dyr" path="res://scenes/Bosssize bar.tscn" id="12_gwumh"]
 [ext_resource type="PackedScene" uid="uid://xv5iloism1du" path="res://scenes/size bar.tscn" id="13_6x36i"]
 [ext_resource type="AudioStream" uid="uid://dbgxmdjp7fc6a" path="res://assets/SFX/running.mp3" id="16_saoi7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a3mn"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(0, 0, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opmo"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(150, 0, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcw7q"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(300, 0, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjwxs"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(450, 0, 150, 162)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6ai0"]
 atlas = ExtResource("3_0o1wh")
@@ -125,8 +140,41 @@ region = Rect2(750, 648, 150, 162)
 atlas = ExtResource("3_0o1wh")
 region = Rect2(0, 810, 150, 162)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dbfg"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(150, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csx14"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(300, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr0wo"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(450, 810, 150, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pntrp"]
+atlas = ExtResource("3_0o1wh")
+region = Rect2(600, 810, 150, 162)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_i2ub0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a3mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcw7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjwxs")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v6ai0")
@@ -222,6 +270,23 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dbfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csx14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr0wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pntrp")
+}],
+"loop": true,
+"name": &"struggle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dm5g"]
@@ -257,16 +322,10 @@ font_size = 25
 collision_mask = 3
 script = ExtResource("1_51acg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1.50004, -1.49997)
-scale = Vector2(0.367188, 0.367188)
-texture = ExtResource("2_61dkt")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.450833, 0.450833)
 sprite_frames = SubResource("SpriteFrames_i2ub0")
-animation = &"idle"
+animation = &"climb"
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0.5)

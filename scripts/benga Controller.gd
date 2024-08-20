@@ -83,6 +83,7 @@ func _on_benga_movement_3_body_entered(body):
 				alientween.tween_property(alien2,"position",Vector2(392, -1796),5)
 				var movepaytween = create_tween()
 				$"../player/BlastAlien".visible = true
+				$hit_player.play()
 				movepaytween.tween_property(player,"position",Vector2(286, -1415),0.5)
 				await movepaytween.finished
 				Global.forcestop = true
@@ -92,11 +93,12 @@ func _on_benga_movement_3_body_entered(body):
 				movetween.set_parallel()
 				movetween.tween_property(infpieceL,"position",Vector2(-79, -1867),1)
 				movetween.tween_property(infpieceR,"position",Vector2(-88, -1872),1)
-				
+				$womp.play()
 				await alientween.finished
 				movetween = create_tween()
 				movetween.tween_property(lone,"position",Vector2(609, -1574),1)
 				await movetween.finished
+				$womp.play()
 				$badonk.play()
 				alientween = create_tween()
 				Global.forcestop = false

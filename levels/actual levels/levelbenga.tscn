@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://ukoy104774k1"]
+[gd_scene load_steps=65 format=3 uid="uid://ukoy104774k1"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="2_m8sf1"]
 [ext_resource type="Texture2D" uid="uid://6ktcfk3ed8go" path="res://bg/wall.png" id="3_bt5dn"]
@@ -16,16 +16,18 @@
 [ext_resource type="Texture2D" uid="uid://dywvtnu2jaivu" path="res://sprites/objects/benga 3.png" id="11_na184"]
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="11_ttnyv"]
 [ext_resource type="Texture2D" uid="uid://bn2ck4m5wwagd" path="res://sprites/objects/benga 11.png" id="12_hqqm8"]
-[ext_resource type="PackedScene" path="res://levels/objects/gum.tscn" id="12_mlujb"]
+[ext_resource type="PackedScene" uid="uid://80o2cfjlsltr" path="res://levels/objects/gum.tscn" id="12_mlujb"]
 [ext_resource type="Texture2D" uid="uid://dgyvbtlg1q5s4" path="res://sprites/objects/book 10.png" id="14_vdo7l"]
 [ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="15_de15l"]
 [ext_resource type="AudioStream" uid="uid://bjktexklcdri5" path="res://assets/SFX/573047__thecoolcookie17__bonk-sound-effect (mp3cut.net).mp3" id="15_qcvgj"]
 [ext_resource type="PackedScene" uid="uid://do3r2faib5rf6" path="res://levels/alien/alien.tscn" id="16_5qy7l"]
+[ext_resource type="AudioStream" uid="uid://b75i4k2cjlo7i" path="res://assets/SFX/220191__gameaudio__space-swoosh-brighter.wav" id="16_eh8px"]
+[ext_resource type="AudioStream" uid="uid://du2rdfhv2mlux" path="res://assets/SFX/55843__sergenious__port.wav" id="17_u14qr"]
 [ext_resource type="Script" path="res://scripts/climbable.gd" id="20_j87wu"]
-[ext_resource type="PackedScene" path="res://levels/objects/chess2.tscn" id="22_hqagc"]
+[ext_resource type="PackedScene" uid="uid://bf1cwi7y53112" path="res://levels/objects/chess2.tscn" id="22_hqagc"]
 [ext_resource type="AudioStream" uid="uid://dofp05ufkdfxc" path="res://assets/audio/darkness_road_bpm165.mp3" id="23_ll50w"]
-[ext_resource type="PackedScene" path="res://levels/objects/chess1.tscn" id="23_vb1fm"]
-[ext_resource type="PackedScene" path="res://levels/objects/chess3.tscn" id="25_lyplu"]
+[ext_resource type="PackedScene" uid="uid://h5cwp723qrqo" path="res://levels/objects/chess1.tscn" id="23_vb1fm"]
+[ext_resource type="PackedScene" uid="uid://c0jorhiwauos" path="res://levels/objects/chess3.tscn" id="25_lyplu"]
 [ext_resource type="PackedScene" uid="uid://bij4tgilhpkxw" path="res://levels/objects/floortile.tscn" id="27_it5m7"]
 [ext_resource type="Texture2D" uid="uid://dpf173bb5i4i3" path="res://bg/tile wall.png" id="28_2lmtj"]
 [ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="29_nnvgi"]
@@ -33,13 +35,13 @@
 [ext_resource type="Script" path="res://scripts/atomised zone.gd" id="31_66fpn"]
 [ext_resource type="Script" path="res://scripts/semiatomised zone.gd" id="32_bx5oo"]
 [ext_resource type="Texture2D" uid="uid://tpcmmfduc2ka" path="res://sprites/objects/shelf wall 1.png" id="33_x3er2"]
-[ext_resource type="PackedScene" path="res://levels/objects/plant_1.tscn" id="34_23o7r"]
-[ext_resource type="PackedScene" path="res://levels/objects/plant_2.tscn" id="35_yjn4a"]
+[ext_resource type="PackedScene" uid="uid://bhiyd1xdbgpto" path="res://levels/objects/plant_1.tscn" id="34_23o7r"]
+[ext_resource type="PackedScene" uid="uid://dsijsdwrny47s" path="res://levels/objects/plant_2.tscn" id="35_yjn4a"]
 [ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="36_dn71v"]
 [ext_resource type="Texture2D" uid="uid://d36xavavgoije" path="res://sprites/objects/book 9.png" id="36_lcc8i"]
 [ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="37_ubnpo"]
-[ext_resource type="PackedScene" path="res://levels/objects/plant_4.tscn" id="38_0fbs4"]
-[ext_resource type="PackedScene" path="res://levels/scene_change.tscn" id="40_p1i3s"]
+[ext_resource type="PackedScene" uid="uid://cuhjunc20slnp" path="res://levels/objects/plant_4.tscn" id="38_0fbs4"]
+[ext_resource type="PackedScene" uid="uid://bw68qse37lixg" path="res://levels/scene_change.tscn" id="40_p1i3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmwa"]
 size = Vector2(277, 369)
@@ -650,6 +652,16 @@ script = ExtResource("10_h0mjx")
 [node name="badonk" type="AudioStreamPlayer2D" parent="benga Controller"]
 stream = ExtResource("15_qcvgj")
 volume_db = 5.0
+bus = &"SFX"
+
+[node name="womp" type="AudioStreamPlayer2D" parent="benga Controller"]
+stream = ExtResource("16_eh8px")
+volume_db = 5.622
+bus = &"SFX"
+
+[node name="hit_player" type="AudioStreamPlayer" parent="benga Controller"]
+stream = ExtResource("17_u14qr")
+volume_db = 7.496
 bus = &"SFX"
 
 [node name="Benga movement1" type="Area2D" parent="."]

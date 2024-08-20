@@ -10,8 +10,8 @@ func _ready():
 	readyup.tween_property($"../player","position",Vector2(10271, 523),4)
 	readyup.tween_property($"../player/alien2","position",Vector2(-324, -77),4)
 	readyup.tween_property($"../player/alien2","rotation_degrees",$"../player/alien2".rotation_degrees -90, 4)
-	readyup.tween_property($"../player/CollisionShape2D2","position",Vector2(0, 377),4)
-	readyup.tween_property($"../player/CollisionShape2D2","scale",Vector2(10,15),4)
+	readyup.tween_property($"../player/CollisionShape2D3","position",Vector2(0, 377),4)
+	readyup.tween_property($"../player/CollisionShape2D3","scale",Vector2(10,15),4)
 	await readyup.finished
 	$"../alien".isplaying = false
 	Global.under_control = true

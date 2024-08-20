@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg1gkoaqts5wv"]
+[gd_scene load_steps=36 format=3 uid="uid://cg1gkoaqts5wv"]
 
 [ext_resource type="PackedScene" uid="uid://21hk8qfeso4" path="res://scenes/player.tscn" id="1_oa8lb"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_ahlrt"]
@@ -10,6 +10,26 @@
 [ext_resource type="Texture2D" uid="uid://biwoout1fb8s1" path="res://sprites/objects/table.png" id="8_a6022"]
 [ext_resource type="Texture2D" uid="uid://vj6fr6wyou3s" path="res://bg/wall 2.png" id="9_io1di"]
 [ext_resource type="AudioStream" uid="uid://baego4uolbrjd" path="res://assets/audio/Orbital Colossus.mp3" id="9_onm4e"]
+[ext_resource type="Texture2D" uid="uid://dx56g7obw3rj7" path="res://sprites/objects/box 3.png" id="11_psn7p"]
+[ext_resource type="Texture2D" uid="uid://bxubtetimyqy" path="res://sprites/objects/box 2.png" id="12_a3uqp"]
+[ext_resource type="Texture2D" uid="uid://cq8gtkn3if5g1" path="res://sprites/objects/box 4.png" id="13_ssv5u"]
+[ext_resource type="Texture2D" uid="uid://b8wrx272h8ga8" path="res://sprites/objects/box.PNG" id="14_ilqss"]
+[ext_resource type="Texture2D" uid="uid://tpcmmfduc2ka" path="res://sprites/objects/shelf wall 1.png" id="15_hg175"]
+[ext_resource type="Texture2D" uid="uid://d0v1xluf55xl2" path="res://sprites/objects/book 4.png" id="16_wkw3h"]
+[ext_resource type="Texture2D" uid="uid://cupblf5053cel" path="res://sprites/objects/book 5.png" id="17_ki33c"]
+[ext_resource type="Texture2D" uid="uid://crrt5xs6n5hj7" path="res://sprites/objects/book 8.png" id="18_csex6"]
+[ext_resource type="Texture2D" uid="uid://d36xavavgoije" path="res://sprites/objects/book 9.png" id="19_qxlsp"]
+[ext_resource type="Texture2D" uid="uid://crje508aolqb6" path="res://sprites/objects/plant 2.png" id="26_rkrb7"]
+[ext_resource type="Texture2D" uid="uid://0eni7nd7jmwp" path="res://sprites/objects/plant 4.png" id="27_cqu00"]
+[ext_resource type="Texture2D" uid="uid://d343hvxj3rndq" path="res://sprites/objects/plant 1.png" id="28_f7n8i"]
+[ext_resource type="Texture2D" uid="uid://cdicx1cbydg01" path="res://sprites/objects/tablet 1.png" id="29_2tvc6"]
+[ext_resource type="Texture2D" uid="uid://br3r6bn5a060v" path="res://sprites/objects/sticky note.png" id="30_bxo4y"]
+[ext_resource type="Texture2D" uid="uid://b0ykik83ud43a" path="res://sprites/objects/poster.png" id="30_yl7md"]
+[ext_resource type="Texture2D" uid="uid://dj75aflurcwco" path="res://sprites/ui/arrow.png" id="31_2l5ny"]
+[ext_resource type="Texture2D" uid="uid://bhwivxhxo7hfl" path="res://sprites/objects/plush.png" id="33_rcauy"]
+[ext_resource type="Texture2D" uid="uid://csms1rb1wiwk0" path="res://sprites/objects/chess king 2.png" id="34_mef10"]
+[ext_resource type="Texture2D" uid="uid://de0f12lejgwrq" path="res://sprites/objects/chess king.png" id="35_polxl"]
+[ext_resource type="Texture2D" uid="uid://dg2vt2n7c17hu" path="res://sprites/objects/chess knight.png" id="36_42b1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etret"]
 size = Vector2(564, 858)
@@ -61,7 +81,7 @@ z_index = 2
 position = Vector2(5582, -249)
 isplaying = true
 dmg = Vector2(0.25, 0.25)
-firerate = 0.7
+firerate = 1.0
 
 [node name="alienhitbox" type="StaticBody2D" parent="alien" groups=["alien"]]
 
@@ -88,7 +108,7 @@ layer_0/tile_data = PackedInt32Array(262144, 0, 65536, 262145, 0, 65536, 262146,
 
 [node name="wall" type="StaticBody2D" parent="floor"]
 z_index = 2
-position = Vector2(31025, -2101)
+position = Vector2(32534, -1993)
 scale = Vector2(1, 1.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/wall"]
@@ -151,14 +171,626 @@ texture = ExtResource("8_a6022")
 
 [node name="Wall2" type="Sprite2D" parent="."]
 z_index = -106
-position = Vector2(12590.5, -987.5)
-scale = Vector2(19.2439, 13.1528)
+position = Vector2(13686, -1131)
+scale = Vector2(21.1458, 13.5957)
 texture = ExtResource("9_io1di")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_onm4e")
 volume_db = -10.0
 autoplay = true
+
+[node name="Boxtowers" type="Node2D" parent="."]
+position = Vector2(8603, 687)
+scale = Vector2(0.735, 0.735)
+
+[node name="Boxt1" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(12628, -2204)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("11_psn7p")
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt1"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("12_a3uqp")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt1/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Boxt2" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(13562, -2038.42)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("12_a3uqp")
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt2"]
+position = Vector2(25.6898, 12.3552)
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("13_ssv5u")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt2/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-95.836, 4106.92)
+scale = Vector2(1.083, 1.785)
+texture = ExtResource("11_psn7p")
+
+[node name="Boxt4" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(15405, -1953.42)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("13_ssv5u")
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt4"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("14_ilqss")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt4/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-82.0022, 4018.76)
+scale = Vector2(0.988, 1.69)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Boxt5" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(16320, -1732)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("12_a3uqp")
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt5"]
+position = Vector2(0.00096484, 31.8443)
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("12_a3uqp")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt5/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-71.1352, 3923.81)
+scale = Vector2(0.988, 1.1)
+texture = ExtResource("13_ssv5u")
+flip_h = true
+
+[node name="Boxt6" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(17167, -1850)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt6"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt6/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-68.1721, 3988.5)
+scale = Vector2(0.988, 1.37)
+texture = ExtResource("11_psn7p")
+
+[node name="Boxt3" type="Sprite2D" parent="Boxtowers"]
+position = Vector2(14460, -2128)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="twoer" type="Node2D" parent="Boxtowers/Boxt3"]
+
+[node name="Box3" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-22.7227, 515.479)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box4" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-14.8184, 1042.9)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box5" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-9.87891, 1568.33)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box7" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-52.3623, 2104.71)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box9" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-74.0986, 2694.82)
+scale = Vector2(0.988, 1.595)
+texture = ExtResource("11_psn7p")
+flip_h = true
+
+[node name="Box10" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-57.3027, 3405.35)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="Box11" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-99.7861, 3941.73)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("13_ssv5u")
+flip_h = true
+
+[node name="Box12" type="Sprite2D" parent="Boxtowers/Boxt3/twoer"]
+modulate = Color(0.65098, 0.65098, 0.65098, 1)
+position = Vector2(-109.666, 4472.13)
+scale = Vector2(0.987996, 0.995134)
+texture = ExtResource("11_psn7p")
+
+[node name="shelves and obj" type="Node2D" parent="."]
+position = Vector2(10505, 62)
+scale = Vector2(0.605, 0.605)
+
+[node name="ShelfWall1" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(2957, -1327)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="Book4" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6371.83, -1761.11)
+rotation = 1.5592
+texture = ExtResource("16_wkw3h")
+
+[node name="Book5" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6306.83, -1750.11)
+rotation = 1.5592
+texture = ExtResource("17_ki33c")
+
+[node name="Book6" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6449, -1758.05)
+rotation = 1.5592
+texture = ExtResource("16_wkw3h")
+
+[node name="Book7" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6638, -1745.05)
+rotation = 1.5592
+texture = ExtResource("17_ki33c")
+
+[node name="Book8" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6697, -1765.05)
+rotation = 1.5592
+texture = ExtResource("18_csex6")
+
+[node name="Book9" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(6766, -1751.05)
+rotation = 1.5592
+texture = ExtResource("19_qxlsp")
+
+[node name="ShelfWall2" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(5691, -1332)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="ShelfWall3" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(8379, -1332)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="Box2" type="Sprite2D" parent="shelves and obj/ShelfWall3"]
+position = Vector2(167.83, -120.2)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("12_a3uqp")
+
+[node name="ShelfWall4" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(10764, -2237)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="ShelfWall5" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(18511, -2026)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="ShelfWall6" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(20782, -1057)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="StickyNote" type="Sprite2D" parent="shelves and obj/ShelfWall6"]
+position = Vector2(295.761, -10.4738)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("30_bxo4y")
+
+[node name="Arrow" type="Sprite2D" parent="shelves and obj/ShelfWall6/StickyNote"]
+position = Vector2(5, -6)
+rotation = -1.95509
+texture = ExtResource("31_2l5ny")
+
+[node name="ShelfWall7" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(21546, -295)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="Book4" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(285.245, -109.24)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("16_wkw3h")
+
+[node name="Book5" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(269.036, -106.497)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("17_ki33c")
+
+[node name="Book6" type="Sprite2D" parent="shelves and obj/ShelfWall7"]
+position = Vector2(304.49, -108.477)
+rotation = 1.5592
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("16_wkw3h")
+
+[node name="ShelfWall8" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(20142, 1062)
+rotation = -0.00572664
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="Shelfplushhie" type="Sprite2D" parent="shelves and obj"]
+position = Vector2(14530, -2631)
+scale = Vector2(4.01, 4.01)
+texture = ExtResource("15_hg175")
+
+[node name="Plush" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-277.556, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush2" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-218.953, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush3" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-156.858, -76.5586)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush4" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-94.0153, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush5" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-29.9255, -74.0648)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush6" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(85.0371, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush7" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(151.621, -75.8104)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush8" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(215.71, -74.5635)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="Plush9" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(278.553, -74.5635)
+scale = Vector2(0.249377, 0.249377)
+texture = ExtResource("33_rcauy")
+
+[node name="ChessKing2" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(15.2117, -67.8304)
+scale = Vector2(0.158354, 0.158354)
+texture = ExtResource("34_mef10")
+
+[node name="ChessKing" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(-63.0922, -66.3341)
+scale = Vector2(0.158354, 0.158354)
+texture = ExtResource("35_polxl")
+
+[node name="ChessKnight" type="Sprite2D" parent="shelves and obj/Shelfplushhie"]
+position = Vector2(41.7756, -57.3958)
+rotation = 1.56371
+scale = Vector2(0.187, 0.187)
+texture = ExtResource("36_42b1g")
+
+[node name="Plant2" type="Sprite2D" parent="."]
+position = Vector2(11803, -996)
+texture = ExtResource("26_rkrb7")
+
+[node name="Plant4" type="Sprite2D" parent="."]
+position = Vector2(12090, -1013)
+texture = ExtResource("27_cqu00")
+
+[node name="Plant1" type="Sprite2D" parent="."]
+position = Vector2(12372, -966)
+texture = ExtResource("28_f7n8i")
+
+[node name="Plant3" type="Sprite2D" parent="."]
+position = Vector2(21160, -1354)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("26_rkrb7")
+
+[node name="Plant5" type="Sprite2D" parent="."]
+position = Vector2(21425, -1338)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("28_f7n8i")
+
+[node name="Plant6" type="Sprite2D" parent="."]
+position = Vector2(21704, -1332)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("28_f7n8i")
+
+[node name="Plant7" type="Sprite2D" parent="."]
+position = Vector2(21971, -1336)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("28_f7n8i")
+
+[node name="Plant8" type="Sprite2D" parent="."]
+position = Vector2(22366, -1364)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("27_cqu00")
+
+[node name="Tablet1" type="Sprite2D" parent="."]
+position = Vector2(19634, 2325)
+texture = ExtResource("29_2tvc6")
+
+[node name="Plush" type="Sprite2D" parent="."]
+position = Vector2(21149, 1978)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("33_rcauy")
+
+[node name="Poster" type="Sprite2D" parent="."]
+position = Vector2(22106, 211)
+texture = ExtResource("30_yl7md")
+
+[node name="boxes" type="Node2D" parent="."]
+position = Vector2(3751, 1078)
+scale = Vector2(0.585, 0.585)
+
+[node name="Box11" type="Sprite2D" parent="boxes"]
+position = Vector2(8400, 2261)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("12_a3uqp")
+
+[node name="Box2" type="Sprite2D" parent="boxes"]
+position = Vector2(9515, 2268)
+texture = ExtResource("12_a3uqp")
+
+[node name="Box3" type="Sprite2D" parent="boxes"]
+position = Vector2(9497, 1740)
+rotation = -0.02847
+texture = ExtResource("11_psn7p")
+
+[node name="Box12" type="Sprite2D" parent="boxes"]
+position = Vector2(9511, 1235.73)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("12_a3uqp")
+
+[node name="Box4" type="Sprite2D" parent="boxes"]
+z_index = -1
+position = Vector2(9496, 789.725)
+rotation = -0.02847
+scale = Vector2(1, 0.72353)
+texture = ExtResource("11_psn7p")
+
+[node name="Box8" type="Sprite2D" parent="boxes"]
+position = Vector2(5760.78, 2269.76)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("14_ilqss")
+
+[node name="Box9" type="Sprite2D" parent="boxes"]
+position = Vector2(6598.78, 2345.76)
+rotation = -3.128
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("12_a3uqp")
+
+[node name="Box10" type="Sprite2D" parent="boxes"]
+position = Vector2(7506.78, 2265.76)
+scale = Vector2(1.01215, 1.00489)
+texture = ExtResource("11_psn7p")
 
 [connection signal="timeout" from="alien/Timer2" to="alien" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="alien/Area2D" to="alien" method="_on_area_2d_body_entered"]
