@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7g8wa0gm3470"]
+[gd_scene load_steps=5 format=3 uid="uid://7g8wa0gm3470"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_qdy7j"]
 [ext_resource type="Theme" uid="uid://cv5ix05irjhgf" path="res://themes/pausemenu theme.tres" id="2_olowy"]
@@ -42,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_olowy")
 theme_override_fonts/font = ExtResource("2_tiir0")
-text = "YOU WERE ATOMIZED"
+text = "YOU WHERE ATOMIZED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -63,13 +63,14 @@ layout_mode = 2
 theme = ExtResource("4_i5k4w")
 theme_override_fonts/font = ExtResource("2_tiir0")
 text = "Retry"
-flat = true
 
 [node name="hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_m75yk")
+bus = &"SFX"
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_af5pk")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_retry_button_pressed"]

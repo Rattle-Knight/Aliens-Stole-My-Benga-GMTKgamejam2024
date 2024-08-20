@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfkkj5n365aen"]
+[gd_scene load_steps=13 format=3 uid="uid://5mu2ogokk2w0"]
 
 [ext_resource type="Script" path="res://scripts/cinematic outro.gd" id="1_dl072"]
 [ext_resource type="Script" path="res://scripts/ParallaxLayerscroll.gd" id="2_my61e"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://mmyu344fjhy0" path="res://sprites/cinematic/outro 3 layer 1.png" id="9_8gj3q"]
 [ext_resource type="Texture2D" uid="uid://bm86ct284ut0v" path="res://sprites/cinematic/outro 3 layer 2.png" id="10_6ard8"]
 [ext_resource type="Texture2D" uid="uid://cwk3dtj5auahk" path="res://sprites/cinematic/outro 3 layer 3.png" id="11_yqy0k"]
+[ext_resource type="AudioStream" uid="uid://s2fr0ufi44is" path="res://assets/audio/jazznbrass loop.wav" id="12_18kne"]
 
 [node name="CinematicIntro" type="Node2D"]
 script = ExtResource("1_dl072")
@@ -119,5 +120,9 @@ SPEED = 2.0
 [node name="Outro3Layer3" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer3"]
 position = Vector2(-1, 13)
 texture = ExtResource("11_yqy0k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_18kne")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
