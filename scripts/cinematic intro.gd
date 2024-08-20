@@ -3,7 +3,6 @@ extends Node2D
 var trig = 0
 
 
-
 func _on_timer_timeout():
 	trig += 1
 	if trig == 1:

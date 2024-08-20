@@ -9,3 +9,4 @@ var playerisatom = false
 
 var showhud = false
 var under_control = false
+var can_esc = true

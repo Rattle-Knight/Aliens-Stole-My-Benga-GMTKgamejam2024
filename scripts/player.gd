@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var climbingspeed =  200.0
 
 @onready var camera = $Camera2D
+@onready var anim = $AnimatedSprite2D
+
 
 var speed = 250
 var jump_power = -750
@@ -197,6 +199,7 @@ func player_movement():
 
 func jump(input_dir):
 	if Input.is_action_just_pressed("space") and is_on_floor():
+		anim.play("jump")
 		velocity.y += jump_power 
 		$jump.play_with_random_pitch()
 
@@ -210,7 +213,21 @@ func change_size():
 
 
 func play_animation():
-	pass
+	
+	var direction = Input.get_axis("left", "right")
+	if direction > 0:
+		anim.flip_h = true
+	elif direction < 0:
+		anim.flip_h = false
+	
+	if is_on_floor():
+		if direction == 0:
+			anim.play("idle")
+		else:
+			anim.play("run")
+	else:
+		anim.play("jump")
+	
 
 
 

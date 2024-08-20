@@ -1,6 +1,5 @@
 extends Control
 
-
 func _on_start_pressed():
 	$click.play()
 	await get_tree().create_timer(0.1).timeout
